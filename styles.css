@@ -285,9 +285,17 @@ body {
     flex-direction: column;
 }
 
+.hero-subtitle {
+    font-size: 32px;
+    line-height: 44px;
+    text-transform: none;
+    margin-top: 20px;
+    color: var(--color-mine-shaft);
+}
+
 .hero-form-wrapper {
     position: absolute;
-    top: 630px;
+    top: 750px;
     left: 120px;
     z-index: 3;
 }

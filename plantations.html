@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1440">
+    <title>Каталоги плантаций - Incoflores</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="catalog.css">
+    <style>
+        .plantations-container {
+            width: 1440px;
+            margin: 0 auto;
+            background-color: #fff;
+        }
+
+        .plantations-header {
+            padding: 149px 120px 0;
+            text-align: center;
+        }
+
+        .plantations-title {
+            font-family: 'Playfair Display', serif;
+            font-weight: 400;
+            font-size: 40px;
+            line-height: 52px;
+            color: #222222;
+            margin: 0 0 40px;
+        }
+
+        .plantations-subtitle {
+            font-family: Arial, sans-serif;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 24px;
+            color: #222222;
+            max-width: 560px;
+            margin: 0 auto 52px;
+        }
+
+        .plantations-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            padding: 0 120px;
+        }
+
+        .plantation-item {
+            border-right: 1px solid #bebebe;
+            border-bottom: 1px solid #bebebe;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            min-height: 100px;
+        }
+
+        .plantation-item:nth-child(4n) {
+            border-right: none;
+        }
+
+        .plantation-item:nth-last-child(-n+4) {
+            border-bottom: none;
+        }
+
+        .plantation-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 200px;
+            max-height: 200px;
+        }
+
+        .plantation-link img {
+            max-width: 200px;
+            max-height: 200px;
+            object-fit: contain;
+        }
+
+        .plantations-footer {
+            margin-top: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="page plantations-container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-container">
+                <a href="index.html" class="logo">
+                    <img src="https://www.figma.com/api/mcp/asset/5bb49d37-0fa5-4b3b-bd28-64c665d439ad" alt="Incoflores"
+                        class="logo-img">
+                </a>
+                <nav class="nav">
+                    <div class="nav-dropdown">
+                        <a href="index.html#services" class="nav-link nav-link-dropdown">Наши услуги</a>
+                        <div class="dropdown-menu">
+                            <a href="http://project6732419.tilda.ws/page36402882.html" class="dropdown-item">Цветочный брокер</a>
+                            <a href="http://project6732419.tilda.ws/page36404784.html" class="dropdown-item">Контроль качества</a>
+                            <a href="http://project6732419.tilda.ws/page36408111.html" class="dropdown-item">Специальное предложение к 8 марта, тюльпаны 🌷</a>
+                        </div>
+                    </div>
+                    <a href="flowercatalog.html" class="nav-link">Каталог цветов</a>
+                    <a href="plantations.html" class="nav-link">Наши партнеры</a>
+                    <a href="https://incoflores.ru/webshop" class="nav-link">Веб шоп</a>
+                    <a href="https://incoflores.ru/calculator" class="nav-link">Калькулятор доставки</a>
+                    <a href="index.html#about" class="nav-link">О нас</a>
+                    <a href="index.html#contacts" class="nav-link">Контакты</a>
+                </nav>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <div class="plantations-header">
+            <h1 class="plantations-title">Каталоги плантаций</h1>
+            <p class="plantations-subtitle">Если вас заинтересовали цветы из каталогов наших партнеров, напишите нам!</p>
+        </div>
+
+        <!-- Partners Grid -->
+        <div class="plantations-grid">
+            <div class="plantation-item">
+                <a href="https://roseslandfarm.com/catalogo/" class="plantation-link" target="_blank">
+                    <img src="https://www.figma.com/api/mcp/asset/c98d7ed5-5cc1-4a9f-94dc-11d0afd4e511" alt="Rosesland">
+                </a>
+            </div>
+            <div class="plantation-item">
+                <a href="https://www.attarroses.com/rose-catalogue" class="plantation-link" target="_blank">
+                    <img src="https://www.figma.com/api/mcp/asset/efa9ee94-44f7-4e24-bb05-250bc367166d" alt="Attar Roses">
+                </a>
+            </div>
+            <div class="plantation-item">
+                <a href="https://infinityloveroses.com.ec/es/shop/" class="plantation-link" target="_blank">
+                    <img src="https://www.figma.com/api/mcp/asset/7d20db95-73c7-4a02-a675-f41125de9eb5" alt="Infinity">
+                </a>
+            </div>
+            <div class="plantation-item">
+                <a href="https://www.florecal.online/allvarieties" class="plantation-link" target="_blank">
+                    <img src="https://www.figma.com/api/mcp/asset/129f1b0d-d8a6-4def-afed-e363b64b65f6" alt="Florecal">
+                </a>
+            </div>
+            <div class="plantation-item">
+                <a href="https://www.nintanga.com.ec/productos/" class="plantation-link" target="_blank">
+                    <img src="https://www.figma.com/api/mcp/asset/e6462af2-3ded-45d7-b11c-ba26ff270bfc" alt="Nintanga">
+                </a>
+            </div>
+            <div class="plantation-item">
+                <a href="https://www.sacharose.com/our-roses" class="plantation-link" target="_blank">
+                    <img src="https://www.figma.com/api/mcp/asset/5b5f4bff-d748-4e02-b8b2-8f5073935056" alt="Sacharose">
+                </a>
+            </div>
+            <div class="plantation-item">
+                <a href="https://www.florisolandcompany.com/es/catalogo.php" class="plantation-link" target="_blank">
+                    <img src="https://www.figma.com/api/mcp/asset/9bbfbeac-fb72-443a-a223-13185bc90708" alt="Florisol">
+                </a>
+            </div>
+            <div class="plantation-item">
+                <a href="https://florandina.com/our-hydrangeas/" class="plantation-link" target="_blank">
+                    <img src="https://www.figma.com/api/mcp/asset/aeebc404-fb4a-4d36-8dab-13948cabd379" alt="Florandina">
+                </a>
+            </div>
+            <div class="plantation-item">
+                <a href="https://larosadelaalegria.com/product-category/estandar-roses/" class="plantation-link" target="_blank">
+                    <img src="https://www.figma.com/api/mcp/asset/9ee5d596-e133-4b3f-8b67-5f43e2f1231e" alt="La Rosa de la Alegria">
+                </a>
+            </div>
+            <div class="plantation-item">
+                <a href="https://olimpoflowers.com.ec/nuestras-rosas/" class="plantation-link" target="_blank">
+                    <img src="https://www.figma.com/api/mcp/asset/d4771819-d93e-4faf-9db1-2e9599e63b88" alt="Olimpo">
+                </a>
+            </div>
+            <div class="plantation-item">
+                <a href="https://online.fliphtml5.com/pbbct/xdda/#p=1" class="plantation-link" target="_blank">
+                    <img src="https://www.figma.com/api/mcp/asset/bd674d6d-427d-41a4-9df1-933847450e27" alt="Khad Roses">
+                </a>
+            </div>
+            <div class="plantation-item">
+                <a href="https://roosec.my.canva.site/" class="plantation-link" target="_blank">
+                    <img src="https://www.figma.com/api/mcp/asset/ea8d948d-e43d-4d75-8c8d-6fc5248aaaae" alt="Roos">
+                </a>
+            </div>
+            <div class="plantation-item">
+                <a href="https://www.hojaverde.com.ec/catalog/" class="plantation-link" target="_blank">
+                    <img src="https://www.figma.com/api/mcp/asset/944e1c1e-f6b5-4fbf-bb4f-e5e24e48c187" alt="Hoja Verde">
+                </a>
+            </div>
+            <div class="plantation-item">
+                <a href="https://www.rosasdelmanzano.com/en/fresh-roses/" class="plantation-link" target="_blank">
+                    <img src="https://www.figma.com/api/mcp/asset/e5971cf8-3de6-4ce0-b8e3-0f4d73687b3e" alt="Rosas del Manzano">
+                </a>
+            </div>
+            <div class="plantation-item">
+                <a href="https://altasierra-roses.com/catalog/" class="plantation-link" target="_blank">
+                    <img src="https://www.figma.com/api/mcp/asset/e576a811-354a-4aed-b712-d043b108fa7d" alt="Alta Sierra Roses">
+                </a>
+            </div>
+            <div class="plantation-item">
+                <a href="https://www.jymflowersec.com/varieties" class="plantation-link" target="_blank">
+                    <img src="https://www.figma.com/api/mcp/asset/d9f3e3c9-9134-4898-91af-5fc9522bb8d4" alt="J&M Flowers">
+                </a>
+            </div>
+            <div class="plantation-item">
+                <a href="https://catalog.holygodrosesecuador.com/" class="plantation-link" target="_blank">
+                    <img src="https://www.figma.com/api/mcp/asset/c7ce049d-346d-462e-9d1a-f061879c80fb" alt="Holy God Roses">
+                </a>
+            </div>
+            <div class="plantation-item">
+                <a href="https://www.ecoflorgroup.com/ru/catalogos-2/" class="plantation-link" target="_blank">
+                    <img src="https://www.figma.com/api/mcp/asset/43f915bc-1b32-4015-ae54-0420ffcb2867" alt="Ecoflor Group">
+                </a>
+            </div>
+            <div class="plantation-item">
+                <a href="https://esfarms.com/category0.php" class="plantation-link" target="_blank">
+                    <img src="https://www.figma.com/api/mcp/asset/86d851c6-334f-43e8-acbe-b5cbb8827f06" alt="ESF">
+                </a>
+            </div>
+            <div class="plantation-item">
+                <a href="https://floristicaecu.com/cataloge/" class="plantation-link" target="_blank">
+                    <img src="https://www.figma.com/api/mcp/asset/b7faae3a-b561-40be-a30a-d42ca6d39ed5" alt="Floristica Ecuador">
+                </a>
+            </div>
+            <div class="plantation-item">
+                <a href="https://terranostra-farm.com/varieties-2/" class="plantation-link" target="_blank">
+                    <img src="https://www.figma.com/api/mcp/asset/817bdc85-8a1d-4129-b7e4-9efe82243653" alt="Terranostra">
+                </a>
+            </div>
+            <div class="plantation-item">
+                <a href="https://www.latinafarms.com.ec/catalogo/" class="plantation-link" target="_blank">
+                    <img src="https://www.figma.com/api/mcp/asset/727e340e-3571-4dd1-b0d7-cbc6484358e5" alt="Latina Farms">
+                </a>
+            </div>
+            <div class="plantation-item">
+                <a href="https://discoverflower.com/" class="plantation-link" target="_blank">
+                    <img src="https://www.figma.com/api/mcp/asset/267fa343-223e-41f4-b4f9-9a764e2c7ede" alt="Discover Farms">
+                </a>
+            </div>
+            <div class="plantation-item">
+                <a href="https://azayagardens.com/our-roses/" class="plantation-link" target="_blank">
+                    <img src="https://www.figma.com/api/mcp/asset/246b67c2-4ba9-44b4-adbb-4d027e760185" alt="Azaya Gardens">
+                </a>
+            </div>
+            <div class="plantation-item">
+                <a href="http://trebolroses.com/shop/" class="plantation-link" target="_blank">
+                    <img src="https://www.figma.com/api/mcp/asset/f5fd7890-9fc1-429a-b1c3-ef93f04ce1b2" alt="Trebol Roses">
+                </a>
+            </div>
+            <div class="plantation-item">
+                <a href="https://www.ceresfarms.com/varieties-catalog" class="plantation-link" target="_blank">
+                    <img src="https://www.figma.com/api/mcp/asset/e85ee336-d5af-4ef6-a8a9-5f086017d18e" alt="Ceres Farms">
+                </a>
+            </div>
+            <div class="plantation-item">
+                <a href="https://everbloomroses.com/en/tienda/" class="plantation-link" target="_blank">
+                    <img src="https://www.figma.com/api/mcp/asset/2513b130-dc3d-452b-8c00-58d30c20ecfa" alt="Everbloom">
+                </a>
+            </div>
+            <div class="plantation-item">
+                <a href="https://crislenroses.com/catalogo_crislen/" class="plantation-link" target="_blank">
+                    <img src="https://www.figma.com/api/mcp/asset/8f80ee3a-73c9-4e74-9507-e85455181548" alt="Crislen Roses">
+                </a>
+            </div>
+            <div class="plantation-item">
+                <a href="https://moonlightflowerscorp.com/ecuadorian-roses-collection" class="plantation-link" target="_blank">
+                    <img src="https://www.figma.com/api/mcp/asset/0a5868e6-3c55-4f6f-8cb2-996fe948a6c3" alt="Moonlight">
+                </a>
+            </div>
+            <div class="plantation-item">
+                <a href="https://www.flowervillage.ec/catalog/" class="plantation-link" target="_blank">
+                    <img src="https://www.figma.com/api/mcp/asset/938c2eb8-19a4-4d22-8e78-8e158e744143" alt="Flower Village">
+                </a>
+            </div>
+            <div class="plantation-item">
+                <a href="https://tessacorporation.com/ru/shop/" class="plantation-link" target="_blank">
+                    <img src="https://www.figma.com/api/mcp/asset/882419c5-22ca-4aa6-9f5a-95d17957c6f5" alt="Tessa">
+                </a>
+            </div>
+            <div class="plantation-item">
+                <a href="https://www.esmeraldafarms.com/flowers" class="plantation-link" target="_blank">
+                    <img src="https://www.figma.com/api/mcp/asset/a2ae5439-dffb-43a2-9c8a-1c68f3d6fa49" alt="Esmeralda">
+                </a>
+            </div>
+            <div class="plantation-item">
+                <a href="https://ecoroses.com.ec/our-products/" class="plantation-link" target="_blank">
+                    <img src="https://www.figma.com/api/mcp/asset/a602c65f-8f2b-4d8f-8c51-88db622202e7" alt="Eco Roses">
+                </a>
+            </div>
+            <div class="plantation-item">
+                <a href="http://monterosas.com/our-varieties/" class="plantation-link" target="_blank">
+                    <img src="https://www.figma.com/api/mcp/asset/c5535986-bc7e-4239-ae19-4f3e22ad1070" alt="Monterosas">
+                </a>
+            </div>
+            <div class="plantation-item">
+                <a href="https://srfcc.com/catalogue/" class="plantation-link" target="_blank">
+                    <img src="https://www.figma.com/api/mcp/asset/17686af8-b643-4a17-a25b-322e0eb14410" alt="Sunrite Farms">
+                </a>
+            </div>
+            <div class="plantation-item">
+                <a href="https://stampsybox.com.ec/our-varieties/" class="plantation-link" target="_blank">
+                    <img src="https://www.figma.com/api/mcp/asset/86de47ce-3bd7-466d-92f6-c5c1c434571d" alt="Stampsy Box">
+                </a>
+            </div>
+            <div class="plantation-item">
+                <a href="https://cantizafloral.com/shop/" class="plantation-link" target="_blank">
+                    <img src="https://www.figma.com/api/mcp/asset/54f0d874-81c5-4800-be06-3bb464583754" alt="Cantiza">
+                </a>
+            </div>
+            <div class="plantation-item">
+                <a href="https://online.fliphtml5.com/zzbacv/hdkb/#p=1" class="plantation-link" target="_blank">
+                    <img src="https://www.figma.com/api/mcp/asset/ac9a5a50-7423-4aa8-932a-fb8b44a33fda" alt="Rosas del Corazon">
+                </a>
+            </div>
+            <div class="plantation-item">
+                <a href="https://grupodelpacificox.com/tienda/" class="plantation-link" target="_blank">
+                    <img src="https://www.figma.com/api/mcp/asset/55acca71-ebbc-4b7b-94f4-887896144d55" alt="Grupo del Pacifico">
+                </a>
+            </div>
+            <div class="plantation-item">
+                <a href="https://eunoia-flowers.com/index.php/variedades/" class="plantation-link" target="_blank">
+                    <img src="https://www.figma.com/api/mcp/asset/a6d49035-9e78-40f0-aee0-9b1b60a090b0" alt="Eunoia Flowers">
+                </a>
+            </div>
+            <div class="plantation-item">
+                <a href="https://gardaexport.com/product-category/roses-2/" class="plantation-link" target="_blank">
+                    <img src="https://www.figma.com/api/mcp/asset/7d676a1b-ce83-45d0-95ab-833a9351fe16" alt="Garda Export">
+                </a>
+            </div>
+            <div class="plantation-item">
+                <a href="https://valledelsol.com.ec/catalogo/" class="plantation-link" target="_blank">
+                    <img src="https://www.figma.com/api/mcp/asset/88a621a9-3db6-4455-93c1-b39c3163d996" alt="Valle del Sol">
+                </a>
+            </div>
+            <div class="plantation-item">
+                <a href="https://www.eden-roses.com/catalog.html" class="plantation-link" target="_blank">
+                    <img src="https://www.figma.com/api/mcp/asset/1fa92acf-b573-400e-884c-974a744aea72" alt="Eden Roses">
+                </a>
+            </div>
+            <div class="plantation-item">
+                <a href="https://okroses.com/#galeria" class="plantation-link" target="_blank">
+                    <img src="https://www.figma.com/api/mcp/asset/3e66ef78-c030-43a7-a978-036db4d5e769" alt="OK Roses">
+                </a>
+            </div>
+            <div class="plantation-item">
+                <a href="https://agrogana.com/products/" class="plantation-link" target="_blank">
+                    <img src="https://www.figma.com/api/mcp/asset/5ea22d34-63c7-42a7-b17f-44a68ec1a8af" alt="Agrogana">
+                </a>
+            </div>
+            <div class="plantation-item">
+                <a href="https://www.muchflowers.com/our-flowers" class="plantation-link" target="_blank">
+                    <img src="https://www.figma.com/api/mcp/asset/249c3985-d5f2-42e0-8596-a62d471a44fb" alt="Much Flowers">
+                </a>
+            </div>
+            <div class="plantation-item">
+                <a href="https://natuflor.com/shop/" class="plantation-link" target="_blank">
+                    <img src="https://www.figma.com/api/mcp/asset/d7247113-ba6d-4e20-8383-1fbe3d08f3f6" alt="Natuflor">
+                </a>
+            </div>
+            <div class="plantation-item">
+                <a href="https://worldrosescenter.com/products/" class="plantation-link" target="_blank">
+                    <img src="https://www.figma.com/api/mcp/asset/5c75788b-9506-4cf7-a540-3065d3963cec" alt="World Roses Center">
+                </a>
+            </div>
+            <div class="plantation-item">
+                <a href="https://ecuaroscanada.com/catalogo-2/" class="plantation-link" target="_blank">
+                    <img src="https://www.figma.com/api/mcp/asset/a6474578-7508-44d7-8e2c-fb09a7e2b413" alt="Ecuaros Canada">
+                </a>
+            </div>
+            <div class="plantation-item">
+                <a href="https://agrinag.com/catalog/" class="plantation-link" target="_blank">
+                    <img src="https://www.figma.com/api/mcp/asset/831f700b-3a81-4073-afc3-af9f4801d508" alt="Agrinag">
+                </a>
+            </div>
+            <div class="plantation-item">
+                <a href="https://royalflowersgroup.com/category/roses/" class="plantation-link" target="_blank">
+                    <img src="https://www.figma.com/api/mcp/asset/df35780f-e7cc-4a65-a1ca-cee3e9dfefb2" alt="Royal Flowers">
+                </a>
+            </div>
+            <div class="plantation-item">
+                <a href="https://www.kishiwuar.com/colores" class="plantation-link" target="_blank">
+                    <img src="https://www.figma.com/api/mcp/asset/57a52ca7-bfb7-417b-8279-44ea5798ab62" alt="Kishiwuar">
+                </a>
+            </div>
+            <div class="plantation-item">
+                <a href="https://www.artroses.ec/ecuadorian-roses/" class="plantation-link" target="_blank">
+                    <img src="https://www.figma.com/api/mcp/asset/5358a020-110c-4c9e-9c3e-750a4ff8d4c4" alt="Art Roses">
+                </a>
+            </div>
+            <div class="plantation-item">
+                <a href="https://jardinesdebolivar.com/" class="plantation-link" target="_blank">
+                    <img src="https://www.figma.com/api/mcp/asset/30813b32-69d6-4798-86e4-749f9527ccce" alt="Jardines de Bolivar">
+                </a>
+            </div>
+            <div class="plantation-item">
+                <a href="https://anniroses.com/roses/" class="plantation-link" target="_blank">
+                    <img src="https://www.figma.com/api/mcp/asset/47525085-916a-49e4-84b7-be0a5621b795" alt="Anni Roses">
+                </a>
+            </div>
+            <div class="plantation-item">
+                <a href="https://www.anne-flowers.com/assortment" class="plantation-link" target="_blank">
+                    <img src="https://www.figma.com/api/mcp/asset/4d849977-4b3b-41bd-9af7-592cab08e59a" alt="Anne Flowers">
+                </a>
+            </div>
+            <div class="plantation-item">
+                <a href="https://nikitaflowers.com/catalog/" class="plantation-link" target="_blank">
+                    <img src="https://www.figma.com/api/mcp/asset/3ae4fc19-cbef-4ea0-9e26-7b307923f896" alt="Nikita Flowers">
+                </a>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="footer plantations-footer">
+            <div class="footer-content">
+                <p class="footer-copyright">© All Rights Reserved. Acme Inc.</p>
+                <div class="footer-social">
+                    <a href="https://www.facebook.com/groups/incoflores" class="footer-social-link" target="_blank">
+                        <img src="https://www.figma.com/api/mcp/asset/0b45e37b-4aa7-4ad0-89cd-e4b4d96e2ecf" alt="Facebook" class="footer-social-icon">
+                    </a>
+                    <a href="https://vk.com/incoflores" class="footer-social-link" target="_blank">
+                        <img src="https://www.figma.com/api/mcp/asset/a8d65b7e-a2d6-40fa-acf7-8b1ffafc6d58" alt="VK" class="footer-social-icon">
+                    </a>
+                    <a href="https://www.instagram.com/vorobyeva_incoflores" class="footer-social-link" target="_blank">
+                        <img src="https://www.figma.com/api/mcp/asset/30f8a9fd-e285-4fb5-a0b7-b60f5af34ad0" alt="Instagram" class="footer-social-icon">
+                    </a>
+                </div>
+            </div>
+        </footer>
+    </div>
+</body>
+
+</html>

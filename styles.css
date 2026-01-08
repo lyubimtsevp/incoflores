@@ -157,6 +157,14 @@ body {
     opacity: 1;
 }
 
+.nav-link-active {
+    color: var(--color-red);
+}
+
+.nav-link-active::after {
+    opacity: 1;
+}
+
 /* Dropdown Menu */
 .nav-dropdown {
     position: relative;

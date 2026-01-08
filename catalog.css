@@ -203,8 +203,13 @@ a.tab:hover {
 .tabpanel {
     position: relative;
     width: 100%;
-    height: 1740px;
+    min-height: 1740px;
     background-color: #FFFFFF;
+}
+
+/* Bouquet flowers page - taller tabpanel (last element at 1863px + 31px line-height) */
+.tabpanel-bouquet {
+    min-height: 1920px;
 }
 
 /* === Section Titles === */
@@ -320,7 +325,8 @@ a.tab:hover {
 }
 
 /* === Footer override for catalog === */
-.footer {
+.footer-catalog {
+    margin-top: 0;
     background: #F9EBE0;
     border-top: 1px solid #DA6561;
     padding: 0 140px;

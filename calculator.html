@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1440">
+    <title>Калькулятор доставки - Incoflores</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="catalog.css">
+    <style>
+        .calculator-container {
+            width: 1440px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding-top: 140px;
+        }
+
+        .calculator-header {
+            padding: 40px 140px 30px;
+        }
+
+        .calculator-title {
+            font-family: 'Playfair Display', serif;
+            font-weight: 400;
+            font-size: 42px;
+            line-height: 54px;
+            color: #222222;
+            margin: 0 0 10px;
+        }
+
+        .calculator-breadcrumbs {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 40px;
+        }
+
+        .calculator-breadcrumbs a {
+            font-family: 'Playfair Display', serif;
+            font-size: 16px;
+            color: #222222;
+            text-decoration: none;
+        }
+
+        .calculator-breadcrumbs a:hover {
+            text-decoration: underline;
+        }
+
+        .calculator-breadcrumbs span {
+            color: #858585;
+        }
+
+        .calculator-content {
+            padding: 0 140px 60px;
+        }
+
+        .calculator-form-wrapper {
+            background: #FAFAFA;
+            border-radius: 8px;
+            padding: 40px;
+            max-width: 800px;
+        }
+
+        .form-title {
+            font-family: 'Playfair Display', serif;
+            font-weight: 400;
+            font-size: 28px;
+            color: #222222;
+            margin: 0 0 10px;
+        }
+
+        .form-subtitle {
+            font-family: 'Arial', sans-serif;
+            font-size: 16px;
+            color: #666666;
+            margin: 0 0 30px;
+        }
+
+        .form-group {
+            margin-bottom: 24px;
+        }
+
+        .form-label {
+            display: block;
+            font-family: 'Arial', sans-serif;
+            font-size: 16px;
+            color: #222222;
+            margin-bottom: 8px;
+        }
+
+        .form-select,
+        .form-input {
+            width: 100%;
+            padding: 14px 16px;
+            font-family: 'Arial', sans-serif;
+            font-size: 16px;
+            color: #222222;
+            border: 1px solid #E0E0E0;
+            border-radius: 6px;
+            background-color: #FFFFFF;
+            outline: none;
+            transition: border-color 0.3s;
+            box-sizing: border-box;
+        }
+
+        .form-select:focus,
+        .form-input:focus {
+            border-color: #DA6561;
+        }
+
+        .form-select {
+            cursor: pointer;
+            appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%23666' d='M6 8L0 0h12z'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 16px center;
+            padding-right: 40px;
+        }
+
+        .form-input {
+            max-width: 200px;
+        }
+
+        .form-hint {
+            font-family: 'Arial', sans-serif;
+            font-size: 14px;
+            color: #888888;
+            margin-top: 6px;
+        }
+
+        .form-row {
+            display: flex;
+            gap: 24px;
+        }
+
+        .form-row .form-group {
+            flex: 1;
+        }
+
+        .btn-calculate {
+            display: inline-block;
+            padding: 16px 40px;
+            background-color: #DA6561;
+            color: #FFFFFF;
+            font-family: 'Arial', sans-serif;
+            font-size: 16px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+
+        .btn-calculate:hover {
+            background-color: #C45550;
+        }
+
+        .btn-calculate:active {
+            transform: scale(0.98);
+        }
+
+        .result-section {
+            margin-top: 40px;
+            padding-top: 30px;
+            border-top: 1px solid #E0E0E0;
+            display: none;
+        }
+
+        .result-section.active {
+            display: block;
+        }
+
+        .result-title {
+            font-family: 'Playfair Display', serif;
+            font-weight: 400;
+            font-size: 24px;
+            color: #222222;
+            margin: 0 0 20px;
+        }
+
+        .result-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 12px 0;
+            border-bottom: 1px solid #F0F0F0;
+        }
+
+        .result-item:last-child {
+            border-bottom: none;
+        }
+
+        .result-label {
+            font-family: 'Arial', sans-serif;
+            font-size: 16px;
+            color: #666666;
+        }
+
+        .result-value {
+            font-family: 'Arial', sans-serif;
+            font-size: 16px;
+            font-weight: 600;
+            color: #222222;
+        }
+
+        .result-total {
+            background: #F9EBE0;
+            padding: 20px;
+            border-radius: 6px;
+            margin-top: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .result-total-label {
+            font-family: 'Playfair Display', serif;
+            font-size: 20px;
+            color: #222222;
+        }
+
+        .result-total-value {
+            font-family: 'Arial', sans-serif;
+            font-size: 28px;
+            font-weight: 700;
+            color: #DA6561;
+        }
+
+        .info-section {
+            margin-top: 40px;
+            padding: 30px;
+            background: #FFF8F5;
+            border-left: 4px solid #DA6561;
+            border-radius: 0 6px 6px 0;
+        }
+
+        .info-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 20px;
+            color: #222222;
+            margin: 0 0 15px;
+        }
+
+        .info-text {
+            font-family: 'Arial', sans-serif;
+            font-size: 14px;
+            color: #666666;
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        .info-text ul {
+            margin: 10px 0 0;
+            padding-left: 20px;
+        }
+
+        .info-text li {
+            margin-bottom: 8px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="page">
+        <!-- Header -->
+        <header class="header header-catalog">
+            <div class="header-container">
+                <a href="index.html" class="logo">
+                    <img src="https://www.figma.com/api/mcp/asset/071aae46-e8d5-45dc-9ae1-9eb613474f81" alt="Incoflores"
+                        class="logo-img">
+                </a>
+                <nav class="nav nav-catalog">
+                    <a href="index.html#services" class="nav-link">Наши услуги</a>
+                    <a href="flowercatalog.html" class="nav-link">Каталог цветов</a>
+                    <a href="index.html#about" class="nav-link">О нас</a>
+                    <a href="index.html#contacts" class="nav-link">Контакты</a>
+                </nav>
+            </div>
+        </header>
+
+        <!-- Calculator Content -->
+        <div class="calculator-container">
+            <div class="calculator-header">
+                <div class="calculator-breadcrumbs">
+                    <a href="index.html">Incoflores</a>
+                    <span>/</span>
+                    <span>Калькулятор доставки</span>
+                </div>
+                <h1 class="calculator-title">Калькулятор авиадоставки</h1>
+            </div>
+
+            <div class="calculator-content">
+                <div class="calculator-form-wrapper">
+                    <h2 class="form-title">Расчет стоимости доставки</h2>
+                    <p class="form-subtitle">Заполните необходимые поля, чтобы рассчитать стоимость авиадоставки цветов из Эквадора.</p>
+
+                    <form id="calculatorForm">
+                        <div class="form-group">
+                            <label class="form-label">Город доставки:</label>
+                            <select class="form-select" id="citySelect" required>
+                                <option value="">-- Выберите город --</option>
+                                <option value="moscow" data-price="0">Москва</option>
+                                <option value="spb" data-price="35">Санкт-Петербург</option>
+                                <option value="ekb" data-price="45">Екатеринбург</option>
+                                <option value="novosibirsk" data-price="55">Новосибирск</option>
+                                <option value="kazan" data-price="40">Казань</option>
+                                <option value="nn" data-price="35">Нижний Новгород</option>
+                                <option value="chelyabinsk" data-price="45">Челябинск</option>
+                                <option value="samara" data-price="40">Самара</option>
+                                <option value="omsk" data-price="50">Омск</option>
+                                <option value="rostov" data-price="35">Ростов-на-Дону</option>
+                                <option value="ufa" data-price="45">Уфа</option>
+                                <option value="krasnoyarsk" data-price="60">Красноярск</option>
+                                <option value="perm" data-price="45">Пермь</option>
+                                <option value="voronezh" data-price="30">Воронеж</option>
+                                <option value="volgograd" data-price="35">Волгоград</option>
+                                <option value="krasnodar" data-price="30">Краснодар</option>
+                                <option value="saratov" data-price="38">Саратов</option>
+                                <option value="tyumen" data-price="50">Тюмень</option>
+                                <option value="tolyatti" data-price="40">Тольятти</option>
+                                <option value="izhevsk" data-price="45">Ижевск</option>
+                                <option value="barnaul" data-price="55">Барнаул</option>
+                                <option value="ulyanovsk" data-price="42">Ульяновск</option>
+                                <option value="irkutsk" data-price="65">Иркутск</option>
+                                <option value="vladivostok" data-price="80">Владивосток</option>
+                                <option value="yaroslavl" data-price="30">Ярославль</option>
+                                <option value="kemerovo" data-price="55">Кемерово</option>
+                                <option value="tomsk" data-price="55">Томск</option>
+                                <option value="ryazan" data-price="28">Рязань</option>
+                                <option value="naberezhnye" data-price="42">Набережные Челны</option>
+                                <option value="penza" data-price="38">Пенза</option>
+                                <option value="astrakhan" data-price="40">Астрахань</option>
+                                <option value="lipetsk" data-price="30">Липецк</option>
+                                <option value="tula" data-price="25">Тула</option>
+                                <option value="kirov" data-price="45">Киров</option>
+                                <option value="cheboksary" data-price="42">Чебоксары</option>
+                                <option value="kaliningrad" data-price="45">Калининград</option>
+                                <option value="bryansk" data-price="28">Брянск</option>
+                                <option value="magnitogorsk" data-price="48">Магнитогорск</option>
+                                <option value="kursk" data-price="30">Курск</option>
+                                <option value="tver" data-price="25">Тверь</option>
+                                <option value="sochi" data-price="35">Сочи</option>
+                                <option value="stavropol" data-price="35">Ставрополь</option>
+                                <option value="surgut" data-price="60">Сургут</option>
+                                <option value="belgorod" data-price="32">Белгород</option>
+                                <option value="orel" data-price="28">Орёл</option>
+                                <option value="vladimir" data-price="25">Владимир</option>
+                                <option value="arkhangelsk" data-price="50">Архангельск</option>
+                                <option value="murmansk" data-price="55">Мурманск</option>
+                                <option value="smolensk" data-price="28">Смоленск</option>
+                                <option value="kurgan" data-price="50">Курган</option>
+                                <option value="other" data-price="50">Другой город</option>
+                            </select>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label class="form-label">Количество коробок:</label>
+                                <input type="number" class="form-input" id="boxCount" min="1" max="100" value="1" required>
+                                <p class="form-hint">1 коробка ≈ 35 кг (6-8 пачек)</p>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="form-label">Вес груза (кг):</label>
+                                <input type="number" class="form-input" id="weight" min="1" value="35" required>
+                                <p class="form-hint">Автоматически рассчитывается</p>
+                            </div>
+                        </div>
+
+                        <button type="submit" class="btn-calculate">Рассчитать стоимость</button>
+                    </form>
+
+                    <div class="result-section" id="resultSection">
+                        <h3 class="result-title">Результат расчета</h3>
+                        <div class="result-item">
+                            <span class="result-label">Город доставки:</span>
+                            <span class="result-value" id="resultCity">-</span>
+                        </div>
+                        <div class="result-item">
+                            <span class="result-label">Количество коробок:</span>
+                            <span class="result-value" id="resultBoxes">-</span>
+                        </div>
+                        <div class="result-item">
+                            <span class="result-label">Общий вес:</span>
+                            <span class="result-value" id="resultWeight">-</span>
+                        </div>
+                        <div class="result-item">
+                            <span class="result-label">Тариф за кг:</span>
+                            <span class="result-value" id="resultRate">-</span>
+                        </div>
+                        <div class="result-total">
+                            <span class="result-total-label">Итого стоимость доставки:</span>
+                            <span class="result-total-value" id="resultTotal">0 ₽</span>
+                        </div>
+                    </div>
+
+                    <div class="info-section">
+                        <h4 class="info-title">Условия доставки:</h4>
+                        <p class="info-text">
+                            Расчет стоимости доставки является предварительным.
+                            <ul>
+                                <li>Минимальный заказ для доставки: от 20 000 руб.</li>
+                                <li>Доставка осуществляется авиатранспортом из Эквадора</li>
+                                <li>Срок доставки: 3-5 рабочих дней</li>
+                                <li>Цена может меняться в зависимости от актуальных тарифов</li>
+                            </ul>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="footer footer-catalog">
+            <div class="footer-content">
+                <p class="footer-copyright">© All Rights Reserved. Acme Inc.</p>
+                <div class="footer-social">
+                    <a href="https://www.facebook.com/groups/incoflores" class="social-link">
+                        <img src="https://www.figma.com/api/mcp/asset/c6b6ec22-ff3a-4df1-8b09-d55e4e53c9f9"
+                            alt="Facebook">
+                    </a>
+                    <a href="https://vk.com/incoflores" class="social-link">
+                        <img src="https://www.figma.com/api/mcp/asset/d5dc1f7b-8428-461a-8e76-f00ecabe0a9b" alt="VK">
+                    </a>
+                    <a href="https://www.instagram.com/vorobyeva_incoflores" class="social-link">
+                        <img src="https://www.figma.com/api/mcp/asset/2a5d420c-b5a7-448c-9ff0-1a36e4d46c5d"
+                            alt="Instagram">
+                    </a>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        // Calculator logic
+        document.addEventListener('DOMContentLoaded', function() {
+            const form = document.getElementById('calculatorForm');
+            const citySelect = document.getElementById('citySelect');
+            const boxCount = document.getElementById('boxCount');
+            const weight = document.getElementById('weight');
+            const resultSection = document.getElementById('resultSection');
+
+            // Auto-calculate weight when box count changes
+            boxCount.addEventListener('input', function() {
+                weight.value = this.value * 35;
+            });
+
+            // Form submission
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                const selectedOption = citySelect.options[citySelect.selectedIndex];
+                const cityName = selectedOption.text;
+                const pricePerKg = parseInt(selectedOption.dataset.price) || 0;
+                const boxes = parseInt(boxCount.value) || 1;
+                const totalWeight = parseInt(weight.value) || 35;
+                
+                // Base cost calculation
+                let baseCost = pricePerKg * totalWeight;
+                
+                // Add handling fee
+                const handlingFee = boxes * 500;
+                
+                // Total cost
+                const totalCost = baseCost + handlingFee;
+                
+                // Display results
+                document.getElementById('resultCity').textContent = cityName;
+                document.getElementById('resultBoxes').textContent = boxes + ' шт.';
+                document.getElementById('resultWeight').textContent = totalWeight + ' кг';
+                document.getElementById('resultRate').textContent = pricePerKg + ' ₽/кг';
+                document.getElementById('resultTotal').textContent = totalCost.toLocaleString('ru-RU') + ' ₽';
+                
+                // Show result section
+                resultSection.classList.add('active');
+                
+                // Scroll to results
+                resultSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            });
+        });
+    </script>
+</body>
+
+</html>

@@ -1,45 +1,110 @@
 /* ============================================
-   CATALOG PAGE - Страница каталога цветов
+   CATALOG PAGE - Точные значения из Figma MCP
+   1440px width, pixel-perfect
    ============================================ */
 
 /* === Page Background === */
 .page {
-    background-color: #F9EBE0;
+    background-color: #FFFFFF;
+    width: 1440px;
+    margin: 0 auto;
 }
 
-/* === Active Nav Link === */
-.nav-link-active {
+/* === Header Catalog === */
+.header-catalog {
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 1440px;
+    height: 105px;
+    background: rgba(255, 255, 255, 0.7);
+    box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.1);
+    z-index: 100;
+}
+
+.header-catalog .header-container {
+    max-width: 1200px;
+    padding: 26px 120px 26.02px;
+    display: flex;
+    align-items: center;
+}
+
+.header-catalog .logo-img {
+    width: 180px;
+    height: 52.98px;
+}
+
+.header-catalog .nav {
+    width: 950px;
+    display: flex;
+    justify-content: flex-end;
+    gap: 34px;
+    padding-bottom: 1px;
+}
+
+.header-catalog .nav-link {
+    font-family: 'Arial', sans-serif;
+    font-size: 20px;
+    color: #222222;
+    text-decoration: none;
     position: relative;
 }
 
-.nav-link-active::after {
+.header-catalog .nav-link-active {
+    opacity: 0.7;
+}
+
+.header-catalog .nav-link::after {
     content: '';
     position: absolute;
     bottom: -3px;
     left: 0;
     width: 100%;
     height: 1px;
-    background-color: var(--color-red);
+    background-color: #DA6561;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.header-catalog .nav-link:hover::after {
     opacity: 1;
 }
 
-/* === Breadcrumbs === */
+/* === Catalog Container === */
+.catalog-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+/* === Breadcrumbs Section === */
 .breadcrumbs-section {
+    width: 100%;
     background-color: #FFFFFF;
-    padding: 60px 0 30px;
+    padding: 60px 140px 30px;
 }
 
 .breadcrumbs {
-    padding: 0 140px;
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: 4px;
+}
+
+.breadcrumb-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding-right: 10px;
 }
 
 .breadcrumb-link {
-    font-family: Arial, sans-serif;
+    font-family: 'Playfair Display', serif;
+    font-weight: 400;
     font-size: 16px;
-    color: #DA6561;
+    line-height: 19.2px;
+    color: #000000;
     text-decoration: none;
 }
 
@@ -48,183 +113,281 @@
 }
 
 .breadcrumb-separator {
-    font-family: Arial, sans-serif;
+    font-family: 'Arial', sans-serif;
     font-size: 16px;
-    color: #222222;
+    line-height: 19.2px;
+    color: #858585;
 }
 
-.breadcrumb-current {
-    font-family: Arial, sans-serif;
-    font-size: 16px;
-    color: #222222;
-}
-
-/* === Catalog Title === */
+/* === Title Section === */
 .catalog-title-section {
+    width: 100%;
     background-color: #FFFFFF;
-    padding: 20px 0 45px;
-    text-align: center;
+    padding-bottom: 45px;
+}
+
+.catalog-title-wrapper {
+    position: relative;
+    width: 100%;
+    height: 50px;
+    overflow: hidden;
 }
 
 .catalog-title {
+    position: absolute;
+    left: 643px;
+    top: -2px;
     font-family: 'Playfair Display', serif;
-    font-size: 44px;
     font-weight: 400;
+    font-size: 35px;
+    line-height: 54px;
     color: #222222;
     text-transform: uppercase;
     margin: 0;
 }
 
-/* === Tabs === */
-.catalog-tabs {
-    background-color: #FFFFFF;
-    padding: 0 140px 60px;
+/* === Tabs Section === */
+.tabs-section {
+    width: 1160px;
+    padding-top: 60px;
 }
 
-.tabs-container {
+.tabs-list {
     display: flex;
-    border-bottom: 1px solid #E8E8E8;
+    width: 100%;
 }
 
 .tab {
-    flex: 1;
-    padding: 20px 0;
-    background: transparent;
-    border: none;
-    border-bottom: 2px solid transparent;
-    font-family: Arial, sans-serif;
-    font-size: 18px;
-    color: #222222;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-.tab:hover {
-    color: #DA6561;
-}
-
-.tab.active {
-    border-bottom-color: #DA6561;
-    color: #DA6561;
-}
-
-/* === Catalog Content === */
-.catalog-content {
-    background-color: #FFFFFF;
-    padding: 0 140px 60px;
-}
-
-/* === Category === */
-.catalog-category {
-    margin-bottom: 60px;
-}
-
-.category-title {
-    font-family: 'Playfair Display', serif;
-    font-size: 36px;
-    font-weight: 400;
-    font-style: italic;
-    color: #222222;
-    margin: 0 0 40px 0;
-}
-
-/* === Flowers Grid === */
-.flowers-grid {
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    gap: 30px 20px;
-}
-
-.flower-card {
+    width: 386.66px;
+    border-bottom: 1px solid #F9EBE0;
+    padding-bottom: 18px;
     display: flex;
-    flex-direction: column;
+    justify-content: center;
     align-items: center;
+    cursor: pointer;
+}
+
+.tab:last-child {
+    width: 386.69px;
+}
+
+.tab-active {
+    border-bottom-color: #222222;
+}
+
+.tab-text {
+    font-family: 'Playfair Display', serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 21.6px;
+    color: #222222;
     text-align: center;
 }
 
-.flower-image {
-    width: 174px;
-    height: 174px;
-    border-radius: 8px;
-    overflow: hidden;
-    margin-bottom: 12px;
-    background-color: #F9EBE0;
+.tab-text-active {
+    font-weight: 600;
+    color: #022222;
 }
 
-.flower-image img {
+/* === Tab Panel === */
+.tabpanel {
+    position: relative;
+    width: 100%;
+    height: 1740px;
+    background-color: #FFFFFF;
+}
+
+/* === Section Titles === */
+.section-title {
+    position: absolute;
+    left: 139px;
+    font-family: 'Playfair Display', serif;
+    font-weight: 400;
+    font-size: 35px;
+    color: #222222;
+    margin: 0;
+    text-transform: none;
+}
+
+.section-title-1 {
+    top: 60px;
+    line-height: 54px;
+}
+
+.section-title-2 {
+    top: 978px;
+    line-height: 51px;
+}
+
+.section-title-3 {
+    top: 1362px;
+    line-height: 44px;
+}
+
+/* === Rose Cards === */
+.rose-card {
+    position: absolute;
+    width: 174px;
+    height: 174px;
+    background-color: #FFFFFF;
+    overflow: hidden;
+}
+
+.rose-img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: transform 0.3s ease;
 }
 
-.flower-card:hover .flower-image img {
-    transform: scale(1.05);
-}
-
-.flower-name {
-    font-family: Arial, sans-serif;
-    font-size: 16px;
-    line-height: 1.4;
+.rose-name {
+    position: absolute;
+    font-family: 'Arial', sans-serif;
+    font-size: 20px;
+    line-height: 31px;
     color: #222222;
 }
 
 /* === CTA Section === */
-.catalog-cta {
+.cta-section {
+    width: 100%;
     background-color: #F9EBE0;
-    padding: 60px 140px;
-    text-align: center;
+    padding: 30px 0;
+}
+
+.cta-content {
+    height: 130px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .cta-title {
+    position: absolute;
+    left: 356px;
+    top: 0;
+    width: 728px;
     font-family: 'Playfair Display', serif;
-    font-size: 36px;
     font-weight: 400;
-    font-style: italic;
-    color: #222222;
-    margin: 0 0 30px 0;
+    font-size: 35px;
+    line-height: 54px;
+    color: #000000;
+    margin: 0;
 }
 
 .cta-buttons {
+    position: absolute;
+    top: 74px;
     display: flex;
-    justify-content: center;
-    gap: 20px;
+    gap: 21px;
 }
 
-.cta-btn {
-    padding: 14px 24px;
-    font-family: Arial, sans-serif;
+.btn {
+    width: 180px;
+    padding: 13.15px 0 14.85px;
+    font-family: 'Arial', sans-serif;
     font-size: 14px;
-    font-weight: 700;
-    text-decoration: none;
-    border-radius: 4px;
-    transition: all 0.3s ease;
-    min-width: 180px;
+    line-height: 21.7px;
     text-align: center;
+    text-decoration: none;
+    border-radius: 5px;
+    display: block;
 }
 
-.cta-btn-primary {
+.btn-primary {
     background-color: #DA6561;
     color: #FFFFFF;
-    border: 1px solid #DA6561;
 }
 
-.cta-btn-primary:hover {
-    background-color: #c55a56;
-}
-
-.cta-btn-secondary {
-    background-color: transparent;
+.btn-outline {
+    background-color: #F9EBE0;
     color: #DA6561;
     border: 1px solid #DA6561;
 }
 
-.cta-btn-secondary:hover {
-    background-color: #DA6561;
-    color: #FFFFFF;
+.btn:hover {
+    opacity: 0.9;
 }
 
-/* === Footer Override for Catalog === */
-.catalog-cta + .footer {
-    margin-top: 0;
+/* === Footer override for catalog === */
+.footer {
+    background: #F9EBE0;
+    border-top: 1px solid #DA6561;
+    padding: 0 140px;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 48.65px 0 49.35px;
+}
+
+.footer-copyright {
+    font-family: 'Playfair Display', serif;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 21.7px;
+    color: #DA6561;
+    margin: 0;
+}
+
+.footer-social {
+    display: flex;
+    gap: 8px;
+    padding-left: 12px;
+}
+
+.social-link {
+    width: 30px;
+    height: 30px;
+    display: block;
+}
+
+.social-link img {
+    width: 100%;
+    height: 100%;
+}
+
+/* === Dropdown for catalog page === */
+.header-catalog .nav-dropdown {
+    position: relative;
+}
+
+.header-catalog .dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    min-width: 280px;
+    background: #FFFFFF;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+    padding: 16px 0;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: all 0.3s ease;
+    z-index: 1000;
+    margin-top: 10px;
+}
+
+.header-catalog .nav-dropdown:hover .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.header-catalog .dropdown-item {
+    display: block;
+    padding: 10px 24px;
+    font-family: 'Arial', sans-serif;
+    font-size: 16px;
+    color: #222222;
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+.header-catalog .dropdown-item:hover {
+    background-color: #F9EBE0;
+    color: #DA6561;
 }

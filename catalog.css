@@ -43,6 +43,11 @@
     padding-bottom: 1px;
 }
 
+/* Simplified navigation for catalog pages (4 links only) */
+.header-catalog .nav-catalog {
+    gap: 34px;
+}
+
 .header-catalog .nav-link {
     font-family: 'Arial', sans-serif;
     font-size: 20px;

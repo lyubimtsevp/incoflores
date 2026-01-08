@@ -1,0 +1,230 @@
+/* ============================================
+   CATALOG PAGE - Страница каталога цветов
+   ============================================ */
+
+/* === Page Background === */
+.page {
+    background-color: #F9EBE0;
+}
+
+/* === Active Nav Link === */
+.nav-link-active {
+    position: relative;
+}
+
+.nav-link-active::after {
+    content: '';
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: var(--color-red);
+    opacity: 1;
+}
+
+/* === Breadcrumbs === */
+.breadcrumbs-section {
+    background-color: #FFFFFF;
+    padding: 60px 0 30px;
+}
+
+.breadcrumbs {
+    padding: 0 140px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.breadcrumb-link {
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    color: #DA6561;
+    text-decoration: none;
+}
+
+.breadcrumb-link:hover {
+    text-decoration: underline;
+}
+
+.breadcrumb-separator {
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    color: #222222;
+}
+
+.breadcrumb-current {
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    color: #222222;
+}
+
+/* === Catalog Title === */
+.catalog-title-section {
+    background-color: #FFFFFF;
+    padding: 20px 0 45px;
+    text-align: center;
+}
+
+.catalog-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 44px;
+    font-weight: 400;
+    color: #222222;
+    text-transform: uppercase;
+    margin: 0;
+}
+
+/* === Tabs === */
+.catalog-tabs {
+    background-color: #FFFFFF;
+    padding: 0 140px 60px;
+}
+
+.tabs-container {
+    display: flex;
+    border-bottom: 1px solid #E8E8E8;
+}
+
+.tab {
+    flex: 1;
+    padding: 20px 0;
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid transparent;
+    font-family: Arial, sans-serif;
+    font-size: 18px;
+    color: #222222;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.tab:hover {
+    color: #DA6561;
+}
+
+.tab.active {
+    border-bottom-color: #DA6561;
+    color: #DA6561;
+}
+
+/* === Catalog Content === */
+.catalog-content {
+    background-color: #FFFFFF;
+    padding: 0 140px 60px;
+}
+
+/* === Category === */
+.catalog-category {
+    margin-bottom: 60px;
+}
+
+.category-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 36px;
+    font-weight: 400;
+    font-style: italic;
+    color: #222222;
+    margin: 0 0 40px 0;
+}
+
+/* === Flowers Grid === */
+.flowers-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 30px 20px;
+}
+
+.flower-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.flower-image {
+    width: 174px;
+    height: 174px;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 12px;
+    background-color: #F9EBE0;
+}
+
+.flower-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.flower-card:hover .flower-image img {
+    transform: scale(1.05);
+}
+
+.flower-name {
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.4;
+    color: #222222;
+}
+
+/* === CTA Section === */
+.catalog-cta {
+    background-color: #F9EBE0;
+    padding: 60px 140px;
+    text-align: center;
+}
+
+.cta-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 36px;
+    font-weight: 400;
+    font-style: italic;
+    color: #222222;
+    margin: 0 0 30px 0;
+}
+
+.cta-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.cta-btn {
+    padding: 14px 24px;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    min-width: 180px;
+    text-align: center;
+}
+
+.cta-btn-primary {
+    background-color: #DA6561;
+    color: #FFFFFF;
+    border: 1px solid #DA6561;
+}
+
+.cta-btn-primary:hover {
+    background-color: #c55a56;
+}
+
+.cta-btn-secondary {
+    background-color: transparent;
+    color: #DA6561;
+    border: 1px solid #DA6561;
+}
+
+.cta-btn-secondary:hover {
+    background-color: #DA6561;
+    color: #FFFFFF;
+}
+
+/* === Footer Override for Catalog === */
+.catalog-cta + .footer {
+    margin-top: 0;
+}

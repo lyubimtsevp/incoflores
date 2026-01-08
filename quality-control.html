@@ -1,0 +1,738 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1440">
+    <title>Контроль качества - Incoflores</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="catalog.css">
+    <style>
+        .qc-container {
+            width: 1440px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding-top: 105px;
+        }
+
+        /* Breadcrumbs */
+        .qc-breadcrumbs {
+            padding: 60px 140px 30px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .qc-breadcrumbs a {
+            font-family: 'Playfair Display', serif;
+            font-size: 16px;
+            color: #222;
+            text-decoration: none;
+        }
+
+        .qc-breadcrumbs a:hover {
+            text-decoration: underline;
+        }
+
+        .qc-breadcrumbs span {
+            font-family: 'Playfair Display', serif;
+            font-size: 16px;
+            color: #222;
+        }
+
+        /* Title */
+        .qc-title {
+            text-align: center;
+            font-family: 'Playfair Display', serif;
+            font-weight: 400;
+            font-size: 35px;
+            line-height: 54px;
+            color: #222;
+            text-transform: uppercase;
+            margin: 0 0 50px;
+            padding: 0 140px;
+        }
+
+        /* Main Content Section */
+        .qc-main {
+            position: relative;
+            padding: 0 120px;
+            min-height: 1170px;
+        }
+
+        /* Images */
+        .qc-image-main {
+            position: absolute;
+            left: 246px;
+            top: 57px;
+            width: 516px;
+            height: 697px;
+            background: #f9ebe0;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+
+        .qc-image-main img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .qc-image-main-border {
+            position: absolute;
+            left: 228px;
+            top: 42px;
+            width: 516px;
+            height: 697px;
+            border: 1px solid #c8a995;
+            border-radius: 5px;
+        }
+
+        .qc-image-bottom-left {
+            position: absolute;
+            left: 136px;
+            top: 611px;
+            width: 261px;
+            height: 307px;
+            background: #fff;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+
+        .qc-image-bottom-left img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .qc-image-bottom-left-border {
+            position: absolute;
+            left: 124px;
+            top: 622px;
+            width: 261px;
+            height: 307px;
+            border: 1px solid #c8a995;
+            border-radius: 5px;
+        }
+
+        .qc-image-right {
+            position: absolute;
+            right: 174px;
+            top: 757px;
+            width: 292px;
+            height: 345px;
+            background: #fff;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+
+        .qc-image-right img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .qc-image-right-border {
+            position: absolute;
+            right: 154px;
+            top: 740px;
+            width: 292px;
+            height: 345px;
+            border: 1px solid #c8a995;
+            border-radius: 5px;
+        }
+
+        /* Text Content */
+        .qc-text-block {
+            position: absolute;
+            right: 128px;
+            top: 124px;
+            width: 447px;
+        }
+
+        .qc-vertical-divider {
+            position: absolute;
+            left: 832px;
+            top: 112px;
+            width: 2px;
+            height: 210px;
+            background: #c8a995;
+        }
+
+        .qc-text-strong {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            font-size: 20px;
+            line-height: 31px;
+            color: #222;
+            margin-bottom: 40px;
+        }
+
+        .qc-text-regular {
+            font-family: 'Playfair Display', serif;
+            font-weight: 400;
+            font-size: 20px;
+            line-height: 28px;
+            color: #222;
+        }
+
+        .qc-text-bottom {
+            position: absolute;
+            right: 108px;
+            top: 363px;
+            width: 485px;
+        }
+
+        .qc-notice {
+            position: absolute;
+            left: 429px;
+            top: 795px;
+            width: 426px;
+            font-family: 'Playfair Display', serif;
+            font-size: 20px;
+            line-height: 28px;
+            color: #222;
+            text-align: center;
+        }
+
+        .qc-notice a {
+            color: #c04b3f;
+            text-decoration: none;
+        }
+
+        .qc-notice a:hover {
+            text-decoration: underline;
+        }
+
+        /* Bullet Points */
+        .qc-bullets {
+            position: absolute;
+            left: 122px;
+            top: 970px;
+            width: 791px;
+        }
+
+        .qc-bullet-item {
+            font-family: 'Playfair Display', serif;
+            font-size: 20px;
+            line-height: 28px;
+            color: #222;
+            padding-left: 20px;
+            position: relative;
+            margin-bottom: 20px;
+        }
+
+        .qc-bullet-item::before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            color: #222;
+        }
+
+        /* Conditions Section */
+        .qc-conditions {
+            padding: 75px 120px;
+            background: #fff;
+        }
+
+        .qc-section-title {
+            text-align: center;
+            font-family: 'Playfair Display', serif;
+            font-weight: 400;
+            font-size: 35px;
+            line-height: 47px;
+            color: #222;
+            text-transform: uppercase;
+            margin-bottom: 60px;
+        }
+
+        .qc-conditions-content {
+            display: flex;
+            gap: 80px;
+            align-items: flex-start;
+        }
+
+        .qc-conditions-list {
+            flex: 1;
+        }
+
+        .qc-conditions-image {
+            position: relative;
+            width: 406px;
+            height: 200px;
+        }
+
+        .qc-conditions-image-inner {
+            position: absolute;
+            left: 14px;
+            top: 15px;
+            width: 406px;
+            height: 200px;
+            background: #fff;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+
+        .qc-conditions-image-inner img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .qc-conditions-image-border {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 406px;
+            height: 200px;
+            border: 1px solid #c8a995;
+            border-radius: 5px;
+        }
+
+        /* Problems Section */
+        .qc-problems {
+            padding: 75px 120px;
+            background: #f9ebe0;
+        }
+
+        .qc-problems-title {
+            text-align: center;
+            font-family: 'Playfair Display', serif;
+            font-weight: 400;
+            font-size: 35px;
+            line-height: 47px;
+            color: #222;
+            text-transform: uppercase;
+            margin-bottom: 45px;
+        }
+
+        /* Accordion */
+        .qc-accordion {
+            max-width: 1160px;
+            margin: 0 auto;
+        }
+
+        .qc-accordion-item {
+            border-bottom: 1px solid #c8a995;
+        }
+
+        .qc-accordion-item:first-child {
+            border-top: 1px solid #c8a995;
+        }
+
+        .qc-accordion-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 24px 30px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .qc-accordion-header:hover {
+            background: rgba(200, 169, 149, 0.1);
+        }
+
+        .qc-accordion-title {
+            font-family: 'Playfair Display', serif;
+            font-weight: 400;
+            font-size: 24px;
+            line-height: 32.4px;
+            color: #000;
+        }
+
+        .qc-accordion-icon {
+            width: 24px;
+            height: 24px;
+            position: relative;
+            transition: transform 0.3s;
+        }
+
+        .qc-accordion-icon::before,
+        .qc-accordion-icon::after {
+            content: '';
+            position: absolute;
+            background: #222;
+        }
+
+        .qc-accordion-icon::before {
+            width: 24px;
+            height: 2px;
+            top: 50%;
+            left: 0;
+            transform: translateY(-50%);
+        }
+
+        .qc-accordion-icon::after {
+            width: 2px;
+            height: 24px;
+            left: 50%;
+            top: 0;
+            transform: translateX(-50%);
+            transition: transform 0.3s;
+        }
+
+        .qc-accordion-item.active .qc-accordion-icon::after {
+            transform: translateX(-50%) rotate(90deg);
+        }
+
+        .qc-accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+
+        .qc-accordion-item.active .qc-accordion-content {
+            max-height: 200px;
+        }
+
+        .qc-accordion-body {
+            padding: 0 30px 24px;
+            font-family: 'Playfair Display', serif;
+            font-size: 18px;
+            line-height: 28px;
+            color: #222;
+        }
+
+        /* Footer override */
+        .qc-footer {
+            margin-top: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="page">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-container">
+                <a href="index.html" class="logo">
+                    <img src="https://www.figma.com/api/mcp/asset/5bb49d37-0fa5-4b3b-bd28-64c665d439ad" alt="Incoflores"
+                        class="logo-img">
+                </a>
+                <nav class="nav">
+                    <div class="nav-dropdown">
+                        <a href="index.html#services" class="nav-link nav-link-dropdown nav-link-active">Наши услуги</a>
+                        <div class="dropdown-menu">
+                            <a href="http://project6732419.tilda.ws/page36402882.html" class="dropdown-item">Цветочный брокер</a>
+                            <a href="quality-control.html" class="dropdown-item">Контроль качества</a>
+                            <a href="http://project6732419.tilda.ws/page36408111.html" class="dropdown-item">Специальное предложение к 8 марта, тюльпаны 🌷</a>
+                        </div>
+                    </div>
+                    <a href="flowercatalog.html" class="nav-link">Каталог цветов</a>
+                    <a href="plantations.html" class="nav-link">Наши партнеры</a>
+                    <a href="https://incoflores.ru/webshop" class="nav-link">Веб шоп</a>
+                    <a href="calculator.html" class="nav-link">Калькулятор доставки</a>
+                    <a href="index.html#about" class="nav-link">О нас</a>
+                    <a href="index.html#contacts" class="nav-link">Контакты</a>
+                </nav>
+            </div>
+        </header>
+
+        <div class="qc-container">
+            <!-- Breadcrumbs -->
+            <div class="qc-breadcrumbs">
+                <a href="index.html">Incoflores</a>
+                <span>/</span>
+                <a href="index.html#services">Наши услуги</a>
+                <span>/</span>
+                <span>Контроль качества</span>
+            </div>
+
+            <!-- Title -->
+            <h1 class="qc-title">Контроль качества</h1>
+
+            <!-- Main Content -->
+            <div class="qc-main">
+                <!-- Main Image with border -->
+                <div class="qc-image-main-border"></div>
+                <div class="qc-image-main">
+                    <img src="https://www.figma.com/api/mcp/asset/de54ce9b-79a5-455c-87d6-2635beaccaf8" alt="Контроль качества">
+                </div>
+
+                <!-- Bottom Left Image -->
+                <div class="qc-image-bottom-left-border"></div>
+                <div class="qc-image-bottom-left">
+                    <img src="https://www.figma.com/api/mcp/asset/ebd06664-12f7-4647-b349-a51aecf91111" alt="Цветы">
+                </div>
+
+                <!-- Right Image -->
+                <div class="qc-image-right-border"></div>
+                <div class="qc-image-right">
+                    <img src="https://www.figma.com/api/mcp/asset/d06b89ff-55d9-4a10-995e-44e6a87ee5ec" alt="Цветы">
+                </div>
+
+                <!-- Vertical Divider -->
+                <div class="qc-vertical-divider"></div>
+
+                <!-- Text Block -->
+                <div class="qc-text-block">
+                    <p class="qc-text-strong">
+                        Контроль Качества - это проверка Вашего цветка перед вылетом из Эквадора. Производится в холодильных комнатах у транспортника, там куда стекается цветок от плантаций, и где он сортируется перед отправкой.
+                    </p>
+                </div>
+
+                <!-- Text Bottom -->
+                <div class="qc-text-bottom">
+                    <p class="qc-text-regular" style="margin-bottom: 30px;">
+                        Сотрудники нашей компании в вечернее и ночное время проводят проверку цветов в холодильных комнатах карго агентства.
+                    </p>
+                    <p class="qc-text-strong" style="margin-bottom: 30px;">
+                        Проверяется цветок на наличие каких либо болезней, свежесть, соответствие стандартам, сверяется с заказом. Выявляются проблемы с упаковкой.
+                    </p>
+                    <p class="qc-text-regular">
+                        Весь отбракованный цветок возвращается на плантации. Сразу по факту проведения проверки (до 15 часов дня по московскому времени) клиент получает отчет о проверке, сопровождаемый подробными фотографиями о выявленной проблеме, что дает возможность закупщику оперативно среагировать и докупить цветок.
+                    </p>
+                </div>
+
+                <!-- Notice -->
+                <p class="qc-notice">
+                    Данная услуга доступна для клиентов, которые отправляют свои грузы через карго агентство <a href="#">Fresh Logistics</a>.
+                </p>
+
+                <!-- Bullet Points -->
+                <div class="qc-bullets">
+                    <div class="qc-bullet-item">
+                        Опыт работы в данном направлении составляет более 15 лет, что дает нашим клиентам уверенность в качестве нашей работы.
+                    </div>
+                    <div class="qc-bullet-item">
+                        Эта услуга избавляет Вас от сомнительного удовольствия платить за некачественный цветок, бережет Ваше время и деньги.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Conditions Section -->
+            <div class="qc-conditions">
+                <h2 class="qc-section-title">Условия сотрудничества</h2>
+
+                <div class="qc-conditions-content">
+                    <div class="qc-conditions-list">
+                        <div class="qc-bullet-item">
+                            Отправка цветка через карго агентство Fresh Logistics.
+                        </div>
+                        <div class="qc-bullet-item">
+                            Оплата по факту проведенной проверки.
+                        </div>
+                        <div class="qc-bullet-item">
+                            Стоимость услуги - 2.00$ за фуль с общего объема.
+                        </div>
+                        <div class="qc-bullet-item">
+                            Выборочное вскрытие коробок (в обязательном порядке вскрываются проблемные сорта, миксы в сезон дождей, плантации с нестабильным качеством цветка, а также коробки указанные клиентом).
+                        </div>
+                        <div class="qc-bullet-item">
+                            Работаем с любыми объемами.
+                        </div>
+                    </div>
+
+                    <div class="qc-conditions-image">
+                        <div class="qc-conditions-image-border"></div>
+                        <div class="qc-conditions-image-inner">
+                            <img src="https://www.figma.com/api/mcp/asset/ddf9b883-deb9-4d51-8dde-5922fbe2f8d0" alt="Цветы">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Problems Section -->
+            <div class="qc-problems">
+                <h2 class="qc-problems-title">Какие проблемы можно выявить перед вылетом из Эквадора?</h2>
+
+                <div class="qc-accordion">
+                    <div class="qc-accordion-item">
+                        <div class="qc-accordion-header">
+                            <span class="qc-accordion-title">Старый цветок</span>
+                            <span class="qc-accordion-icon"></span>
+                        </div>
+                        <div class="qc-accordion-content">
+                            <div class="qc-accordion-body">
+                                Цветок, который был срезан слишком давно и уже начал увядать или потерял свежесть.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="qc-accordion-item">
+                        <div class="qc-accordion-header">
+                            <span class="qc-accordion-title">Обезвоженный цветок</span>
+                            <span class="qc-accordion-icon"></span>
+                        </div>
+                        <div class="qc-accordion-content">
+                            <div class="qc-accordion-body">
+                                Цветок, который не получал достаточного количества воды и начал вянуть.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="qc-accordion-item">
+                        <div class="qc-accordion-header">
+                            <span class="qc-accordion-title">Пересорт</span>
+                            <span class="qc-accordion-icon"></span>
+                        </div>
+                        <div class="qc-accordion-content">
+                            <div class="qc-accordion-body">
+                                Несоответствие сорта цветка заказанному - отправлен другой сорт или цвет.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="qc-accordion-item">
+                        <div class="qc-accordion-header">
+                            <span class="qc-accordion-title">Ботритис (Botrytis)</span>
+                            <span class="qc-accordion-icon"></span>
+                        </div>
+                        <div class="qc-accordion-content">
+                            <div class="qc-accordion-body">
+                                Грибковое заболевание, которое проявляется серой плесенью на лепестках.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="qc-accordion-item">
+                        <div class="qc-accordion-header">
+                            <span class="qc-accordion-title">Плохая упаковка</span>
+                            <span class="qc-accordion-icon"></span>
+                        </div>
+                        <div class="qc-accordion-content">
+                            <div class="qc-accordion-body">
+                                Некачественная или повреждённая упаковка, которая может привести к порче цветов при транспортировке.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="qc-accordion-item">
+                        <div class="qc-accordion-header">
+                            <span class="qc-accordion-title">Грязный цветок</span>
+                            <span class="qc-accordion-icon"></span>
+                        </div>
+                        <div class="qc-accordion-content">
+                            <div class="qc-accordion-body">
+                                Наличие следов грязи, пыли или химикатов на лепестках и листьях.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="qc-accordion-item">
+                        <div class="qc-accordion-header">
+                            <span class="qc-accordion-title">Избыточный конденсат</span>
+                            <span class="qc-accordion-icon"></span>
+                        </div>
+                        <div class="qc-accordion-content">
+                            <div class="qc-accordion-body">
+                                Лишняя влага в упаковке, которая может привести к развитию грибковых заболеваний.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="qc-accordion-item">
+                        <div class="qc-accordion-header">
+                            <span class="qc-accordion-title">Гнилая листва и стебли</span>
+                            <span class="qc-accordion-icon"></span>
+                        </div>
+                        <div class="qc-accordion-content">
+                            <div class="qc-accordion-body">
+                                Признаки гниения на листьях и стеблях, что указывает на заболевание или неправильное хранение.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="qc-accordion-item">
+                        <div class="qc-accordion-header">
+                            <span class="qc-accordion-title">Перекормленный цветок</span>
+                            <span class="qc-accordion-icon"></span>
+                        </div>
+                        <div class="qc-accordion-content">
+                            <div class="qc-accordion-body">
+                                Цветок, который получил избыточное количество удобрений, что влияет на его внешний вид и стойкость.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="qc-accordion-item">
+                        <div class="qc-accordion-header">
+                            <span class="qc-accordion-title">Лом</span>
+                            <span class="qc-accordion-icon"></span>
+                        </div>
+                        <div class="qc-accordion-content">
+                            <div class="qc-accordion-body">
+                                Механические повреждения цветов - сломанные стебли, поврежденные бутоны.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="qc-accordion-item">
+                        <div class="qc-accordion-header">
+                            <span class="qc-accordion-title">Размер бутона цветка</span>
+                            <span class="qc-accordion-icon"></span>
+                        </div>
+                        <div class="qc-accordion-content">
+                            <div class="qc-accordion-body">
+                                Несоответствие размера бутона заявленным стандартам сорта.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="qc-accordion-item">
+                        <div class="qc-accordion-header">
+                            <span class="qc-accordion-title">Опыленный солнцем цветок</span>
+                            <span class="qc-accordion-icon"></span>
+                        </div>
+                        <div class="qc-accordion-content">
+                            <div class="qc-accordion-body">
+                                Цветок, получивший солнечные ожоги на лепестках, что влияет на внешний вид.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="footer qc-footer">
+            <div class="footer-content">
+                <p class="footer-copyright">© All Rights Reserved. Acme Inc.</p>
+                <div class="footer-social">
+                    <a href="https://www.facebook.com/groups/incoflores" class="social-link">
+                        <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M15 0C6.716 0 0 6.716 0 15C0 23.284 6.716 30 15 30C23.284 30 30 23.284 30 15C30 6.716 23.284 0 15 0ZM18.75 10H17.031C16.406 10 16.25 10.313 16.25 10.937V12.5H18.75L18.438 15H16.25V23.75H12.5V15H10V12.5H12.5V9.375C12.5 7.188 13.75 5.625 16.562 5.625H18.75V10Z" fill="#c04b3f"/>
+                        </svg>
+                    </a>
+                    <a href="https://vk.com/incoflores" class="social-link">
+                        <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M15 0C6.716 0 0 6.716 0 15C0 23.284 6.716 30 15 30C23.284 30 30 23.284 30 15C30 6.716 23.284 0 15 0ZM21.875 16.875C21.875 16.875 23.125 18.125 23.438 18.75C23.438 18.75 23.5 18.875 23.5 18.937C23.625 19.125 23.625 19.25 23.562 19.375C23.438 19.562 23.062 19.625 22.937 19.625H20.625C20.437 19.625 20.062 19.562 19.625 19.25C19.25 19 18.937 18.562 18.625 18.125C18.187 17.562 17.812 17.062 17.375 17.062C17.3125 17.062 17.25 17.0745 17.1875 17.1C16.875 17.25 16.5 17.687 16.5 18.812C16.5 19.187 16.187 19.437 16 19.437H14.937C14.562 19.437 12.625 19.312 10.937 17.5C8.875 15.312 7.062 10.937 7.062 10.812C6.937 10.5 7.187 10.375 7.437 10.375H9.812C10.125 10.375 10.25 10.562 10.375 10.812C10.5 11.125 10.937 12.25 11.562 13.312C12.625 15.125 13.187 15.687 13.625 15.437C13.6875 15.4003 13.7419 15.3501 13.7839 15.2903C14.125 14.812 14.062 13.187 14.062 12.562C14.062 12.312 14.062 11.437 13.75 11.062C13.562 10.812 13.187 10.687 13 10.625C13.125 10.437 13.375 10.25 13.687 10.187C14.187 10.062 15 10.062 15.875 10.062H16.312C17.25 10.062 17.5 10.125 17.812 10.187C18.5 10.375 18.562 10.812 18.5 12.062C18.437 12.437 18.437 12.875 18.437 13.375C18.437 13.5 18.375 13.875 18.375 14.187C18.375 14.875 18.375 15.687 18.875 15.937C18.9375 15.975 19.0094 15.9969 19.0834 16C19.25 16 19.75 16 21 14.125C21.625 13.125 22.125 11.812 22.125 11.812C22.187 11.625 22.375 11.375 22.625 11.375H25.125C25.375 11.375 25.625 11.437 25.687 11.562C25.812 11.75 25.75 12.125 25.062 13.125L24 14.562C23.312 15.562 23.312 15.625 23.937 16.187C23.9629 16.2069 23.9878 16.2278 24.0117 16.2496C24.3633 16.5625 24.625 16.8125 25.125 17.3125C25.375 17.5625 25.625 17.8125 25.875 18.125C25.9375 18.1992 25.9961 18.2773 26.0508 18.3594C26.312 18.75 26.187 19.125 25.687 19.187L23.375 19.25C23.0625 19.3125 22.625 19.1875 22.125 18.8125C21.875 18.625 21.625 18.375 21.375 18.125L21.125 17.875C20.875 17.625 20.625 17.3125 20.375 17.125C20.2579 17.0224 20.1253 16.9399 19.9825 16.8806C19.8397 16.8213 19.6891 16.7863 19.5363 16.7769C19.3835 16.7676 19.2303 16.7841 19.0826 16.8258C18.935 16.8674 18.7953 16.9334 18.6694 17.0206C18.5436 17.1078 18.434 17.2148 18.3449 17.3367C18.3125 17.375 18.25 17.4375 18.1875 17.5C18.0625 17.625 17.9375 17.75 17.8125 17.875C17.6875 18 17.5625 18.125 17.4375 18.25C17.3125 18.375 17.1875 18.5 17.0625 18.5625C17 18.5938 16.9375 18.625 16.875 18.625H16.8125C16.5 18.625 16.25 18.5 16.25 18.5C15.5 18.125 15.125 17.375 15.0625 17.25C15 17.125 14.9375 17 14.875 16.875C14.75 16.625 14.625 16.375 14.625 16.375V16.3125C14.5625 16.1875 14.5625 16.0625 14.5625 15.9375C14.5625 15.8125 14.5625 15.6875 14.5625 15.5625C14.5625 15.4375 14.5625 15.3125 14.625 15.1875C14.625 15.0625 14.6875 14.9375 14.75 14.8125C14.8125 14.6875 14.875 14.5625 14.9375 14.4375C15 14.3125 15.0625 14.1875 15.125 14.0625C15.1875 13.9375 15.25 13.8125 15.3125 13.6875C15.375 13.5625 15.4375 13.4375 15.5 13.3125C15.5625 13.1875 15.625 13.0625 15.6875 12.9375C15.75 12.8125 15.8125 12.6875 15.875 12.5625C15.9375 12.4375 16 12.3125 16.0625 12.1875C16.125 12.0625 16.1875 11.9375 16.25 11.8125V11.75C16.3125 11.625 16.375 11.5 16.375 11.375C16.375 11.3125 16.375 11.25 16.375 11.1875C16.375 11.125 16.375 11.0625 16.3125 11C16.25 10.875 16.125 10.8125 16 10.8125C15.9375 10.8125 15.875 10.8125 15.8125 10.875C15.5 11 15.25 11.25 15.125 11.375C14.875 11.625 14.6875 11.9375 14.5 12.1875C14.375 12.375 14.25 12.5625 14.125 12.75C14 12.9375 13.875 13.125 13.75 13.3125C13.625 13.5 13.5 13.6875 13.375 13.875C13.25 14.0625 13.125 14.25 13 14.4375C12.875 14.625 12.75 14.8125 12.625 15C12.5 15.1875 12.375 15.375 12.25 15.5625C12.125 15.75 12 15.9375 11.875 16.125C11.75 16.3125 11.625 16.5 11.5 16.6875C11.375 16.875 11.25 17.0625 11.125 17.25V17.3125C11 17.5 10.875 17.6875 10.75 17.875V17.9375L10.6875 18C10.5625 18.1875 10.4375 18.375 10.25 18.5C10.1875 18.5625 10.0625 18.625 9.9375 18.625H9.875C9.8125 18.625 9.75 18.5625 9.6875 18.5C9.625 18.4375 9.625 18.375 9.625 18.3125V18.25C9.625 18.1875 9.625 18.125 9.6875 18.0625C9.75 17.9375 9.8125 17.8125 9.875 17.6875C9.9375 17.5625 10 17.4375 10.0625 17.3125C10.125 17.1875 10.1875 17.0625 10.25 16.9375C10.3125 16.8125 10.375 16.6875 10.4375 16.5625C10.5 16.4375 10.5625 16.3125 10.625 16.1875C10.6875 16.0625 10.75 15.9375 10.8125 15.8125C10.875 15.6875 10.9375 15.5625 11 15.4375C11.0625 15.3125 11.125 15.1875 11.1875 15.0625C11.25 14.9375 11.3125 14.8125 11.375 14.6875C11.4375 14.5625 11.5 14.4375 11.5625 14.3125C11.625 14.1875 11.6875 14.0625 11.75 13.9375C11.8125 13.8125 11.875 13.6875 11.9375 13.5625C12 13.4375 12.0625 13.3125 12.125 13.1875C12.1875 13.0625 12.25 12.9375 12.3125 12.8125C12.375 12.6875 12.4375 12.5625 12.5 12.4375C12.5625 12.3125 12.625 12.1875 12.6875 12.0625C12.75 11.9375 12.8125 11.8125 12.875 11.6875C12.9375 11.5625 13 11.4375 13.0625 11.3125C13.125 11.1875 13.1875 11.0625 13.25 10.9375C13.3125 10.8125 13.375 10.6875 13.4375 10.5625C13.5 10.4375 13.5625 10.3125 13.625 10.25C13.6875 10.125 13.8125 10 13.9375 9.9375C14 9.875 14.0625 9.8125 14.125 9.8125H14.1875C14.375 9.75 14.5 9.75 14.6875 9.8125C14.8125 9.875 14.9375 10 15 10.125C15.0625 10.25 15.125 10.375 15.125 10.5625V10.625C15.125 10.75 15.125 10.875 15.0625 11C15 11.125 14.9375 11.25 14.875 11.375C14.8125 11.5 14.75 11.625 14.6875 11.75C14.625 11.875 14.5625 12 14.5 12.125C14.4375 12.25 14.375 12.375 14.3125 12.5C14.25 12.625 14.1875 12.75 14.125 12.875C14.0625 13 14 13.125 13.9375 13.25C13.875 13.375 13.8125 13.5 13.75 13.625C13.6875 13.75 13.625 13.875 13.5625 14C13.5 14.125 13.4375 14.25 13.375 14.375C13.3125 14.5 13.25 14.625 13.1875 14.75C13.125 14.875 13.0625 15 13 15.125C12.9375 15.25 12.875 15.375 12.8125 15.5C12.75 15.625 12.6875 15.75 12.625 15.875C12.5625 16 12.5 16.125 12.4375 16.25C12.375 16.375 12.3125 16.5 12.25 16.625C12.1875 16.75 12.125 16.875 12.0625 17C12 17.125 11.9375 17.25 11.875 17.375C11.8125 17.5 11.75 17.625 11.6875 17.75C11.625 17.875 11.5625 18 11.5 18.125C11.4375 18.25 11.375 18.375 11.3125 18.5C11.25 18.625 11.1875 18.75 11.125 18.875C11.0625 19 11 19.125 10.9375 19.25V19.3125C10.875 19.4375 10.8125 19.5625 10.6875 19.625C10.625 19.6875 10.5 19.6875 10.4375 19.6875H10.375C10.1875 19.6875 10 19.625 9.875 19.5L9.8125 19.4375C9.6875 19.3125 9.625 19.125 9.625 18.9375V18.875C9.625 18.75 9.625 18.625 9.6875 18.5C9.75 18.375 9.8125 18.25 9.875 18.125C9.9375 18 10 17.875 10.0625 17.75C10.125 17.625 10.1875 17.5 10.25 17.375C10.3125 17.25 10.375 17.125 10.4375 17C10.5 16.875 10.5625 16.75 10.625 16.625C10.6875 16.5 10.75 16.375 10.8125 16.25C10.875 16.125 10.9375 16 11 15.875C11.0625 15.75 11.125 15.625 11.1875 15.5C11.25 15.375 11.3125 15.25 11.375 15.125C11.4375 15 11.5 14.875 11.5625 14.75C11.625 14.625 11.6875 14.5 11.75 14.375C11.8125 14.25 11.875 14.125 11.9375 14C12 13.875 12.0625 13.75 12.125 13.625C12.1875 13.5 12.25 13.375 12.3125 13.25C12.375 13.125 12.4375 13 12.5 12.875L21.875 16.875Z" fill="#c04b3f"/>
+                        </svg>
+                    </a>
+                    <a href="https://www.instagram.com/vorobyeva_incoflores" class="social-link">
+                        <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M15 0C6.716 0 0 6.716 0 15C0 23.284 6.716 30 15 30C23.284 30 30 23.284 30 15C30 6.716 23.284 0 15 0ZM15 7.5C16.937 7.5 17.187 7.5 17.937 7.5C20.687 7.625 21.875 8.875 22 11.562C22 12.312 22.062 12.562 22.062 14.5C22.062 16.437 22 16.687 22 17.437C21.875 20.125 20.625 21.375 17.937 21.5C17.187 21.5 16.937 21.562 15 21.562C13.062 21.562 12.812 21.5 12.062 21.5C9.375 21.375 8.125 20.125 8 17.437C8 16.687 7.937 16.437 7.937 14.5C7.937 12.562 8 12.312 8 11.562C8.125 8.875 9.375 7.625 12.062 7.5C12.812 7.5 13.062 7.5 15 7.5ZM15 9C13.062 9 12.875 9 12.125 9.062C10.375 9.125 9.625 9.875 9.562 11.625C9.5 12.375 9.5 12.562 9.5 14.5C9.5 16.437 9.5 16.625 9.562 17.375C9.625 19.125 10.375 19.875 12.125 19.937C12.875 20 13.062 20 15 20C16.937 20 17.125 20 17.875 19.937C19.625 19.875 20.375 19.125 20.437 17.375C20.5 16.625 20.5 16.437 20.5 14.5C20.5 12.562 20.5 12.375 20.437 11.625C20.375 9.875 19.625 9.125 17.875 9.062C17.125 9 16.937 9 15 9ZM15 11.125C17.375 11.125 19.375 13.062 19.375 14.5C19.375 17.375 17.375 19.375 15 19.375C12.625 19.375 10.625 17.375 10.625 15C10.625 12.625 12.625 10.625 15 10.625V11.125ZM15 12.312C13.312 12.312 12.312 13.812 12.312 15C12.312 16.687 13.312 17.687 15 17.687C16.687 17.687 17.687 16.687 17.687 15C17.687 13.312 16.687 12.312 15 12.312ZM19.5 10.437C19.5 10.937 19.062 11.375 18.562 11.375C18.062 11.375 17.625 10.937 17.625 10.437C17.625 9.937 18.062 9.5 18.562 9.5C19.062 9.5 19.5 9.937 19.5 10.437Z" fill="#c04b3f"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        // Accordion functionality
+        document.querySelectorAll('.qc-accordion-header').forEach(header => {
+            header.addEventListener('click', () => {
+                const item = header.parentElement;
+                const isActive = item.classList.contains('active');
+                
+                // Close all other items
+                document.querySelectorAll('.qc-accordion-item').forEach(otherItem => {
+                    otherItem.classList.remove('active');
+                });
+                
+                // Toggle current item
+                if (!isActive) {
+                    item.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

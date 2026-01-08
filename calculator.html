@@ -62,7 +62,7 @@
             background: #FAFAFA;
             border-radius: 8px;
             padding: 40px;
-            max-width: 800px;
+            max-width: 900px;
         }
 
         .form-title {
@@ -176,64 +176,64 @@
             display: block;
         }
 
+        .result-summary {
+            font-family: 'Arial', sans-serif;
+            font-size: 16px;
+            color: #2E7D32;
+            margin-bottom: 20px;
+            padding: 15px;
+            background: #E8F5E9;
+            border-radius: 6px;
+        }
+
         .result-title {
             font-family: 'Playfair Display', serif;
             font-weight: 400;
-            font-size: 24px;
-            color: #222222;
-            margin: 0 0 20px;
-        }
-
-        .result-item {
-            display: flex;
-            justify-content: space-between;
-            padding: 12px 0;
-            border-bottom: 1px solid #F0F0F0;
-        }
-
-        .result-item:last-child {
-            border-bottom: none;
-        }
-
-        .result-label {
-            font-family: 'Arial', sans-serif;
-            font-size: 16px;
-            color: #666666;
-        }
-
-        .result-value {
-            font-family: 'Arial', sans-serif;
-            font-size: 16px;
-            font-weight: 600;
-            color: #222222;
-        }
-
-        .result-total {
-            background: #F9EBE0;
-            padding: 20px;
-            border-radius: 6px;
-            margin-top: 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .result-total-label {
-            font-family: 'Playfair Display', serif;
             font-size: 20px;
             color: #222222;
+            margin: 0 0 15px;
         }
 
-        .result-total-value {
+        .result-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+
+        .result-table th,
+        .result-table td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid #E0E0E0;
             font-family: 'Arial', sans-serif;
-            font-size: 28px;
+            font-size: 15px;
+        }
+
+        .result-table th {
+            background: #F5F5F5;
+            font-weight: 600;
+            color: #333;
+        }
+
+        .result-table td:last-child {
+            text-align: right;
+            font-weight: 500;
+        }
+
+        .result-table tr:last-child td {
+            border-bottom: none;
             font-weight: 700;
+            background: #FFF8F5;
+        }
+
+        .result-table tr:last-child td:last-child {
             color: #DA6561;
+            font-size: 18px;
         }
 
         .info-section {
-            margin-top: 40px;
-            padding: 30px;
+            margin-top: 30px;
+            padding: 25px;
             background: #FFF8F5;
             border-left: 4px solid #DA6561;
             border-radius: 0 6px 6px 0;
@@ -241,9 +241,9 @@
 
         .info-title {
             font-family: 'Playfair Display', serif;
-            font-size: 20px;
+            font-size: 18px;
             color: #222222;
-            margin: 0 0 15px;
+            margin: 0 0 12px;
         }
 
         .info-text {
@@ -260,7 +260,13 @@
         }
 
         .info-text li {
-            margin-bottom: 8px;
+            margin-bottom: 6px;
+        }
+
+        .airport-hint {
+            font-size: 13px;
+            color: #888;
+            margin-top: 4px;
         }
     </style>
 </head>
@@ -296,118 +302,59 @@
 
             <div class="calculator-content">
                 <div class="calculator-form-wrapper">
-                    <h2 class="form-title">Расчет стоимости доставки</h2>
-                    <p class="form-subtitle">Заполните необходимые поля, чтобы рассчитать стоимость авиадоставки цветов из Эквадора.</p>
+                    <h2 class="form-title">Расчет стоимости авиадоставки</h2>
+                    <p class="form-subtitle">Заполните необходимые поля, чтобы рассчитать стоимость авиадоставки.</p>
 
                     <form id="calculatorForm">
                         <div class="form-group">
-                            <label class="form-label">Город доставки:</label>
+                            <label class="form-label">Вылет из Москвы в:</label>
                             <select class="form-select" id="citySelect" required>
                                 <option value="">-- Выберите город --</option>
-                                <option value="moscow" data-price="0">Москва</option>
-                                <option value="spb" data-price="35">Санкт-Петербург</option>
-                                <option value="ekb" data-price="45">Екатеринбург</option>
-                                <option value="novosibirsk" data-price="55">Новосибирск</option>
-                                <option value="kazan" data-price="40">Казань</option>
-                                <option value="nn" data-price="35">Нижний Новгород</option>
-                                <option value="chelyabinsk" data-price="45">Челябинск</option>
-                                <option value="samara" data-price="40">Самара</option>
-                                <option value="omsk" data-price="50">Омск</option>
-                                <option value="rostov" data-price="35">Ростов-на-Дону</option>
-                                <option value="ufa" data-price="45">Уфа</option>
-                                <option value="krasnoyarsk" data-price="60">Красноярск</option>
-                                <option value="perm" data-price="45">Пермь</option>
-                                <option value="voronezh" data-price="30">Воронеж</option>
-                                <option value="volgograd" data-price="35">Волгоград</option>
-                                <option value="krasnodar" data-price="30">Краснодар</option>
-                                <option value="saratov" data-price="38">Саратов</option>
-                                <option value="tyumen" data-price="50">Тюмень</option>
-                                <option value="tolyatti" data-price="40">Тольятти</option>
-                                <option value="izhevsk" data-price="45">Ижевск</option>
-                                <option value="barnaul" data-price="55">Барнаул</option>
-                                <option value="ulyanovsk" data-price="42">Ульяновск</option>
-                                <option value="irkutsk" data-price="65">Иркутск</option>
-                                <option value="vladivostok" data-price="80">Владивосток</option>
-                                <option value="yaroslavl" data-price="30">Ярославль</option>
-                                <option value="kemerovo" data-price="55">Кемерово</option>
-                                <option value="tomsk" data-price="55">Томск</option>
-                                <option value="ryazan" data-price="28">Рязань</option>
-                                <option value="naberezhnye" data-price="42">Набережные Челны</option>
-                                <option value="penza" data-price="38">Пенза</option>
-                                <option value="astrakhan" data-price="40">Астрахань</option>
-                                <option value="lipetsk" data-price="30">Липецк</option>
-                                <option value="tula" data-price="25">Тула</option>
-                                <option value="kirov" data-price="45">Киров</option>
-                                <option value="cheboksary" data-price="42">Чебоксары</option>
-                                <option value="kaliningrad" data-price="45">Калининград</option>
-                                <option value="bryansk" data-price="28">Брянск</option>
-                                <option value="magnitogorsk" data-price="48">Магнитогорск</option>
-                                <option value="kursk" data-price="30">Курск</option>
-                                <option value="tver" data-price="25">Тверь</option>
-                                <option value="sochi" data-price="35">Сочи</option>
-                                <option value="stavropol" data-price="35">Ставрополь</option>
-                                <option value="surgut" data-price="60">Сургут</option>
-                                <option value="belgorod" data-price="32">Белгород</option>
-                                <option value="orel" data-price="28">Орёл</option>
-                                <option value="vladimir" data-price="25">Владимир</option>
-                                <option value="arkhangelsk" data-price="50">Архангельск</option>
-                                <option value="murmansk" data-price="55">Мурманск</option>
-                                <option value="smolensk" data-price="28">Смоленск</option>
-                                <option value="kurgan" data-price="50">Курган</option>
-                                <option value="other" data-price="50">Другой город</option>
                             </select>
                         </div>
 
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label class="form-label">Количество коробок:</label>
-                                <input type="number" class="form-input" id="boxCount" min="1" max="100" value="1" required>
-                                <p class="form-hint">1 коробка ≈ 35 кг (6-8 пачек)</p>
-                            </div>
-
-                            <div class="form-group">
-                                <label class="form-label">Вес груза (кг):</label>
-                                <input type="number" class="form-input" id="weight" min="1" value="35" required>
-                                <p class="form-hint">Автоматически рассчитывается</p>
-                            </div>
+                        <div class="form-group">
+                            <label class="form-label">Аэропорт:</label>
+                            <select class="form-select" id="airportSelect" disabled>
+                                <option value="">Список аэропортов появится после выбора города</option>
+                            </select>
+                            <p class="airport-hint">Разные аэропорты/авиакомпании имеют разные тарифы</p>
                         </div>
 
-                        <button type="submit" class="btn-calculate">Рассчитать стоимость</button>
+                        <div class="form-group">
+                            <label class="form-label">Количество коробок (1 коробка = 35кг):</label>
+                            <input type="number" class="form-input" id="boxCount" min="1" max="100" value="1" required>
+                        </div>
+
+                        <button type="submit" class="btn-calculate">Рассчитать</button>
                     </form>
 
                     <div class="result-section" id="resultSection">
-                        <h3 class="result-title">Результат расчета</h3>
-                        <div class="result-item">
-                            <span class="result-label">Город доставки:</span>
-                            <span class="result-value" id="resultCity">-</span>
-                        </div>
-                        <div class="result-item">
-                            <span class="result-label">Количество коробок:</span>
-                            <span class="result-value" id="resultBoxes">-</span>
-                        </div>
-                        <div class="result-item">
-                            <span class="result-label">Общий вес:</span>
-                            <span class="result-value" id="resultWeight">-</span>
-                        </div>
-                        <div class="result-item">
-                            <span class="result-label">Тариф за кг:</span>
-                            <span class="result-value" id="resultRate">-</span>
-                        </div>
-                        <div class="result-total">
-                            <span class="result-total-label">Итого стоимость доставки:</span>
-                            <span class="result-total-value" id="resultTotal">0 ₽</span>
-                        </div>
+                        <p class="result-summary" id="resultSummary"></p>
+                        
+                        <h3 class="result-title">Детализация суммы доставки:</h3>
+                        <table class="result-table">
+                            <thead>
+                                <tr>
+                                    <th>№</th>
+                                    <th>Услуга</th>
+                                    <th>Стоимость, руб.</th>
+                                </tr>
+                            </thead>
+                            <tbody id="resultTableBody">
+                            </tbody>
+                        </table>
                     </div>
 
                     <div class="info-section">
-                        <h4 class="info-title">Условия доставки:</h4>
+                        <h4 class="info-title">Условия и расчет доставки:</h4>
                         <p class="info-text">
-                            Расчет стоимости доставки является предварительным.
+                            Расчет стоимости доставки Предварительный. Доставка товара осуществляется при закупке от 20 000 руб.
                             <ul>
-                                <li>Минимальный заказ для доставки: от 20 000 руб.</li>
-                                <li>Доставка осуществляется авиатранспортом из Эквадора</li>
-                                <li>Срок доставки: 3-5 рабочих дней</li>
-                                <li>Цена может меняться в зависимости от актуальных тарифов</li>
+                                <li>Доставка осуществляется авиатранспортом из Москвы</li>
+                                <li>1 коробка = 35 кг цветочной продукции</li>
+                                <li>Цена может меняться в зависимости от актуальных тарифов авиакомпаний</li>
+                                <li>Доставка в Калининград: + сборы 13 руб./кг</li>
                             </ul>
                         </p>
                     </div>
@@ -441,52 +388,292 @@
     </div>
 
     <script>
-        // Calculator logic
-        document.addEventListener('DOMContentLoaded', function() {
-            const form = document.getElementById('calculatorForm');
-            const citySelect = document.getElementById('citySelect');
-            const boxCount = document.getElementById('boxCount');
-            const weight = document.getElementById('weight');
-            const resultSection = document.getElementById('resultSection');
+        // Delivery data - cities with airports and tariffs
+        const deliveryData = {
+            "Абакан": [
+                { airport: "Внуково (ДР)", tariff: 155 },
+                { airport: "Шереметьево (5Н)", tariff: 160 }
+            ],
+            "Архангельск": [
+                { airport: "Внуково (ДР)", tariff: 130 },
+                { airport: "Шереметьево (СУ)", tariff: 135 }
+            ],
+            "Астрахань": [
+                { airport: "Внуково (ДР)", tariff: 115 },
+                { airport: "Домодедово (У6)", tariff: 120 }
+            ],
+            "Барнаул": [
+                { airport: "Внуково (ДР)", tariff: 145 },
+                { airport: "Шереметьево (5Н)", tariff: 150 },
+                { airport: "Домодедово (У6)", tariff: 155 }
+            ],
+            "Благовещенск": [
+                { airport: "Шереметьево (СУ)", tariff: 200 },
+                { airport: "Домодедово (У6)", tariff: 210 }
+            ],
+            "Владивосток": [
+                { airport: "Шереметьево (СУ)", tariff: 195 },
+                { airport: "Домодедово (У6)", tariff: 200 },
+                { airport: "Внуково (ДР)", tariff: 190 }
+            ],
+            "Волгоград": [
+                { airport: "Внуково (ДР)", tariff: 105 },
+                { airport: "Домодедово (У6)", tariff: 110 }
+            ],
+            "Екатеринбург": [
+                { airport: "Внуково (ДР)", tariff: 116 },
+                { airport: "Шереметьево (5Н)", tariff: 120 },
+                { airport: "Домодедово (У6)", tariff: 125 },
+                { airport: "Шереметьево (ДР)", tariff: 127 },
+                { airport: "Шереметьево (СУ)", tariff: 131 }
+            ],
+            "Ижевск": [
+                { airport: "Внуково (ДР)", tariff: 120 },
+                { airport: "Домодедово (У6)", tariff: 125 }
+            ],
+            "Иркутск": [
+                { airport: "Внуково (ДР)", tariff: 165 },
+                { airport: "Шереметьево (СУ)", tariff: 170 },
+                { airport: "Домодедово (У6)", tariff: 175 }
+            ],
+            "Казань": [
+                { airport: "Внуково (ДР)", tariff: 105 },
+                { airport: "Шереметьево (5Н)", tariff: 110 },
+                { airport: "Домодедово (У6)", tariff: 112 }
+            ],
+            "Калининград": [
+                { airport: "Внуково (ДР)", tariff: 115 },
+                { airport: "Шереметьево (СУ)", tariff: 120 }
+            ],
+            "Кемерово": [
+                { airport: "Внуково (ДР)", tariff: 150 },
+                { airport: "Шереметьево (5Н)", tariff: 155 }
+            ],
+            "Краснодар": [
+                { airport: "Внуково (ДР)", tariff: 95 },
+                { airport: "Домодедово (У6)", tariff: 100 },
+                { airport: "Шереметьево (СУ)", tariff: 105 }
+            ],
+            "Красноярск": [
+                { airport: "Внуково (ДР)", tariff: 155 },
+                { airport: "Шереметьево (5Н)", tariff: 160 },
+                { airport: "Домодедово (У6)", tariff: 165 }
+            ],
+            "Магнитогорск": [
+                { airport: "Внуково (ДР)", tariff: 125 },
+                { airport: "Домодедово (У6)", tariff: 130 }
+            ],
+            "Минеральные Воды": [
+                { airport: "Внуково (ДР)", tariff: 100 },
+                { airport: "Домодедово (У6)", tariff: 105 }
+            ],
+            "Мурманск": [
+                { airport: "Шереметьево (СУ)", tariff: 140 },
+                { airport: "Внуково (ДР)", tariff: 145 }
+            ],
+            "Нижний Новгород": [
+                { airport: "Внуково (ДР)", tariff: 100 },
+                { airport: "Шереметьево (5Н)", tariff: 105 },
+                { airport: "Домодедово (У6)", tariff: 108 }
+            ],
+            "Новосибирск": [
+                { airport: "Внуково (ДР)", tariff: 140 },
+                { airport: "Шереметьево (5Н)", tariff: 145 },
+                { airport: "Домодедово (У6)", tariff: 150 },
+                { airport: "Шереметьево (СУ)", tariff: 152 }
+            ],
+            "Омск": [
+                { airport: "Внуково (ДР)", tariff: 135 },
+                { airport: "Шереметьево (5Н)", tariff: 140 }
+            ],
+            "Оренбург": [
+                { airport: "Внуково (ДР)", tariff: 115 },
+                { airport: "Домодедово (У6)", tariff: 120 }
+            ],
+            "Пермь": [
+                { airport: "Внуково (ДР)", tariff: 118 },
+                { airport: "Шереметьево (5Н)", tariff: 122 },
+                { airport: "Домодедово (У6)", tariff: 125 }
+            ],
+            "Ростов-на-Дону": [
+                { airport: "Внуково (ДР)", tariff: 98 },
+                { airport: "Домодедово (У6)", tariff: 103 },
+                { airport: "Шереметьево (СУ)", tariff: 108 }
+            ],
+            "Самара": [
+                { airport: "Внуково (ДР)", tariff: 108 },
+                { airport: "Шереметьево (5Н)", tariff: 112 },
+                { airport: "Домодедово (У6)", tariff: 115 }
+            ],
+            "Санкт-Петербург": [
+                { airport: "Внуково (ДР)", tariff: 85 },
+                { airport: "Шереметьево (СУ)", tariff: 90 },
+                { airport: "Домодедово (У6)", tariff: 92 }
+            ],
+            "Саратов": [
+                { airport: "Внуково (ДР)", tariff: 110 },
+                { airport: "Домодедово (У6)", tariff: 115 }
+            ],
+            "Сочи": [
+                { airport: "Внуково (ДР)", tariff: 100 },
+                { airport: "Домодедово (У6)", tariff: 105 },
+                { airport: "Шереметьево (СУ)", tariff: 108 }
+            ],
+            "Ставрополь": [
+                { airport: "Внуково (ДР)", tariff: 102 },
+                { airport: "Домодедово (У6)", tariff: 107 }
+            ],
+            "Сургут": [
+                { airport: "Внуково (ДР)", tariff: 145 },
+                { airport: "Шереметьево (5Н)", tariff: 150 },
+                { airport: "Домодедово (У6)", tariff: 155 }
+            ],
+            "Томск": [
+                { airport: "Внуково (ДР)", tariff: 148 },
+                { airport: "Шереметьево (5Н)", tariff: 153 }
+            ],
+            "Тюмень": [
+                { airport: "Внуково (ДР)", tariff: 130 },
+                { airport: "Шереметьево (5Н)", tariff: 135 },
+                { airport: "Домодедово (У6)", tariff: 140 }
+            ],
+            "Улан-Удэ": [
+                { airport: "Шереметьево (СУ)", tariff: 175 },
+                { airport: "Домодедово (У6)", tariff: 180 }
+            ],
+            "Ульяновск": [
+                { airport: "Внуково (ДР)", tariff: 112 },
+                { airport: "Домодедово (У6)", tariff: 117 }
+            ],
+            "Уфа": [
+                { airport: "Внуково (ДР)", tariff: 115 },
+                { airport: "Шереметьево (5Н)", tariff: 120 },
+                { airport: "Домодедово (У6)", tariff: 123 }
+            ],
+            "Хабаровск": [
+                { airport: "Шереметьево (СУ)", tariff: 190 },
+                { airport: "Домодедово (У6)", tariff: 195 }
+            ],
+            "Челябинск": [
+                { airport: "Внуково (ДР)", tariff: 120 },
+                { airport: "Шереметьево (5Н)", tariff: 125 },
+                { airport: "Домодедово (У6)", tariff: 128 }
+            ],
+            "Чита": [
+                { airport: "Шереметьево (СУ)", tariff: 180 },
+                { airport: "Домодедово (У6)", tariff: 185 }
+            ],
+            "Южно-Сахалинск": [
+                { airport: "Шереметьево (СУ)", tariff: 210 },
+                { airport: "Домодедово (У6)", tariff: 215 }
+            ],
+            "Якутск": [
+                { airport: "Шереметьево (СУ)", tariff: 195 },
+                { airport: "Домодедово (У6)", tariff: 200 }
+            ]
+        };
 
-            // Auto-calculate weight when box count changes
-            boxCount.addEventListener('input', function() {
-                weight.value = this.value * 35;
-            });
+        // Fixed costs
+        const DELIVERY_TO_AIRPORT = 1990; // руб.
+        const DOCUMENTS_FEE = 750; // руб.
+        const BOX_WEIGHT = 35; // кг
 
-            // Form submission
-            form.addEventListener('submit', function(e) {
-                e.preventDefault();
-                
-                const selectedOption = citySelect.options[citySelect.selectedIndex];
-                const cityName = selectedOption.text;
-                const pricePerKg = parseInt(selectedOption.dataset.price) || 0;
-                const boxes = parseInt(boxCount.value) || 1;
-                const totalWeight = parseInt(weight.value) || 35;
-                
-                // Base cost calculation
-                let baseCost = pricePerKg * totalWeight;
-                
-                // Add handling fee
-                const handlingFee = boxes * 500;
-                
-                // Total cost
-                const totalCost = baseCost + handlingFee;
-                
-                // Display results
-                document.getElementById('resultCity').textContent = cityName;
-                document.getElementById('resultBoxes').textContent = boxes + ' шт.';
-                document.getElementById('resultWeight').textContent = totalWeight + ' кг';
-                document.getElementById('resultRate').textContent = pricePerKg + ' ₽/кг';
-                document.getElementById('resultTotal').textContent = totalCost.toLocaleString('ru-RU') + ' ₽';
-                
-                // Show result section
-                resultSection.classList.add('active');
-                
-                // Scroll to results
-                resultSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        // DOM elements
+        const citySelect = document.getElementById('citySelect');
+        const airportSelect = document.getElementById('airportSelect');
+        const boxCount = document.getElementById('boxCount');
+        const form = document.getElementById('calculatorForm');
+        const resultSection = document.getElementById('resultSection');
+
+        // Populate cities dropdown
+        function populateCities() {
+            const cities = Object.keys(deliveryData).sort();
+            cities.forEach(city => {
+                const option = document.createElement('option');
+                option.value = city;
+                option.textContent = city;
+                citySelect.appendChild(option);
             });
+        }
+
+        // Update airports when city changes
+        citySelect.addEventListener('change', function() {
+            const city = this.value;
+            airportSelect.innerHTML = '';
+            
+            if (city && deliveryData[city]) {
+                airportSelect.disabled = false;
+                deliveryData[city].forEach((item, index) => {
+                    const option = document.createElement('option');
+                    option.value = index;
+                    option.textContent = `${item.airport} - ${item.tariff} руб./кг.`;
+                    airportSelect.appendChild(option);
+                });
+            } else {
+                airportSelect.disabled = true;
+                const option = document.createElement('option');
+                option.value = '';
+                option.textContent = 'Список аэропортов появится после выбора города';
+                airportSelect.appendChild(option);
+            }
+            
+            // Hide results when city changes
+            resultSection.classList.remove('active');
         });
+
+        // Form submission
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const city = citySelect.value;
+            const airportIndex = airportSelect.value;
+            const boxes = parseInt(boxCount.value) || 1;
+            
+            if (!city || airportIndex === '') {
+                alert('Пожалуйста, выберите город и аэропорт');
+                return;
+            }
+            
+            const airportData = deliveryData[city][airportIndex];
+            const tariff = airportData.tariff;
+            const airportName = airportData.airport;
+            const totalWeight = boxes * BOX_WEIGHT;
+            
+            // Calculate costs
+            const flightCost = tariff * totalWeight;
+            const totalCost = DELIVERY_TO_AIRPORT + DOCUMENTS_FEE + flightCost;
+            
+            // Extra fee for Kaliningrad
+            let extraFee = 0;
+            let extraFeeText = '';
+            if (city === 'Калининград') {
+                extraFee = 13 * totalWeight;
+                extraFeeText = `<tr><td>4</td><td>Сборы Калининград (13 руб./кг)</td><td>${extraFee.toLocaleString('ru-RU')}</td></tr>`;
+            }
+            
+            const grandTotal = totalCost + extraFee;
+            
+            // Update summary
+            document.getElementById('resultSummary').innerHTML = 
+                `Авиадоставка из аэропорта ${airportName} (Москва) в <strong>${city}</strong> ` +
+                `<strong>${boxes}</strong> коробки цветочной продукции будет стоить <strong>${grandTotal.toLocaleString('ru-RU')} руб.</strong>`;
+            
+            // Update table
+            document.getElementById('resultTableBody').innerHTML = `
+                <tr><td>1</td><td>Доставка в аэропорт</td><td>${DELIVERY_TO_AIRPORT.toLocaleString('ru-RU')}</td></tr>
+                <tr><td>2</td><td>Оформление документов (авиа накладная)</td><td>${DOCUMENTS_FEE.toLocaleString('ru-RU')}</td></tr>
+                <tr><td>3</td><td>Перелет (исходя из тарифа ${tariff} руб./кг.)</td><td>${flightCost.toLocaleString('ru-RU')}</td></tr>
+                ${extraFeeText}
+                <tr><td colspan="2"><strong>Итого:</strong></td><td>${grandTotal.toLocaleString('ru-RU')}</td></tr>
+            `;
+            
+            // Show results
+            resultSection.classList.add('active');
+            resultSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
+
+        // Initialize
+        populateCities();
     </script>
 </body>
 

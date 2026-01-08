@@ -727,6 +727,7 @@ body {
 /* === Contacts Section === */
 .contacts {
     background: var(--color-white);
+    padding-bottom: 90px;
 }
 
 .contacts-title-wrapper {

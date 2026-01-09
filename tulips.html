@@ -1,0 +1,1125 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1440">
+    <title>Специальное предложение к 8 марта - Тюльпаны оптом</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --lunar-green: #364734;
+            --swamp-green: #A7B984;
+            --primrose: #E3EE94;
+            --deco: #D5DC95;
+            --early-dawn: #FFF9EB;
+            --cabbage-pont: #3A4D38;
+            --manz: #E4F174;
+            --battleship-gray: #86986D;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Mulish', sans-serif;
+            background-color: var(--lunar-green);
+            color: var(--primrose);
+            min-width: 1440px;
+        }
+
+        .page {
+            width: 1440px;
+            margin: 0 auto;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Header */
+        .tulip-header {
+            position: fixed;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 1440px;
+            height: 80px;
+            background-color: var(--lunar-green);
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            padding: 0 140px;
+        }
+
+        .tulip-logo {
+            height: 24px;
+        }
+
+        .tulip-logo img {
+            height: 100%;
+        }
+
+        .header-cta-btn {
+            position: absolute;
+            left: 606px;
+            top: 15px;
+            width: 263px;
+            height: 50px;
+            border: 2px solid var(--deco);
+            border-radius: 10px;
+            background: transparent;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        .header-cta-btn span {
+            font-family: 'Mulish', sans-serif;
+            font-weight: 600;
+            font-size: 18px;
+            line-height: 21.6px;
+            color: var(--deco);
+        }
+
+        .header-phone {
+            position: absolute;
+            left: 909px;
+            top: 29px;
+            font-family: 'Mulish', sans-serif;
+            font-weight: 400;
+            font-size: 18px;
+            line-height: 22px;
+            color: var(--swamp-green);
+            text-decoration: none;
+        }
+
+        .header-social {
+            position: absolute;
+            right: 85px;
+            top: 20px;
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+
+        .header-social a {
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .header-social svg {
+            width: 40px;
+            height: 40px;
+            fill: var(--swamp-green);
+        }
+
+        .header-burger {
+            position: absolute;
+            right: 140px;
+            top: 25px;
+            width: 45px;
+            height: 30px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            cursor: pointer;
+        }
+
+        .header-burger span {
+            display: block;
+            height: 3px;
+            background-color: var(--swamp-green);
+            border-radius: 2px;
+        }
+
+        /* Hero Section */
+        .tulip-hero {
+            width: 1440px;
+            height: 800px;
+            background-color: var(--lunar-green);
+            position: relative;
+            padding-top: 80px;
+        }
+
+        .hero-wave {
+            position: absolute;
+            top: 209px;
+            left: 1px;
+            width: 1616px;
+            height: 483px;
+            opacity: 0.3;
+        }
+
+        .hero-title {
+            position: absolute;
+            top: 101px;
+            left: 180px;
+            width: 571px;
+        }
+
+        .hero-title h1 {
+            font-family: 'Mulish', sans-serif;
+            font-weight: 700;
+            font-size: 54px;
+            line-height: 54px;
+            color: var(--deco);
+        }
+
+        .hero-subtitle {
+            position: absolute;
+            top: 224px;
+            left: 180px;
+            width: 564px;
+        }
+
+        .hero-subtitle p {
+            font-family: 'Mulish', sans-serif;
+            font-weight: 500;
+            font-size: 32px;
+            line-height: 32px;
+            color: var(--swamp-green);
+        }
+
+        .hero-cta-btn {
+            position: absolute;
+            top: 371px;
+            left: 180px;
+            width: 305px;
+            height: 67px;
+            background-color: var(--deco);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .hero-cta-btn span {
+            font-family: 'Mulish', sans-serif;
+            font-weight: 500;
+            font-size: 24px;
+            line-height: 28.8px;
+            color: var(--cabbage-pont);
+        }
+
+        .hero-tulip-icon {
+            position: absolute;
+            top: 360px;
+            left: 191px;
+            width: 34px;
+            height: 50px;
+        }
+
+        .hero-image-wrapper {
+            position: absolute;
+            top: 101px;
+            left: 899px;
+            width: 357px;
+            height: 432px;
+            background-color: var(--swamp-green);
+        }
+
+        .hero-image {
+            position: absolute;
+            top: 126px;
+            left: 924px;
+            width: 307px;
+            height: 382px;
+            overflow: hidden;
+        }
+
+        .hero-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .hero-badge {
+            position: absolute;
+            top: 418px;
+            left: 870px;
+            width: 414px;
+            height: 58px;
+            background-color: rgba(167, 185, 132, 0.9);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hero-badge span {
+            font-family: 'Mulish', sans-serif;
+            font-weight: 500;
+            font-size: 30px;
+            line-height: 30px;
+            color: var(--cabbage-pont);
+        }
+
+        /* Local Flower Section */
+        .local-section {
+            position: absolute;
+            top: 551px;
+            left: 205px;
+        }
+
+        .local-title {
+            font-family: 'Mulish', sans-serif;
+            font-weight: 400;
+            font-size: 20px;
+            line-height: 20px;
+            color: var(--primrose);
+            margin-bottom: 15px;
+        }
+
+        .local-box {
+            position: absolute;
+            top: 586px;
+            left: 180px;
+            width: 1080px;
+            height: 190px;
+            border: 1px solid var(--battleship-gray);
+            border-radius: 10px;
+        }
+
+        .local-images {
+            position: absolute;
+            top: 611px;
+            left: 205px;
+            display: flex;
+            gap: 20px;
+        }
+
+        .local-img {
+            width: 252px;
+            height: 140px;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+
+        .local-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .local-description {
+            position: absolute;
+            top: 633px;
+            left: 764px;
+            width: 473px;
+        }
+
+        .local-description p {
+            font-family: 'Mulish', sans-serif;
+            font-weight: 400;
+            font-size: 24px;
+            line-height: 24px;
+            color: var(--primrose);
+        }
+
+        /* Section 2 - Оптовые поставки */
+        .tulip-section-2 {
+            width: 1440px;
+            height: 572px;
+            background-color: var(--lunar-green);
+            position: relative;
+        }
+
+        .section2-wave {
+            position: absolute;
+            top: 135px;
+            left: -50px;
+            width: 1616px;
+            height: 483px;
+            opacity: 0.3;
+        }
+
+        .section2-title {
+            position: absolute;
+            top: 60px;
+            left: 140px;
+            width: 561px;
+        }
+
+        .section2-title h2 {
+            font-family: 'Mulish', sans-serif;
+            font-weight: 700;
+            font-size: 34px;
+            line-height: 34px;
+            color: var(--primrose);
+        }
+
+        .section2-subtitle {
+            position: absolute;
+            top: 192px;
+            left: 140px;
+            width: 561px;
+        }
+
+        .section2-subtitle p {
+            font-family: 'Mulish', sans-serif;
+            font-weight: 500;
+            font-size: 22px;
+            line-height: 22px;
+            color: var(--swamp-green);
+        }
+
+        .section2-list {
+            position: absolute;
+            top: 266px;
+            left: 140px;
+            width: 561px;
+        }
+
+        .section2-list ul {
+            list-style: disc;
+            padding-left: 20px;
+        }
+
+        .section2-list li {
+            font-family: 'Mulish', sans-serif;
+            font-weight: 400;
+            font-size: 18px;
+            line-height: 18px;
+            color: var(--primrose);
+            margin-bottom: 15px;
+        }
+
+        .section2-image {
+            position: absolute;
+            top: 86px;
+            left: 700px;
+            width: 600px;
+            height: 400px;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .section2-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .section2-buttons {
+            position: absolute;
+            top: 446px;
+            left: 140px;
+            display: flex;
+            gap: 15px;
+        }
+
+        .btn-primary-tulip {
+            width: 224px;
+            height: 66px;
+            background-color: var(--manz);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+        }
+
+        .btn-primary-tulip span {
+            font-family: 'Mulish', sans-serif;
+            font-weight: 500;
+            font-size: 20px;
+            line-height: 24px;
+            color: var(--cabbage-pont);
+        }
+
+        .btn-secondary-tulip {
+            width: 224px;
+            height: 66px;
+            border: 1px solid var(--deco);
+            border-radius: 10px;
+            background: transparent;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+        }
+
+        .btn-secondary-tulip span {
+            font-family: 'Mulish', sans-serif;
+            font-weight: 500;
+            font-size: 20px;
+            line-height: 24px;
+            color: var(--deco);
+        }
+
+        /* Section 3 - Spacer */
+        .tulip-spacer {
+            width: 1440px;
+            height: 100px;
+            background-color: var(--lunar-green);
+        }
+
+        /* Section 4 - AYNAFLOWERS */
+        .tulip-section-4 {
+            width: 1440px;
+            height: 815px;
+            background-color: var(--lunar-green);
+            position: relative;
+        }
+
+        .section4-blur {
+            position: absolute;
+            top: 455px;
+            left: -141px;
+            width: 625px;
+            height: 625px;
+            background: var(--deco);
+            opacity: 0.8;
+            border-radius: 3000px;
+            filter: blur(350px);
+        }
+
+        .section4-title {
+            position: absolute;
+            top: 0;
+            left: 140px;
+            width: 752px;
+        }
+
+        .section4-title h2 {
+            font-family: 'Mulish', sans-serif;
+            font-weight: 400;
+            font-size: 40px;
+            line-height: 48px;
+            color: var(--deco);
+            margin-bottom: 20px;
+        }
+
+        .section4-title p {
+            font-family: 'Mulish', sans-serif;
+            font-weight: 400;
+            font-size: 30px;
+            line-height: 36px;
+            color: var(--swamp-green);
+        }
+
+        .section4-image {
+            position: absolute;
+            top: 0;
+            left: 1029px;
+            width: 272px;
+            height: 330px;
+        }
+
+        .section4-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .section4-badges {
+            position: absolute;
+            top: 380px;
+            left: 140px;
+        }
+
+        .badge-row {
+            display: flex;
+            gap: 329px;
+            margin-bottom: 30px;
+        }
+
+        .badge-item {
+            height: 55px;
+            padding: 0 30px;
+            background-color: var(--primrose);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .badge-item span {
+            font-family: 'Mulish', sans-serif;
+            font-weight: 500;
+            font-size: 28px;
+            line-height: 43.4px;
+            color: var(--cabbage-pont);
+        }
+
+        .badge-subtitle {
+            font-family: 'Mulish', sans-serif;
+            font-weight: 400;
+            font-size: 28px;
+            line-height: 34px;
+            color: var(--swamp-green);
+            margin-top: 10px;
+            margin-bottom: 45px;
+        }
+
+        .section4-text {
+            position: absolute;
+            top: 551px;
+            left: 800px;
+            width: 504px;
+        }
+
+        .section4-text p {
+            font-family: 'Mulish', sans-serif;
+            font-weight: 400;
+            font-size: 18px;
+            line-height: 22px;
+            color: var(--early-dawn);
+            margin-bottom: 10px;
+        }
+
+        .section4-text strong {
+            color: var(--primrose);
+            font-weight: 700;
+        }
+
+        /* Section 5 - Spacer */
+        .tulip-spacer-2 {
+            width: 1440px;
+            height: 140px;
+            background-color: var(--lunar-green);
+        }
+
+        /* Section 6 - ООО Цветочное дыхание */
+        .tulip-section-6 {
+            width: 1440px;
+            height: 706px;
+            background-color: var(--lunar-green);
+            position: relative;
+        }
+
+        .section6-title {
+            position: absolute;
+            top: 486px;
+            left: 140px;
+            width: 641px;
+        }
+
+        .section6-title h2 {
+            font-family: 'Mulish', sans-serif;
+            font-weight: 500;
+            font-size: 30px;
+            line-height: 36px;
+            color: var(--primrose);
+        }
+
+        .section6-description {
+            position: absolute;
+            top: 578px;
+            left: 140px;
+            width: 476px;
+        }
+
+        .section6-description p {
+            font-family: 'Mulish', sans-serif;
+            font-weight: 300;
+            font-size: 18px;
+            line-height: 22px;
+            color: var(--early-dawn);
+            margin-bottom: 22px;
+        }
+
+        .section6-image-1 {
+            position: absolute;
+            top: 54px;
+            left: 153px;
+            width: 602px;
+            height: 391px;
+            transform: rotate(-3deg);
+            overflow: hidden;
+        }
+
+        .section6-image-1 img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .section6-label-1 {
+            position: absolute;
+            top: 402px;
+            left: 190px;
+            transform: rotate(-3deg);
+        }
+
+        .section6-label-1 span {
+            font-family: 'Mulish', sans-serif;
+            font-weight: 500;
+            font-size: 20px;
+            line-height: 24px;
+            color: var(--swamp-green);
+        }
+
+        .section6-image-2 {
+            position: absolute;
+            top: 57px;
+            left: 988px;
+            width: 298px;
+            height: 474px;
+            transform: rotate(11deg);
+            overflow: hidden;
+        }
+
+        .section6-image-2 img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .section6-label-2 {
+            position: absolute;
+            top: 481px;
+            left: 923px;
+            transform: rotate(11deg);
+        }
+
+        .section6-label-2 span {
+            font-family: 'Mulish', sans-serif;
+            font-weight: 500;
+            font-size: 20px;
+            line-height: 24px;
+            color: var(--swamp-green);
+        }
+
+        /* Section 7 - Spacer */
+        .tulip-spacer-3 {
+            width: 1440px;
+            height: 160px;
+            background-color: var(--lunar-green);
+        }
+
+        /* Footer */
+        .tulip-footer {
+            width: 1440px;
+            background-color: var(--lunar-green);
+        }
+
+        .footer-top-spacer {
+            height: 40px;
+        }
+
+        .footer-main {
+            height: 266px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .footer-logo {
+            position: absolute;
+            top: 20px;
+            left: 140px;
+            width: 102px;
+            height: 50px;
+        }
+
+        .footer-logo img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .footer-contacts {
+            position: absolute;
+            top: 20px;
+            left: 340px;
+            width: 166px;
+        }
+
+        .footer-section-title {
+            font-family: 'Mulish', sans-serif;
+            font-weight: 600;
+            font-size: 20px;
+            line-height: 20px;
+            color: var(--swamp-green);
+            margin-bottom: 15px;
+        }
+
+        .footer-link {
+            font-family: 'Mulish', sans-serif;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 16px;
+            color: var(--swamp-green);
+            text-decoration: none;
+            display: block;
+            margin-bottom: 12px;
+        }
+
+        .footer-social {
+            display: flex;
+            gap: 16px;
+            margin-top: 15px;
+        }
+
+        .footer-social a {
+            width: 31px;
+            height: 31px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .footer-social svg {
+            width: 31px;
+            height: 31px;
+            fill: var(--swamp-green);
+        }
+
+        .footer-menu {
+            position: absolute;
+            top: 21px;
+            left: 555px;
+            width: 166px;
+        }
+
+        .footer-form-section {
+            position: absolute;
+            top: 20px;
+            left: 780px;
+            width: 520px;
+        }
+
+        .form-title {
+            font-family: 'Mulish', sans-serif;
+            font-weight: 600;
+            font-size: 20px;
+            line-height: 20px;
+            color: var(--swamp-green);
+            margin-bottom: 10px;
+        }
+
+        .form-subtitle {
+            font-family: 'Mulish', sans-serif;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 16px;
+            color: var(--swamp-green);
+            opacity: 0.7;
+            margin-bottom: 20px;
+        }
+
+        .footer-form {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .footer-form input[type="text"],
+        .footer-form input[type="tel"] {
+            width: 252.5px;
+            height: 50px;
+            background: white;
+            border: none;
+            border-radius: 10px;
+            padding: 0 20px;
+            font-family: 'Mulish', sans-serif;
+            font-size: 16px;
+        }
+
+        .footer-form input::placeholder {
+            color: rgba(0, 0, 0, 0.5);
+        }
+
+        .footer-checkbox {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            width: 100%;
+        }
+
+        .footer-checkbox input {
+            width: 20px;
+            height: 20px;
+            border: 2px solid var(--swamp-green);
+            appearance: none;
+            cursor: pointer;
+        }
+
+        .footer-checkbox label {
+            font-family: 'Mulish', sans-serif;
+            font-size: 14px;
+            color: var(--swamp-green);
+        }
+
+        .footer-checkbox label a {
+            color: var(--deco);
+            text-decoration: none;
+        }
+
+        .footer-submit {
+            width: 520px;
+            height: 50px;
+            background: var(--deco);
+            border: none;
+            border-radius: 10px;
+            font-family: 'Mulish', sans-serif;
+            font-size: 18px;
+            color: var(--cabbage-pont);
+            cursor: pointer;
+        }
+
+        .footer-bottom {
+            height: 66px;
+            position: relative;
+        }
+
+        .footer-privacy {
+            position: absolute;
+            top: 10px;
+            left: 140px;
+            font-family: 'Mulish', sans-serif;
+            font-size: 16px;
+            color: var(--swamp-green);
+            opacity: 0.7;
+            text-decoration: none;
+        }
+
+        .footer-dev {
+            position: absolute;
+            top: 10px;
+            left: 456px;
+            font-family: 'Mulish', sans-serif;
+            font-size: 16px;
+            color: var(--swamp-green);
+            opacity: 0.7;
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="page">
+        <!-- Header -->
+        <header class="tulip-header">
+            <div class="tulip-logo">
+                <img src="https://www.figma.com/api/mcp/asset/e32ee5db-4874-4d2c-b062-e95c5b8f2001" alt="AynaFlowers">
+            </div>
+            <a href="#contact" class="header-cta-btn">
+                <span>Получить консультацию</span>
+            </a>
+            <a href="tel:+79231733330" class="header-phone">+7 (923) 173-33-30</a>
+            <div class="header-social">
+                <a href="https://wa.me/79231733330" target="_blank">
+                    <svg viewBox="0 0 40 40" fill="currentColor">
+                        <path d="M20 4C11.2 4 4 11.2 4 20c0 3.5 1.1 6.7 3 9.4L4.4 36l6.8-2.6c2.6 1.6 5.6 2.6 8.8 2.6 8.8 0 16-7.2 16-16S28.8 4 20 4zm8.4 22.8c-.4 1-2 1.9-2.8 2-.7.1-1.6.2-2.6-.2-.6-.2-1.4-.5-2.4-1-4.2-1.8-6.9-6-7.1-6.3-.2-.3-1.7-2.2-1.7-4.3 0-2 1.1-3 1.5-3.4.4-.4.8-.5 1.1-.5h.8c.3 0 .6 0 .9.7.3.7 1.1 2.6 1.2 2.8.1.2.2.4.1.7-.1.2-.2.4-.4.6-.2.2-.4.5-.5.6-.2.2-.4.4-.2.8.2.4 1 1.7 2.2 2.7 1.5 1.3 2.7 1.7 3.1 1.9.4.2.6.1.8-.1.2-.2.9-1 1.1-1.4.2-.4.5-.3.8-.2.3.1 2 .9 2.4 1.1.4.2.6.3.7.4.1.2.1 1-.3 2z"/>
+                    </svg>
+                </a>
+                <a href="https://t.me/aynaflowers" target="_blank">
+                    <svg viewBox="0 0 40 40" fill="currentColor">
+                        <path d="M20 4C11.2 4 4 11.2 4 20s7.2 16 16 16 16-7.2 16-16S28.8 4 20 4zm7.4 10.9l-2.6 12.2c-.2.9-.7 1.1-1.4.7l-4-2.9-1.9 1.9c-.2.2-.4.4-.8.4l.3-4 7.4-6.7c.3-.3-.1-.4-.5-.2l-9.2 5.8-4-1.2c-.9-.3-.9-.9.2-1.3l15.5-6c.7-.3 1.4.2 1.1 1.3z"/>
+                    </svg>
+                </a>
+            </div>
+            <div class="header-burger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </header>
+
+        <!-- Hero Section -->
+        <section class="tulip-hero">
+            <div class="hero-title">
+                <h1>Надежные поставки<br>тюльпанов оптом –</h1>
+            </div>
+            <div class="hero-subtitle">
+                <p>гарантируем соответствие<br>по цвету, высоте и стадии<br>раскрытия</p>
+            </div>
+            <a href="#catalog" class="hero-cta-btn">
+                <span>Перейти в каталог</span>
+            </a>
+            <div class="hero-image-wrapper"></div>
+            <div class="hero-image">
+                <img src="https://www.figma.com/api/mcp/asset/fe9cd697-63fb-4018-abd0-ef89a085a959" alt="Тюльпаны">
+            </div>
+            <div class="hero-badge">
+                <span>Не понравится? Заменим</span>
+            </div>
+
+            <div class="local-section">
+                <span class="local-title">Местный и голландский цветок</span>
+            </div>
+            <div class="local-box"></div>
+            <div class="local-images">
+                <div class="local-img">
+                    <img src="https://www.figma.com/api/mcp/asset/c446d36f-b5fb-40a0-abe9-a8194648cc93" alt="Тюльпаны 1">
+                </div>
+                <div class="local-img">
+                    <img src="https://www.figma.com/api/mcp/asset/093a8deb-2e55-408e-af6a-64b906e518d8" alt="Тюльпаны 2">
+                </div>
+            </div>
+            <div class="local-description">
+                <p>Отгружаем вертикально упакованные<br>партии с сортировкой на голландской<br>линии – цветы уже выровнены<br>по высоте и не требуют отбора</p>
+            </div>
+        </section>
+
+        <!-- Section 2 -->
+        <section class="tulip-section-2">
+            <div class="section2-title">
+                <h2>Оптовые поставки тюльпанов<br>собственного производства<br>с гарантией замены</h2>
+            </div>
+            <div class="section2-subtitle">
+                <p>Заменим цветок при несоответствии по цвету,<br>высоте и стадии раскрытия</p>
+            </div>
+            <div class="section2-list">
+                <ul>
+                    <li>Более 40 классических и эксклюзивных сортов</li>
+                    <li>Вертикальная упаковка по 50 шт</li>
+                    <li>Выращиваем более 2.000.000 тюльпанов</li>
+                    <li>Опт от 5.000 шт</li>
+                    <li>Одинаковая высота цветка</li>
+                </ul>
+            </div>
+            <div class="section2-image">
+                <img src="https://www.figma.com/api/mcp/asset/aeb5678b-73cb-43cc-9263-cff6f655dfef" alt="Тюльпаны в упаковке">
+            </div>
+            <div class="section2-buttons">
+                <a href="#" class="btn-primary-tulip">
+                    <span>Скачать прайс-лист</span>
+                </a>
+                <a href="#catalog" class="btn-secondary-tulip">
+                    <span>Смотреть каталог</span>
+                </a>
+            </div>
+        </section>
+
+        <!-- Spacer -->
+        <div class="tulip-spacer"></div>
+
+        <!-- Section 4 - AYNAFLOWERS -->
+        <section class="tulip-section-4">
+            <div class="section4-blur"></div>
+            <div class="section4-title">
+                <h2>AYNAFLOWERS – цветочная компания</h2>
+                <p>Мы находимся в Новосибирске и поставляем<br>цветы в города Сибирского федерального округа</p>
+            </div>
+            <div class="section4-image">
+                <img src="https://www.figma.com/api/mcp/asset/86af293f-bae8-4f95-adee-709dfef016ec" alt="Тюльпаны">
+            </div>
+
+            <div class="section4-badges">
+                <div class="badge-row">
+                    <div>
+                        <div class="badge-item">
+                            <span>ОПЫТНАЯ КОМАНДА</span>
+                        </div>
+                        <p class="badge-subtitle">– более 10-ти лет в цветочном бизнесе</p>
+                    </div>
+                    <div>
+                        <div class="badge-item">
+                            <span>ОТВЕТСТВЕННЫЙ ПОДХОД</span>
+                        </div>
+                        <p class="badge-subtitle">– выполняем свои обязательства</p>
+                    </div>
+                </div>
+                <div>
+                    <div class="badge-item">
+                        <span>КАЧЕСТВО ЦВЕТКА</span>
+                    </div>
+                    <p class="badge-subtitle">– наш приоритет для вас</p>
+                </div>
+            </div>
+
+            <div class="section4-text">
+                <p>Мы знаем, с какими сложностями сталкиваются клиенты, покупающие цветочную продукцию: недопоставки, пересортица, слабое качество, отмены заказов.</p>
+                <p><strong>Мы выполняем свои обязательства, всегда остаемся на связи, не исчезаем после оплаты, соблюдаем сроки.</strong></p>
+                <p><strong>Вы всегда можете на нас положиться!</strong></p>
+            </div>
+        </section>
+
+        <!-- Spacer 2 -->
+        <div class="tulip-spacer-2"></div>
+
+        <!-- Section 6 - ООО Цветочное дыхание -->
+        <section class="tulip-section-6">
+            <div class="section6-image-1">
+                <img src="https://www.figma.com/api/mcp/asset/040f332b-077c-49bb-9ceb-09b74275a538" alt="Теплица">
+            </div>
+            <div class="section6-label-1">
+                <span>ООО 'Цветочное дыхание'</span>
+            </div>
+            <div class="section6-image-2">
+                <img src="https://www.figma.com/api/mcp/asset/8bdca5ee-8eee-46f9-9427-9f6ff35a90e5" alt="Александр Бурмантов">
+            </div>
+            <div class="section6-label-2">
+                <span>Александр Бурмантов</span>
+            </div>
+            <div class="section6-title">
+                <h2>AYNAFLOWERS – эксклюзивный<br>представитель ООО "Цветочное дыхание"</h2>
+            </div>
+            <div class="section6-description">
+                <p>Это тепличный комплекс площадью 6500 кв.м.,<br>расположенный в городе Новосибирске</p>
+                <p>Под руководством Александра Бурмантова комплекс<br>производит 2.000.000 тюльпанов к 8 марта</p>
+            </div>
+        </section>
+
+        <!-- Spacer 3 -->
+        <div class="tulip-spacer-3"></div>
+
+        <!-- Footer -->
+        <footer class="tulip-footer" id="contact">
+            <div class="footer-top-spacer"></div>
+            <div class="footer-main">
+                <div class="footer-logo">
+                    <img src="https://www.figma.com/api/mcp/asset/e32ee5db-4874-4d2c-b062-e95c5b8f2001" alt="AynaFlowers">
+                </div>
+
+                <div class="footer-contacts">
+                    <h4 class="footer-section-title">Контакты</h4>
+                    <a href="tel:+79231733330" class="footer-link">+7 (923) 173-33-30</a>
+                    <a href="mailto:aynaflowers@yandex.ru" class="footer-link">aynaflowers@yandex.ru</a>
+                    <div class="footer-social">
+                        <a href="https://wa.me/79231733330" target="_blank">
+                            <svg viewBox="0 0 31 31" fill="currentColor">
+                                <path d="M15.5 3C8.6 3 3 8.6 3 15.5c0 2.7.9 5.2 2.3 7.3l-2 6.2 5.3-2c2 1.2 4.4 2 6.9 2 6.9 0 12.5-5.6 12.5-12.5S22.4 3 15.5 3zm6.5 17.7c-.3.8-1.6 1.5-2.2 1.6-.5.1-1.2.1-2-.1-.5-.2-1.1-.4-1.9-.8-3.3-1.4-5.4-4.7-5.5-4.9-.2-.2-1.3-1.7-1.3-3.3 0-1.6.8-2.3 1.2-2.7.3-.3.6-.4.9-.4h.6c.2 0 .5 0 .7.5.2.5.9 2 .9 2.2.1.1.1.3.1.5-.1.2-.2.3-.3.5-.2.1-.3.4-.4.5-.2.2-.3.3-.2.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.3 2.4 1.5.3.1.5.1.6-.1.2-.2.7-.8.9-1.1.2-.3.4-.2.6-.2.2.1 1.5.7 1.9.9.3.1.5.2.5.3.1.2.1.8-.2 1.6z"/>
+                            </svg>
+                        </a>
+                        <a href="https://t.me/aynaflowers" target="_blank">
+                            <svg viewBox="0 0 31 31" fill="currentColor">
+                                <path d="M15.5 3C8.6 3 3 8.6 3 15.5S8.6 28 15.5 28 28 22.4 28 15.5 22.4 3 15.5 3zm5.8 8.5l-2 9.5c-.2.7-.5.9-1.1.5l-3.1-2.3-1.5 1.5c-.2.2-.3.3-.6.3l.2-3.1 5.8-5.2c.2-.2-.1-.3-.4-.1l-7.2 4.5-3.1-1c-.7-.2-.7-.7.2-1l12.1-4.7c.5-.2 1 .2.8 1z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="footer-menu">
+                    <h4 class="footer-section-title">Меню</h4>
+                    <a href="#" class="footer-link">О компании</a>
+                    <a href="#" class="footer-link">Голландский цветок</a>
+                    <a href="#" class="footer-link">Местный цветок</a>
+                </div>
+
+                <div class="footer-form-section">
+                    <h4 class="form-title">Ответим на все вопросы</h4>
+                    <p class="form-subtitle">Менеджер свяжется с Вами в течение дня</p>
+                    <form class="footer-form">
+                        <input type="text" placeholder="Имя">
+                        <input type="tel" placeholder="+7 (000) 000-00-00">
+                        <div class="footer-checkbox">
+                            <input type="checkbox" id="privacy-footer">
+                            <label for="privacy-footer">Я согласен с <a href="#">Политикой конфиденциальности</a></label>
+                        </div>
+                        <button type="submit" class="footer-submit">Получить консультацию</button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <a href="#" class="footer-privacy">Политика конфиденциальности</a>
+                <a href="#" class="footer-dev">Разработка сайта</a>
+            </div>
+        </footer>
+    </div>
+</body>
+
+</html>

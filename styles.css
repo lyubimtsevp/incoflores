@@ -26,7 +26,7 @@ body {
 
 /* === CSS Variables из Figma === */
 :root {
-    /* Цвета */
+    /* Цвета - палитра BloomWave */
     --color-linen: #F9EBE0;
     --color-quarter-spanish-white: #F6E9DD;
     --color-red: #DA6561;
@@ -42,6 +42,13 @@ body {
     --color-azure: #0075FF;
     --color-periwinkle-gray: #C7D2E9;
     --color-alto: #D9D9D9;
+    
+    /* Новые цвета из логотипа BloomWave */
+    --color-green-dark: #4A6741;    /* заголовки */
+    --color-green-light: #8CAA7D;   /* листья, подчеркивания */
+    --color-rose: #D4918D;          /* кнопки */
+    --color-rose-light: #E8A5A0;    /* hover */
+    --color-blue-soft: #A8C8E0;     /* дополнительный акцент */
 
     /* Шрифты */
     --font-playfair: 'Playfair Display', serif;
@@ -149,7 +156,7 @@ body {
     left: 0;
     width: 100%;
     height: 1px;
-    background-color: var(--color-red);
+    background-color: var(--color-green-light);
     opacity: 0;
     transition: opacity 0.3s;
 }
@@ -159,7 +166,7 @@ body {
 }
 
 .nav-link-active {
-    color: var(--color-red);
+    color: var(--color-green-dark);
 }
 
 .nav-link-active::after {
@@ -178,7 +185,7 @@ body {
     left: 0;
     width: 100%;
     height: 1px;
-    background-color: var(--color-red);
+    background-color: var(--color-green-light);
     opacity: 0;
     transition: opacity 0.3s;
 }
@@ -223,7 +230,7 @@ body {
 
 .dropdown-item:hover {
     background-color: var(--color-linen);
-    color: var(--color-red);
+    color: var(--color-green-dark);
 }
 
 /* === Hero Section === */
@@ -280,7 +287,7 @@ body {
     font-weight: 400;
     font-size: var(--fs-60);
     line-height: var(--lh-84);
-    color: var(--color-red);
+    color: var(--color-green-dark);
     text-transform: uppercase;
     display: flex;
     flex-direction: column;
@@ -327,35 +334,40 @@ body {
     width: 100%;
     height: 50px;
     background: var(--color-quarter-spanish-white);
-    border: 1px solid var(--color-red);
+    border: 1px solid var(--color-rose);
     border-radius: 5px;
     padding: 17px 21px;
     font-family: var(--font-arial);
     font-size: var(--fs-14);
-    color: var(--color-red);
+    color: var(--color-green-dark);
     outline: none;
 }
 
 .hero-input::placeholder {
-    color: var(--color-red);
-    opacity: 0.5;
+    color: var(--color-rose);
+    opacity: 0.7;
 }
 
 .hero-btn {
     width: 79px;
     height: 50px;
-    background: var(--color-red);
+    background: var(--color-rose);
     border: none;
     border-radius: 5px;
     font-family: var(--font-arial);
     font-weight: 700;
     font-size: var(--fs-24);
-    color: var(--color-linen);
+    color: var(--color-white);
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 11px 15px 12px;
+    transition: background 0.3s;
+}
+
+.hero-btn:hover {
+    background: var(--color-rose-light);
 }
 
 /* === About Section === */
@@ -396,7 +408,7 @@ body {
     font-weight: 400;
     font-size: var(--fs-35);
     line-height: var(--lh-49);
-    color: var(--color-red);
+    color: var(--color-green-dark);
     text-transform: uppercase;
     text-align: center;
     display: flex;
@@ -476,7 +488,7 @@ body {
     font-weight: 400;
     font-size: var(--fs-60);
     line-height: var(--lh-93);
-    color: var(--color-red);
+    color: var(--color-green-dark);
     text-transform: uppercase;
     position: relative;
     top: -15px;
@@ -487,7 +499,7 @@ body {
     font-weight: 400;
     font-size: var(--fs-35);
     line-height: var(--lh-54);
-    color: var(--color-red);
+    color: var(--color-green-dark);
     text-transform: uppercase;
     position: absolute;
     top: 2px;
@@ -499,7 +511,7 @@ body {
     font-weight: 400;
     font-size: var(--fs-35);
     line-height: var(--lh-54);
-    color: var(--color-red);
+    color: var(--color-green-dark);
     text-transform: uppercase;
     letter-spacing: -0.5px;
     position: absolute;
@@ -1001,7 +1013,7 @@ body {
 .form-btn {
     width: 180px;
     height: 50px;
-    background: var(--color-red);
+    background: var(--color-rose);
     border: none;
     border-radius: 5px;
     font-family: var(--font-arial);
@@ -1009,13 +1021,18 @@ body {
     color: var(--color-white);
     cursor: pointer;
     text-align: center;
+    transition: background 0.3s;
+}
+
+.form-btn:hover {
+    background: var(--color-rose-light);
 }
 
 /* === Footer === */
 .footer {
     margin-top: 90px;
     background: var(--color-linen);
-    border-top: 1px solid var(--color-red);
+    border-top: 1px solid var(--color-green-light);
     padding: 0 140px;
 }
 
@@ -1031,7 +1048,7 @@ body {
     font-weight: 600;
     font-size: var(--fs-14);
     line-height: var(--lh-21);
-    color: var(--color-red);
+    color: var(--color-green-dark);
 }
 
 .footer-social {

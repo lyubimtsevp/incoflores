@@ -418,7 +418,7 @@ body {
 
 .about-text {
     position: absolute;
-    top: 150px;
+    top: 200px;
     left: 324px;
     width: 794px;
     font-family: var(--font-arial);

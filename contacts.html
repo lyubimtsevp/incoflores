@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Контакты - Incoflores</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css?v=11">
+    <style>
+        /* Contacts Page Specific Styles */
+        .contacts-page {
+            width: 1440px;
+            margin: 0 auto;
+            background: #fff;
+            min-height: 100vh;
+        }
+
+        .contacts-title-section {
+            padding-top: 125px;
+            padding-bottom: 45px;
+            text-align: center;
+        }
+
+        .contacts-title {
+            font-family: 'Playfair Display', serif;
+            font-weight: 400;
+            font-size: 35px;
+            line-height: 54px;
+            color: #222;
+            text-transform: uppercase;
+            margin: 0;
+        }
+
+        /* Main Contacts Section */
+        .contacts-main {
+            position: relative;
+            width: 1440px;
+            min-height: 534px;
+            padding: 0 120px;
+            display: flex;
+            gap: 90px;
+        }
+
+        .contacts-info {
+            width: 590px;
+        }
+
+        .contacts-header {
+            font-family: Arial, sans-serif;
+            font-weight: 700;
+            font-size: 20px;
+            line-height: 31px;
+            color: #222;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+        }
+
+        .contacts-hours {
+            display: flex;
+            gap: 120px;
+            margin-bottom: 10px;
+        }
+
+        .contacts-hour-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 13px;
+        }
+
+        .contacts-hour-icon {
+            width: 25px;
+            height: 25px;
+        }
+
+        .contacts-hour-text {
+            font-family: Arial, sans-serif;
+        }
+
+        .contacts-hour-time {
+            font-weight: 700;
+            font-size: 18px;
+            line-height: 28px;
+            color: #222;
+        }
+
+        .contacts-hour-desc {
+            font-weight: 400;
+            font-size: 18px;
+            line-height: 28px;
+            color: #222;
+        }
+
+        .contacts-description {
+            font-family: Arial, sans-serif;
+            font-weight: 400;
+            font-size: 18px;
+            line-height: 28px;
+            color: #222;
+            margin-bottom: 30px;
+        }
+
+        .contacts-person {
+            font-family: Arial, sans-serif;
+            font-weight: 700;
+            font-size: 20px;
+            line-height: 31px;
+            color: #222;
+            text-transform: uppercase;
+            margin-bottom: 16px;
+        }
+
+        .contacts-detail {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 12px;
+        }
+
+        .contacts-detail-icon {
+            width: 25px;
+            height: 25px;
+            flex-shrink: 0;
+        }
+
+        .contacts-detail-text {
+            font-family: Arial, sans-serif;
+            font-size: 18px;
+            line-height: 28px;
+            color: #222;
+        }
+
+        .contacts-detail-text strong {
+            font-weight: 700;
+        }
+
+        .contacts-detail-text a {
+            color: #000022;
+            text-decoration: none;
+        }
+
+        .contacts-detail-text a:hover {
+            text-decoration: underline;
+        }
+
+        /* Contact Form */
+        .contacts-form-wrapper {
+            width: 590px;
+        }
+
+        .contacts-form {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .contacts-input {
+            width: 100%;
+            height: 50px;
+            padding: 17px 21px;
+            font-family: Arial, sans-serif;
+            font-size: 14px;
+            color: #222;
+            border: 1px solid #c2c2c2;
+            border-radius: 5px;
+            background: #fff;
+            box-sizing: border-box;
+        }
+
+        .contacts-input::placeholder {
+            color: #222;
+            opacity: 0.5;
+        }
+
+        .contacts-textarea {
+            width: 100%;
+            height: 210px;
+            padding: 17px 21px;
+            font-family: Arial, sans-serif;
+            font-size: 14px;
+            color: #222;
+            border: 1px solid #c2c2c2;
+            border-radius: 5px;
+            background: #fff;
+            box-sizing: border-box;
+            resize: none;
+        }
+
+        .contacts-checkbox-wrapper {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .contacts-checkbox {
+            width: 20px;
+            height: 20px;
+            border: 2px solid #000;
+            border-radius: 0;
+            cursor: pointer;
+        }
+
+        .contacts-checkbox-label {
+            font-family: Arial, sans-serif;
+            font-size: 14px;
+            color: #222;
+        }
+
+        .contacts-submit {
+            width: 180px;
+            height: 50px;
+            background: #DA6561;
+            border: none;
+            border-radius: 5px;
+            font-family: Arial, sans-serif;
+            font-size: 14px;
+            color: #fff;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .contacts-submit:hover {
+            background: #c04b47;
+        }
+
+        /* Why Choose Us Section */
+        .why-choose-section {
+            padding: 119px 140px 0;
+            background: #fff;
+        }
+
+        .why-choose-header {
+            text-align: center;
+            margin-bottom: 105px;
+        }
+
+        .why-choose-title {
+            font-family: 'Playfair Display', serif;
+            font-weight: 600;
+            font-size: 35px;
+            line-height: 52px;
+            color: #000;
+            margin-bottom: 40px;
+        }
+
+        .why-choose-subtitle {
+            font-family: 'Playfair Display', serif;
+            font-weight: 400;
+            font-size: 20px;
+            line-height: 36px;
+            color: #000;
+            max-width: 560px;
+            margin: 0 auto;
+        }
+
+        .why-choose-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 580px);
+            gap: 0;
+        }
+
+        .why-choose-item {
+            display: flex;
+            width: 580px;
+            height: 290px;
+            background: #fff;
+        }
+
+        .why-choose-text {
+            width: 290px;
+            height: 290px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px 29px;
+            box-sizing: border-box;
+        }
+
+        .why-choose-text-content {
+            width: 232px;
+        }
+
+        .why-choose-item-title {
+            font-family: 'Playfair Display', serif;
+            font-weight: 600;
+            font-size: 20px;
+            line-height: 27px;
+            color: #000;
+            margin-bottom: 18px;
+        }
+
+        .why-choose-item-desc {
+            font-family: 'Playfair Display', serif;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 24.8px;
+            color: #000;
+        }
+
+        .why-choose-image {
+            width: 290px;
+            height: 290px;
+            overflow: hidden;
+        }
+
+        .why-choose-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Footer */
+        .contacts-footer {
+            margin-top: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="page contacts-page">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-container">
+                <a href="index.html" class="logo">
+                    <img src="https://www.figma.com/api/mcp/asset/fdb30cb7-c8ff-464d-8f38-43d8b54c86ec" alt="Incoflores"
+                        class="logo-img">
+                </a>
+                <nav class="nav">
+                    <div class="nav-dropdown">
+                        <a href="index.html#services" class="nav-link nav-link-dropdown">Наши услуги</a>
+                        <div class="dropdown-menu">
+                            <a href="http://project6732419.tilda.ws/page36402882.html" class="dropdown-item">Цветочный
+                                брокер</a>
+                            <a href="quality-control.html" class="dropdown-item">Контроль качества</a>
+                            <a href="http://project6732419.tilda.ws/page36408111.html" class="dropdown-item">Специальное
+                                предложение к 8 марта, тюльпаны 🌷</a>
+                        </div>
+                    </div>
+                    <a href="flowercatalog.html" class="nav-link">Каталог цветов</a>
+                    <a href="plantations.html" class="nav-link">Наши партнеры</a>
+                    <a href="https://incoflores.ru/webshop" class="nav-link">Веб шоп</a>
+                    <a href="calculator.html" class="nav-link">Калькулятор доставки</a>
+                    <a href="about.html" class="nav-link">О нас</a>
+                    <a href="contacts.html" class="nav-link nav-link-active">Контакты</a>
+                </nav>
+            </div>
+        </header>
+
+        <!-- Title Section -->
+        <div class="contacts-title-section">
+            <h1 class="contacts-title">Контакты</h1>
+        </div>
+
+        <!-- Main Contacts Section -->
+        <div class="contacts-main">
+            <!-- Left: Contact Info -->
+            <div class="contacts-info">
+                <h2 class="contacts-header">мы на связи</h2>
+
+                <div class="contacts-hours">
+                    <div class="contacts-hour-item">
+                        <img src="https://www.figma.com/api/mcp/asset/a95b947b-2007-43f6-b515-650b601c15f5" alt=""
+                            class="contacts-hour-icon">
+                        <div class="contacts-hour-text">
+                            <div class="contacts-hour-time">24 часа</div>
+                            <div class="contacts-hour-desc">по срочным вопросам</div>
+                        </div>
+                    </div>
+                    <div class="contacts-hour-item">
+                        <img src="https://www.figma.com/api/mcp/asset/5ced86a4-8cf1-44e8-a071-56ea03da50d2" alt=""
+                            class="contacts-hour-icon">
+                        <div class="contacts-hour-text">
+                            <div class="contacts-hour-time">с 15:00 до 8:00</div>
+                            <div class="contacts-hour-desc">по текущим вопросам</div>
+                        </div>
+                    </div>
+                </div>
+
+                <p class="contacts-description">
+                    Вы можете связаться с нами любым удобным для вас<br>
+                    способом из перечисленных ниже или заполнить форму<br>
+                    обратной связи, наш менеджер свяжется с вами<br>
+                    в ближайшее время.
+                </p>
+
+                <h3 class="contacts-person">анна</h3>
+
+                <div class="contacts-detail">
+                    <img src="https://www.figma.com/api/mcp/asset/148cbf4b-0dfd-4dc8-aa86-a72658fc16ea" alt=""
+                        class="contacts-detail-icon">
+                    <span class="contacts-detail-text"><strong>Tel:</strong> <a
+                            href="tel:+593992436282">+593 992 436 282</a></span>
+                </div>
+
+                <div class="contacts-detail">
+                    <img src="https://www.figma.com/api/mcp/asset/97116572-da66-4e31-9937-764b69692d74" alt=""
+                        class="contacts-detail-icon">
+                    <span class="contacts-detail-text"><strong>E-mail:</strong> <a
+                            href="mailto:gerencia@incoflores.ru">gerencia@incoflores.ru</a></span>
+                </div>
+
+                <div class="contacts-detail">
+                    <img src="https://www.figma.com/api/mcp/asset/d43e57cc-2418-49c9-91e5-d8403987e3fa" alt=""
+                        class="contacts-detail-icon">
+                    <span class="contacts-detail-text"><strong>Skype:</strong> annaivv</span>
+                </div>
+
+                <div class="contacts-detail">
+                    <img src="https://www.figma.com/api/mcp/asset/ef8e9200-1530-4fe5-88b8-d60106546b93" alt=""
+                        class="contacts-detail-icon">
+                    <span class="contacts-detail-text"><strong>Viber:</strong> +593 992 436 282</span>
+                </div>
+
+                <div class="contacts-detail">
+                    <img src="https://www.figma.com/api/mcp/asset/33247fca-c30e-4785-a756-3c2e9720c925" alt=""
+                        class="contacts-detail-icon">
+                    <span class="contacts-detail-text"><strong>WhatsApp:</strong> +593 992 436 282</span>
+                </div>
+
+                <div class="contacts-detail">
+                    <img src="https://www.figma.com/api/mcp/asset/7f39e8f4-fde7-4955-8b9f-1e0f043702d6" alt=""
+                        class="contacts-detail-icon" style="width: 27px; height: 27px;">
+                    <span class="contacts-detail-text"><strong>Telegram:</strong> <a
+                            href="https://t.me/AnnaVorobyevaEcuador">@AnnaVorobyevaEcuador</a></span>
+                </div>
+            </div>
+
+            <!-- Right: Contact Form -->
+            <div class="contacts-form-wrapper">
+                <form class="contacts-form">
+                    <input type="text" class="contacts-input" placeholder="Имя">
+                    <input type="tel" class="contacts-input" placeholder="Телефон">
+                    <input type="email" class="contacts-input" placeholder="Email">
+                    <textarea class="contacts-textarea" placeholder="Ваше сообщение"></textarea>
+                    <div class="contacts-checkbox-wrapper">
+                        <input type="checkbox" class="contacts-checkbox" id="consent">
+                        <label for="consent" class="contacts-checkbox-label">Я согласен(а) на обработку персональных
+                            данных</label>
+                    </div>
+                    <button type="submit" class="contacts-submit">ЗАКАЗАТЬ ЗВОНОК</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Why Choose Us Section -->
+        <section class="why-choose-section">
+            <div class="why-choose-header">
+                <h2 class="why-choose-title">Why Choose Us</h2>
+                <p class="why-choose-subtitle">We work hard every day to make life of our clients better and happier</p>
+            </div>
+
+            <div class="why-choose-grid">
+                <!-- Item 1: High quality -->
+                <div class="why-choose-item">
+                    <div class="why-choose-text">
+                        <div class="why-choose-text-content">
+                            <h3 class="why-choose-item-title">High quality</h3>
+                            <p class="why-choose-item-desc">We are the leading firm by delivering quality and value to
+                                our clients.</p>
+                        </div>
+                    </div>
+                    <div class="why-choose-image">
+                        <img src="https://www.figma.com/api/mcp/asset/06f2e289-f171-4533-9d0d-34a2d2a07001"
+                            alt="High quality">
+                    </div>
+                </div>
+
+                <!-- Item 2: Support -->
+                <div class="why-choose-item">
+                    <div class="why-choose-text">
+                        <div class="why-choose-text-content">
+                            <h3 class="why-choose-item-title">Support</h3>
+                            <p class="why-choose-item-desc">Our managers are always ready to answer your questions. You
+                                can call us at the weekends and at night.</p>
+                        </div>
+                    </div>
+                    <div class="why-choose-image">
+                        <img src="https://www.figma.com/api/mcp/asset/d0557d61-a0a4-435e-b95c-65e8742628cd"
+                            alt="Support">
+                    </div>
+                </div>
+
+                <!-- Item 3: Experience -->
+                <div class="why-choose-item">
+                    <div class="why-choose-image">
+                        <img src="https://www.figma.com/api/mcp/asset/64c0e6d0-fee1-4f1c-819c-b7a9f583489b"
+                            alt="Experience">
+                    </div>
+                    <div class="why-choose-text">
+                        <div class="why-choose-text-content">
+                            <h3 class="why-choose-item-title">Experience</h3>
+                            <p class="why-choose-item-desc">Each member of our team has at least 5 years of legal
+                                experience. They use their knowledge to make our clients' life better.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Item 4: Individual Approach -->
+                <div class="why-choose-item">
+                    <div class="why-choose-image">
+                        <img src="https://www.figma.com/api/mcp/asset/1c616e72-fd90-47ac-8e82-ae6969dcffb7"
+                            alt="Individual Approach">
+                    </div>
+                    <div class="why-choose-text">
+                        <div class="why-choose-text-content">
+                            <h3 class="why-choose-item-title">Individual Approach</h3>
+                            <p class="why-choose-item-desc">Our company works according to the principle of individual
+                                approach to every client. This method allows us to achieve success at all levels.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer contacts-footer">
+            <div class="footer-content">
+                <p class="footer-copyright">© All Rights Reserved. Acme Inc.</p>
+                <div class="footer-social">
+                    <a href="https://www.facebook.com/groups/incoflores" class="social-link">
+                        <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M15 0C6.716 0 0 6.716 0 15C0 23.284 6.716 30 15 30C23.284 30 30 23.284 30 15C30 6.716 23.284 0 15 0ZM18.75 10H17.187C16.562 10 16.25 10.312 16.25 10.937V12.5H18.75L18.437 15H16.25V22.5H13.75V15H11.25V12.5H13.75V10.625C13.75 8.437 14.687 7.5 16.875 7.5H18.75V10Z"
+                                fill="#DA6561" />
+                        </svg>
+                    </a>
+                    <a href="https://vk.com/incoflores" class="social-link">
+                        <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M15 0C6.716 0 0 6.716 0 15C0 23.284 6.716 30 15 30C23.284 30 30 23.284 30 15C30 6.716 23.284 0 15 0ZM21.875 16.875C21.875 16.875 23.125 18.125 23.438 18.75C23.438 18.75 23.5 18.875 23.5 18.937C23.625 19.187 23.625 19.375 23.562 19.5C23.437 19.75 23 19.875 22.875 19.875H20.5C20.312 19.875 19.875 19.812 19.375 19.437C19 19.125 18.625 18.625 18.25 18.125C17.75 17.5 17.312 17 16.875 17C16.812 17 16.75 17.012 16.687 17.037C16.375 17.125 16 17.562 16 18.75V19.312C16 19.625 15.75 19.875 15.437 19.875H14.375C13.937 19.875 11.375 19.75 9.125 17.375C6.375 14.437 3.937 8.562 3.937 8.375C3.812 8.062 4.062 7.875 4.312 7.875H6.687C6.937 7.875 7.125 8.062 7.25 8.312C7.25 8.312 8 10.125 9.062 11.625C10.937 14.5 11.687 14.812 12.125 14.562C12.25 14.5 12.5 14.312 12.5 12.937V10.5C12.5 9.5 12.312 9.125 12.125 8.812C12 8.625 11.75 8.5 11.625 8.375C11.5 8.25 11.375 8 11.5 7.75C11.625 7.5 12 7.375 12.25 7.375H15.625C15.937 7.375 16.125 7.5 16.125 7.875V12.5C16.125 12.875 16.562 13.062 16.75 13.062C17.062 13.062 17.312 12.937 17.562 12.687C18.5 11.625 19.312 10.125 19.875 8.875C19.937 8.687 20.125 8.5 20.437 8.5C20.5 8.5 20.562 8.5 20.625 8.5L23.062 8.5C23.5 8.5 23.75 8.625 23.812 8.812C23.937 9.062 23.812 9.5 23.125 10.5C21.625 12.687 21.187 13.187 21.062 13.375C20.875 13.625 20.812 13.75 21.062 14.062C21.187 14.25 21.687 14.75 22 15.125C22.5 15.625 21.875 16.875 21.875 16.875Z"
+                                fill="#DA6561" />
+                        </svg>
+                    </a>
+                    <a href="https://www.instagram.com/vorobyeva_incoflores" class="social-link">
+                        <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M15 0C6.716 0 0 6.716 0 15C0 23.284 6.716 30 15 30C23.284 30 30 23.284 30 15C30 6.716 23.284 0 15 0ZM15 7.5C16.937 7.5 17.187 7.5 17.937 7.5C20.687 7.625 21.875 8.875 22 11.562C22 12.312 22.062 12.562 22.062 15C22.062 17.437 22 17.687 22 18.437C21.875 21.125 20.625 22.375 17.937 22.5C17.187 22.5 16.937 22.562 15 22.562C13.062 22.562 12.812 22.5 12.062 22.5C9.375 22.375 8.125 21.125 8 18.437C8 17.687 7.937 17.437 7.937 15C7.937 12.562 8 12.312 8 11.562C8.125 8.875 9.375 7.625 12.062 7.5C12.812 7.5 13.062 7.5 15 7.5ZM15 9.187C13.125 9.187 12.875 9.187 12.187 9.25C10.625 9.312 9.875 10.062 9.812 11.687C9.75 12.375 9.75 12.562 9.75 15C9.75 17.437 9.75 17.687 9.812 18.312C9.875 19.875 10.625 20.687 12.187 20.75C12.875 20.812 13.062 20.812 15 20.812C16.937 20.812 17.187 20.812 17.812 20.75C19.375 20.687 20.187 19.875 20.187 18.312C20.25 17.625 20.25 17.437 20.25 15C20.25 12.562 20.25 12.312 20.187 11.687C20.125 10.125 19.312 9.312 17.812 9.25C17.125 9.187 16.875 9.187 15 9.187ZM15 10.875C17.25 10.875 19.125 12.75 19.125 15C19.125 17.25 17.25 19.125 15 19.125C12.75 19.125 10.875 17.25 10.875 15C10.875 12.75 12.75 10.875 15 10.875ZM19.312 10.687C19.312 11.312 18.812 11.812 18.187 11.812C17.562 11.812 17.062 11.312 17.062 10.687C17.062 10.062 17.562 9.562 18.187 9.562C18.812 9.562 19.312 10.062 19.312 10.687ZM15 12.5C13.625 12.5 12.5 13.625 12.5 15C12.5 16.375 13.625 17.5 15 17.5C16.375 17.5 17.5 16.375 17.5 15C17.5 13.625 16.375 12.5 15 12.5Z"
+                                fill="#DA6561" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </footer>
+    </div>
+</body>
+
+</html>

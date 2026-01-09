@@ -12,12 +12,14 @@
         :root {
             --lunar-green: #364734;
             --swamp-green: #A7B984;
+            --swamp-green-70: rgba(167, 185, 132, 0.7);
             --primrose: #E3EE94;
             --deco: #D5DC95;
             --early-dawn: #FFF9EB;
             --cabbage-pont: #3A4D38;
             --manz: #E4F174;
             --battleship-gray: #86986D;
+            --green-smoke: #99AA71;
         }
 
         * {
@@ -40,7 +42,7 @@
             overflow: hidden;
         }
 
-        /* Header */
+        /* ==================== HEADER ==================== */
         .tulip-header {
             position: fixed;
             top: 0;
@@ -52,15 +54,20 @@
             z-index: 100;
             display: flex;
             align-items: center;
-            padding: 0 140px;
         }
 
         .tulip-logo {
+            position: absolute;
+            left: 140px;
+            top: 28px;
             height: 24px;
+            display: flex;
+            align-items: center;
         }
 
-        .tulip-logo img {
-            height: 100%;
+        .tulip-logo svg {
+            height: 24px;
+            width: auto;
         }
 
         .header-cta-btn {
@@ -77,6 +84,11 @@
             justify-content: center;
             cursor: pointer;
             text-decoration: none;
+            transition: background 0.3s;
+        }
+
+        .header-cta-btn:hover {
+            background: rgba(213, 220, 149, 0.1);
         }
 
         .header-cta-btn span {
@@ -101,7 +113,7 @@
 
         .header-social {
             position: absolute;
-            right: 85px;
+            left: 1115px;
             top: 20px;
             display: flex;
             gap: 20px;
@@ -124,7 +136,7 @@
 
         .header-burger {
             position: absolute;
-            right: 140px;
+            left: 1255px;
             top: 25px;
             width: 45px;
             height: 30px;
@@ -141,27 +153,35 @@
             border-radius: 2px;
         }
 
-        /* Hero Section */
+        /* ==================== HERO SECTION ==================== */
         .tulip-hero {
             width: 1440px;
             height: 800px;
             background-color: var(--lunar-green);
             position: relative;
             padding-top: 80px;
+            overflow: hidden;
         }
 
+        /* Декоративная волна на фоне */
         .hero-wave {
             position: absolute;
-            top: 209px;
+            top: 289px;
             left: 1px;
             width: 1616px;
             height: 483px;
             opacity: 0.3;
+            pointer-events: none;
+        }
+
+        .hero-wave svg {
+            width: 100%;
+            height: 100%;
         }
 
         .hero-title {
             position: absolute;
-            top: 101px;
+            top: 181px;
             left: 180px;
             width: 571px;
         }
@@ -176,7 +196,7 @@
 
         .hero-subtitle {
             position: absolute;
-            top: 224px;
+            top: 304px;
             left: 180px;
             width: 564px;
         }
@@ -189,10 +209,30 @@
             color: var(--swamp-green);
         }
 
-        .hero-cta-btn {
+        /* Кнопка с иконкой тюльпана */
+        .hero-cta-wrapper {
             position: absolute;
-            top: 371px;
+            top: 451px;
             left: 180px;
+            display: flex;
+            align-items: center;
+        }
+
+        .hero-tulip-icon {
+            position: absolute;
+            left: 11px;
+            top: 0;
+            width: 34px;
+            height: 50px;
+        }
+
+        .hero-tulip-icon svg {
+            width: 100%;
+            height: 100%;
+        }
+
+        .hero-cta-btn {
+            margin-left: 0;
             width: 305px;
             height: 67px;
             background-color: var(--deco);
@@ -202,6 +242,11 @@
             justify-content: center;
             text-decoration: none;
             cursor: pointer;
+            transition: transform 0.2s;
+        }
+
+        .hero-cta-btn:hover {
+            transform: scale(1.02);
         }
 
         .hero-cta-btn span {
@@ -212,27 +257,24 @@
             color: var(--cabbage-pont);
         }
 
-        .hero-tulip-icon {
+        /* Изображение с рамкой (полароид-стиль) */
+        .hero-image-container {
             position: absolute;
-            top: 360px;
-            left: 191px;
-            width: 34px;
-            height: 50px;
+            top: 181px;
+            left: 899px;
         }
 
-        .hero-image-wrapper {
-            position: absolute;
-            top: 101px;
-            left: 899px;
+        .hero-image-frame {
             width: 357px;
             height: 432px;
             background-color: var(--swamp-green);
+            position: relative;
         }
 
         .hero-image {
             position: absolute;
-            top: 126px;
-            left: 924px;
+            top: 25px;
+            left: 25px;
             width: 307px;
             height: 382px;
             overflow: hidden;
@@ -244,9 +286,10 @@
             object-fit: cover;
         }
 
+        /* Бейдж "Не понравится? Заменим" */
         .hero-badge {
             position: absolute;
-            top: 418px;
+            top: 498px;
             left: 870px;
             width: 414px;
             height: 58px;
@@ -265,10 +308,10 @@
             color: var(--cabbage-pont);
         }
 
-        /* Local Flower Section */
+        /* Секция "Местный и голландский цветок" */
         .local-section {
             position: absolute;
-            top: 551px;
+            top: 631px;
             left: 205px;
         }
 
@@ -278,12 +321,11 @@
             font-size: 20px;
             line-height: 20px;
             color: var(--primrose);
-            margin-bottom: 15px;
         }
 
         .local-box {
             position: absolute;
-            top: 586px;
+            top: 666px;
             left: 180px;
             width: 1080px;
             height: 190px;
@@ -293,7 +335,7 @@
 
         .local-images {
             position: absolute;
-            top: 611px;
+            top: 691px;
             left: 205px;
             display: flex;
             gap: 20px;
@@ -314,7 +356,7 @@
 
         .local-description {
             position: absolute;
-            top: 633px;
+            top: 713px;
             left: 764px;
             width: 473px;
         }
@@ -327,12 +369,13 @@
             color: var(--primrose);
         }
 
-        /* Section 2 - Оптовые поставки */
+        /* ==================== SECTION 2 ==================== */
         .tulip-section-2 {
             width: 1440px;
             height: 572px;
             background-color: var(--lunar-green);
             position: relative;
+            overflow: hidden;
         }
 
         .section2-wave {
@@ -342,6 +385,7 @@
             width: 1616px;
             height: 483px;
             opacity: 0.3;
+            pointer-events: none;
         }
 
         .section2-title {
@@ -384,6 +428,7 @@
         .section2-list ul {
             list-style: disc;
             padding-left: 20px;
+            color: var(--primrose);
         }
 
         .section2-list li {
@@ -428,6 +473,11 @@
             align-items: center;
             justify-content: center;
             text-decoration: none;
+            transition: transform 0.2s;
+        }
+
+        .btn-primary-tulip:hover {
+            transform: scale(1.02);
         }
 
         .btn-primary-tulip span {
@@ -448,6 +498,11 @@
             align-items: center;
             justify-content: center;
             text-decoration: none;
+            transition: background 0.3s;
+        }
+
+        .btn-secondary-tulip:hover {
+            background: rgba(213, 220, 149, 0.1);
         }
 
         .btn-secondary-tulip span {
@@ -458,19 +513,30 @@
             color: var(--deco);
         }
 
-        /* Section 3 - Spacer */
+        /* ==================== SPACER ==================== */
         .tulip-spacer {
             width: 1440px;
             height: 100px;
             background-color: var(--lunar-green);
         }
 
-        /* Section 4 - AYNAFLOWERS */
+        /* ==================== SECTION 4 - AYNAFLOWERS ==================== */
         .tulip-section-4 {
             width: 1440px;
             height: 815px;
             background-color: var(--lunar-green);
             position: relative;
+            overflow: hidden;
+        }
+
+        .section4-wave {
+            position: absolute;
+            top: 113px;
+            left: -476px;
+            width: 2320px;
+            height: 968px;
+            opacity: 0.15;
+            pointer-events: none;
         }
 
         .section4-blur {
@@ -483,6 +549,7 @@
             opacity: 0.8;
             border-radius: 3000px;
             filter: blur(350px);
+            pointer-events: none;
         }
 
         .section4-title {
@@ -509,7 +576,8 @@
             color: var(--swamp-green);
         }
 
-        .section4-image {
+        /* Изображение с рамкой (полароид) */
+        .section4-image-container {
             position: absolute;
             top: 0;
             left: 1029px;
@@ -517,12 +585,21 @@
             height: 330px;
         }
 
-        .section4-image img {
+        .section4-image-frame {
+            width: 100%;
+            height: 100%;
+            background: white;
+            padding: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .section4-image-frame img {
             width: 100%;
             height: 100%;
             object-fit: cover;
         }
 
+        /* Бейджи */
         .section4-badges {
             position: absolute;
             top: 380px;
@@ -532,7 +609,7 @@
         .badge-row {
             display: flex;
             gap: 329px;
-            margin-bottom: 30px;
+            margin-bottom: 20px;
         }
 
         .badge-item {
@@ -553,6 +630,24 @@
             color: var(--cabbage-pont);
         }
 
+        .badge-item-alt {
+            height: 55px;
+            padding: 0 30px;
+            background-color: var(--primrose);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .badge-item-alt span {
+            font-family: 'Mulish', sans-serif;
+            font-weight: 400;
+            font-size: 28px;
+            line-height: 43.4px;
+            color: var(--cabbage-pont);
+        }
+
         .badge-subtitle {
             font-family: 'Mulish', sans-serif;
             font-weight: 400;
@@ -560,14 +655,24 @@
             line-height: 34px;
             color: var(--swamp-green);
             margin-top: 10px;
-            margin-bottom: 45px;
+            margin-bottom: 35px;
         }
 
+        /* Текст справа */
         .section4-text {
             position: absolute;
-            top: 551px;
+            top: 455px;
             left: 800px;
-            width: 504px;
+            width: 450px;
+        }
+
+        .section4-text-title {
+            font-family: 'Mulish', sans-serif;
+            font-weight: 400;
+            font-size: 28px;
+            line-height: 34px;
+            color: var(--swamp-green);
+            margin-bottom: 96px;
         }
 
         .section4-text p {
@@ -576,7 +681,7 @@
             font-size: 18px;
             line-height: 22px;
             color: var(--early-dawn);
-            margin-bottom: 10px;
+            margin-bottom: 0;
         }
 
         .section4-text strong {
@@ -584,19 +689,110 @@
             font-weight: 700;
         }
 
-        /* Section 5 - Spacer */
+        /* ==================== SPACER 2 ==================== */
         .tulip-spacer-2 {
             width: 1440px;
             height: 140px;
             background-color: var(--lunar-green);
         }
 
-        /* Section 6 - ООО Цветочное дыхание */
+        /* ==================== SECTION 6 - ООО Цветочное дыхание ==================== */
         .tulip-section-6 {
             width: 1440px;
             height: 706px;
             background-color: var(--lunar-green);
             position: relative;
+            overflow: hidden;
+        }
+
+        .section6-wave {
+            position: absolute;
+            top: 111px;
+            left: -532px;
+            width: 2598px;
+            height: 444px;
+            opacity: 0.15;
+            pointer-events: none;
+        }
+
+        /* Фото теплицы с рамкой (полароид под углом) */
+        .section6-photo-1 {
+            position: absolute;
+            top: 54px;
+            left: 153px;
+            width: 602px;
+            transform: rotate(-3deg);
+        }
+
+        .photo-frame {
+            background: white;
+            padding: 15px 15px 50px 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .photo-frame img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .photo-label {
+            position: absolute;
+            bottom: 15px;
+            left: 20px;
+            font-family: 'Mulish', sans-serif;
+            font-weight: 500;
+            font-size: 20px;
+            line-height: 24px;
+            color: var(--swamp-green);
+        }
+
+        /* Декоративные иконки тюльпанов */
+        .tulip-decorations {
+            position: absolute;
+            top: 370px;
+            left: 590px;
+            display: flex;
+            gap: 5px;
+        }
+
+        .tulip-decorations svg {
+            width: 15px;
+            height: 22px;
+            fill: var(--primrose);
+        }
+
+        /* Фото Александра с рамкой */
+        .section6-photo-2 {
+            position: absolute;
+            top: 57px;
+            left: 900px;
+            width: 340px;
+            transform: rotate(11deg);
+        }
+
+        .photo-label-2 {
+            position: absolute;
+            bottom: 15px;
+            right: 20px;
+            font-family: 'Mulish', sans-serif;
+            font-weight: 500;
+            font-size: 20px;
+            line-height: 24px;
+            color: var(--swamp-green);
+            text-align: right;
+        }
+
+        .tulip-decoration-2 {
+            position: absolute;
+            bottom: 50px;
+            right: 15px;
+        }
+
+        .tulip-decoration-2 svg {
+            width: 15px;
+            height: 22px;
+            fill: var(--primrose);
         }
 
         .section6-title {
@@ -630,76 +826,14 @@
             margin-bottom: 22px;
         }
 
-        .section6-image-1 {
-            position: absolute;
-            top: 54px;
-            left: 153px;
-            width: 602px;
-            height: 391px;
-            transform: rotate(-3deg);
-            overflow: hidden;
-        }
-
-        .section6-image-1 img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .section6-label-1 {
-            position: absolute;
-            top: 402px;
-            left: 190px;
-            transform: rotate(-3deg);
-        }
-
-        .section6-label-1 span {
-            font-family: 'Mulish', sans-serif;
-            font-weight: 500;
-            font-size: 20px;
-            line-height: 24px;
-            color: var(--swamp-green);
-        }
-
-        .section6-image-2 {
-            position: absolute;
-            top: 57px;
-            left: 988px;
-            width: 298px;
-            height: 474px;
-            transform: rotate(11deg);
-            overflow: hidden;
-        }
-
-        .section6-image-2 img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .section6-label-2 {
-            position: absolute;
-            top: 481px;
-            left: 923px;
-            transform: rotate(11deg);
-        }
-
-        .section6-label-2 span {
-            font-family: 'Mulish', sans-serif;
-            font-weight: 500;
-            font-size: 20px;
-            line-height: 24px;
-            color: var(--swamp-green);
-        }
-
-        /* Section 7 - Spacer */
+        /* ==================== SPACER 3 ==================== */
         .tulip-spacer-3 {
             width: 1440px;
             height: 160px;
             background-color: var(--lunar-green);
         }
 
-        /* Footer */
+        /* ==================== FOOTER ==================== */
         .tulip-footer {
             width: 1440px;
             background-color: var(--lunar-green);
@@ -723,10 +857,9 @@
             height: 50px;
         }
 
-        .footer-logo img {
+        .footer-logo svg {
             width: 100%;
             height: 100%;
-            object-fit: contain;
         }
 
         .footer-contacts {
@@ -815,8 +948,13 @@
             gap: 15px;
         }
 
-        .footer-form input[type="text"],
-        .footer-form input[type="tel"] {
+        .footer-input-wrapper {
+            display: flex;
+            gap: 15px;
+            width: 100%;
+        }
+
+        .footer-form input[type="text"] {
             width: 252.5px;
             height: 50px;
             background: white;
@@ -825,6 +963,43 @@
             padding: 0 20px;
             font-family: 'Mulish', sans-serif;
             font-size: 16px;
+        }
+
+        .phone-input-wrapper {
+            width: 252.5px;
+            height: 50px;
+            background: white;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            padding: 0 20px;
+            gap: 10px;
+        }
+
+        .phone-flag {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .phone-flag img {
+            width: 18px;
+            height: 13px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+        }
+
+        .phone-flag span {
+            font-family: 'Mulish', sans-serif;
+            font-size: 16px;
+            color: black;
+        }
+
+        .phone-input-wrapper input {
+            flex: 1;
+            border: none;
+            font-family: 'Mulish', sans-serif;
+            font-size: 16px;
+            outline: none;
         }
 
         .footer-form input::placeholder {
@@ -838,12 +1013,25 @@
             width: 100%;
         }
 
-        .footer-checkbox input {
+        .footer-checkbox input[type="checkbox"] {
             width: 20px;
             height: 20px;
             border: 2px solid var(--swamp-green);
             appearance: none;
             cursor: pointer;
+            position: relative;
+        }
+
+        .footer-checkbox input[type="checkbox"]:checked::after {
+            content: '';
+            position: absolute;
+            left: 4px;
+            top: 0;
+            width: 5px;
+            height: 10px;
+            border: solid var(--swamp-green);
+            border-width: 0 2px 2px 0;
+            transform: rotate(45deg);
         }
 
         .footer-checkbox label {
@@ -857,8 +1045,13 @@
             text-decoration: none;
         }
 
-        .footer-submit {
+        .footer-submit-wrapper {
+            position: relative;
             width: 520px;
+        }
+
+        .footer-submit {
+            width: 100%;
             height: 50px;
             background: var(--deco);
             border: none;
@@ -867,6 +1060,24 @@
             font-size: 18px;
             color: var(--cabbage-pont);
             cursor: pointer;
+            transition: transform 0.2s;
+        }
+
+        .footer-submit:hover {
+            transform: scale(1.01);
+        }
+
+        .footer-tulip-icon {
+            position: absolute;
+            right: 31px;
+            top: 8px;
+            width: 23px;
+            height: 34px;
+        }
+
+        .footer-tulip-icon svg {
+            width: 100%;
+            height: 100%;
         }
 
         .footer-bottom {
@@ -903,7 +1114,13 @@
         <!-- Header -->
         <header class="tulip-header">
             <div class="tulip-logo">
-                <img src="https://www.figma.com/api/mcp/asset/e32ee5db-4874-4d2c-b062-e95c5b8f2001" alt="AynaFlowers">
+                <!-- AYNAFLOWERS логотип -->
+                <svg viewBox="0 0 209 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <text x="0" y="20" font-family="Mulish" font-size="20" font-weight="400" fill="#E3EE94">A</text>
+                    <text x="14" y="20" font-family="Mulish" font-size="20" font-weight="400" fill="#E3EE94">Y</text>
+                    <path d="M24 8 L28 20 L32 8" stroke="#A7B984" stroke-width="2" fill="none"/>
+                    <text x="36" y="20" font-family="Mulish" font-size="20" font-weight="400" fill="#E3EE94">NAFLOWERS</text>
+                </svg>
             </div>
             <a href="#contact" class="header-cta-btn">
                 <span>Получить консультацию</span>
@@ -930,19 +1147,45 @@
 
         <!-- Hero Section -->
         <section class="tulip-hero">
+            <!-- Декоративная волна -->
+            <div class="hero-wave">
+                <svg viewBox="0 0 1616 483" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+                    <path d="M0 200 Q 400 100, 800 200 T 1616 200" stroke="#A7B984" stroke-width="2" fill="none"/>
+                </svg>
+            </div>
+
             <div class="hero-title">
                 <h1>Надежные поставки<br>тюльпанов оптом –</h1>
             </div>
             <div class="hero-subtitle">
                 <p>гарантируем соответствие<br>по цвету, высоте и стадии<br>раскрытия</p>
             </div>
-            <a href="#catalog" class="hero-cta-btn">
-                <span>Перейти в каталог</span>
-            </a>
-            <div class="hero-image-wrapper"></div>
-            <div class="hero-image">
-                <img src="https://www.figma.com/api/mcp/asset/fe9cd697-63fb-4018-abd0-ef89a085a959" alt="Тюльпаны">
+            
+            <div class="hero-cta-wrapper">
+                <div class="hero-tulip-icon">
+                    <svg viewBox="0 0 34 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <ellipse cx="17" cy="12" rx="8" ry="12" fill="#E3EE94"/>
+                        <ellipse cx="9" cy="14" rx="6" ry="10" fill="#A7B984"/>
+                        <ellipse cx="25" cy="14" rx="6" ry="10" fill="#A7B984"/>
+                        <path d="M17 24 L17 48" stroke="#A7B984" stroke-width="3"/>
+                        <path d="M17 35 Q 10 30, 8 35" stroke="#A7B984" stroke-width="2" fill="none"/>
+                        <path d="M17 40 Q 24 35, 26 40" stroke="#A7B984" stroke-width="2" fill="none"/>
+                    </svg>
+                </div>
+                <a href="#catalog" class="hero-cta-btn">
+                    <span>Перейти в каталог</span>
+                </a>
             </div>
+
+            <!-- Изображение с рамкой -->
+            <div class="hero-image-container">
+                <div class="hero-image-frame">
+                    <div class="hero-image">
+                        <img src="https://www.figma.com/api/mcp/asset/fe9cd697-63fb-4018-abd0-ef89a085a959" alt="Тюльпаны">
+                    </div>
+                </div>
+            </div>
+            
             <div class="hero-badge">
                 <span>Не понравится? Заменим</span>
             </div>
@@ -966,6 +1209,11 @@
 
         <!-- Section 2 -->
         <section class="tulip-section-2">
+            <div class="section2-wave">
+                <svg viewBox="0 0 1616 483" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+                    <path d="M0 200 Q 400 100, 800 200 T 1616 200" stroke="#A7B984" stroke-width="2" fill="none"/>
+                </svg>
+            </div>
             <div class="section2-title">
                 <h2>Оптовые поставки тюльпанов<br>собственного производства<br>с гарантией замены</h2>
             </div>
@@ -999,13 +1247,22 @@
 
         <!-- Section 4 - AYNAFLOWERS -->
         <section class="tulip-section-4">
+            <div class="section4-wave">
+                <svg viewBox="0 0 2320 968" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+                    <path d="M0 400 Q 580 200, 1160 400 T 2320 400" stroke="#A7B984" stroke-width="3" fill="none"/>
+                </svg>
+            </div>
             <div class="section4-blur"></div>
             <div class="section4-title">
                 <h2>AYNAFLOWERS – цветочная компания</h2>
                 <p>Мы находимся в Новосибирске и поставляем<br>цветы в города Сибирского федерального округа</p>
             </div>
-            <div class="section4-image">
-                <img src="https://www.figma.com/api/mcp/asset/86af293f-bae8-4f95-adee-709dfef016ec" alt="Тюльпаны">
+            
+            <!-- Изображение с рамкой полароид -->
+            <div class="section4-image-container">
+                <div class="section4-image-frame">
+                    <img src="https://www.figma.com/api/mcp/asset/86af293f-bae8-4f95-adee-709dfef016ec" alt="Тюльпаны">
+                </div>
             </div>
 
             <div class="section4-badges">
@@ -1017,7 +1274,7 @@
                         <p class="badge-subtitle">– более 10-ти лет в цветочном бизнесе</p>
                     </div>
                     <div>
-                        <div class="badge-item">
+                        <div class="badge-item-alt">
                             <span>ОТВЕТСТВЕННЫЙ ПОДХОД</span>
                         </div>
                         <p class="badge-subtitle">– выполняем свои обязательства</p>
@@ -1032,8 +1289,8 @@
             </div>
 
             <div class="section4-text">
-                <p>Мы знаем, с какими сложностями сталкиваются клиенты, покупающие цветочную продукцию: недопоставки, пересортица, слабое качество, отмены заказов.</p>
-                <p><strong>Мы выполняем свои обязательства, всегда остаемся на связи, не исчезаем после оплаты, соблюдаем сроки.</strong></p>
+                <p class="section4-text-title">– выполняем свои обязательства</p>
+                <p>Мы знаем, с какими сложностями сталкиваются клиенты, покупающие цветочную продукцию: недопоставки, пересортица, слабое качество, отмены заказов. <strong>Мы выполняем свои обязательства, всегда остаемся на связи, не исчезаем после оплаты, соблюдаем сроки.</strong></p>
                 <p><strong>Вы всегда можете на нас положиться!</strong></p>
             </div>
         </section>
@@ -1043,18 +1300,50 @@
 
         <!-- Section 6 - ООО Цветочное дыхание -->
         <section class="tulip-section-6">
-            <div class="section6-image-1">
-                <img src="https://www.figma.com/api/mcp/asset/040f332b-077c-49bb-9ceb-09b74275a538" alt="Теплица">
+            <div class="section6-wave">
+                <svg viewBox="0 0 2598 444" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+                    <path d="M0 200 Q 650 50, 1299 200 T 2598 200" stroke="#E3EE94" stroke-width="2" fill="none"/>
+                </svg>
             </div>
-            <div class="section6-label-1">
-                <span>ООО 'Цветочное дыхание'</span>
+
+            <!-- Фото теплицы с рамкой -->
+            <div class="section6-photo-1">
+                <div class="photo-frame">
+                    <img src="https://www.figma.com/api/mcp/asset/040f332b-077c-49bb-9ceb-09b74275a538" alt="Теплица">
+                    <span class="photo-label">ООО "Цветочное дыхание"</span>
+                </div>
             </div>
-            <div class="section6-image-2">
-                <img src="https://www.figma.com/api/mcp/asset/8bdca5ee-8eee-46f9-9427-9f6ff35a90e5" alt="Александр Бурмантов">
+
+            <!-- Декоративные тюльпаны -->
+            <div class="tulip-decorations">
+                <svg viewBox="0 0 15 22" fill="currentColor">
+                    <ellipse cx="7.5" cy="5" rx="4" ry="5"/>
+                    <path d="M7.5 10 L7.5 22" stroke="currentColor" stroke-width="2"/>
+                </svg>
+                <svg viewBox="0 0 15 22" fill="currentColor">
+                    <ellipse cx="7.5" cy="5" rx="4" ry="5"/>
+                    <path d="M7.5 10 L7.5 22" stroke="currentColor" stroke-width="2"/>
+                </svg>
+                <svg viewBox="0 0 15 22" fill="currentColor">
+                    <ellipse cx="7.5" cy="5" rx="4" ry="5"/>
+                    <path d="M7.5 10 L7.5 22" stroke="currentColor" stroke-width="2"/>
+                </svg>
             </div>
-            <div class="section6-label-2">
-                <span>Александр Бурмантов</span>
+
+            <!-- Фото Александра с рамкой -->
+            <div class="section6-photo-2">
+                <div class="photo-frame">
+                    <img src="https://www.figma.com/api/mcp/asset/8bdca5ee-8eee-46f9-9427-9f6ff35a90e5" alt="Александр Бурмантов">
+                    <span class="photo-label-2">Александр Бурмантов</span>
+                    <div class="tulip-decoration-2">
+                        <svg viewBox="0 0 15 22" fill="#E3EE94">
+                            <ellipse cx="7.5" cy="5" rx="4" ry="5"/>
+                            <path d="M7.5 10 L7.5 22" stroke="#E3EE94" stroke-width="2"/>
+                        </svg>
+                    </div>
+                </div>
             </div>
+
             <div class="section6-title">
                 <h2>AYNAFLOWERS – эксклюзивный<br>представитель ООО "Цветочное дыхание"</h2>
             </div>
@@ -1072,7 +1361,13 @@
             <div class="footer-top-spacer"></div>
             <div class="footer-main">
                 <div class="footer-logo">
-                    <img src="https://www.figma.com/api/mcp/asset/e32ee5db-4874-4d2c-b062-e95c5b8f2001" alt="AynaFlowers">
+                    <!-- AynaFlowers логотип для футера -->
+                    <svg viewBox="0 0 102 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <text x="0" y="25" font-family="Mulish" font-size="14" font-weight="400" fill="#E3EE94">AYNA</text>
+                        <text x="0" y="45" font-family="Mulish" font-size="12" font-weight="300" fill="#A7B984">FLOWERS</text>
+                        <path d="M50 5 L55 20 Q 60 25, 55 30 L 50 40" stroke="#A7B984" stroke-width="1.5" fill="none"/>
+                        <ellipse cx="55" cy="8" rx="5" ry="6" fill="#E3EE94"/>
+                    </svg>
                 </div>
 
                 <div class="footer-contacts">
@@ -1104,13 +1399,31 @@
                     <h4 class="form-title">Ответим на все вопросы</h4>
                     <p class="form-subtitle">Менеджер свяжется с Вами в течение дня</p>
                     <form class="footer-form">
-                        <input type="text" placeholder="Имя">
-                        <input type="tel" placeholder="+7 (000) 000-00-00">
+                        <div class="footer-input-wrapper">
+                            <input type="text" placeholder="Имя">
+                            <div class="phone-input-wrapper">
+                                <div class="phone-flag">
+                                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 18 13'%3E%3Crect width='18' height='4.33' fill='white'/%3E%3Crect y='4.33' width='18' height='4.33' fill='%230039A6'/%3E%3Crect y='8.66' width='18' height='4.34' fill='%23D52B1E'/%3E%3C/svg%3E" alt="RU">
+                                    <span>+7</span>
+                                </div>
+                                <input type="tel" placeholder="(000) 000-00-00">
+                            </div>
+                        </div>
                         <div class="footer-checkbox">
-                            <input type="checkbox" id="privacy-footer">
+                            <input type="checkbox" id="privacy-footer" checked>
                             <label for="privacy-footer">Я согласен с <a href="#">Политикой конфиденциальности</a></label>
                         </div>
-                        <button type="submit" class="footer-submit">Получить консультацию</button>
+                        <div class="footer-submit-wrapper">
+                            <button type="submit" class="footer-submit">Получить консультацию</button>
+                            <div class="footer-tulip-icon">
+                                <svg viewBox="0 0 23 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <ellipse cx="11.5" cy="8" rx="5" ry="8" fill="#E3EE94"/>
+                                    <ellipse cx="6" cy="9" rx="4" ry="6" fill="#A7B984"/>
+                                    <ellipse cx="17" cy="9" rx="4" ry="6" fill="#A7B984"/>
+                                    <path d="M11.5 16 L11.5 32" stroke="#A7B984" stroke-width="2"/>
+                                </svg>
+                            </div>
+                        </div>
                     </form>
                 </div>
             </div>

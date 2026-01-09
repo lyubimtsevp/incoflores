@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>О нас - Incoflores</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css?v=2">
+    <link rel="stylesheet" href="catalog.css">
+    <style>
+        /* About Page Specific Styles */
+        .about-container {
+            width: 1440px;
+            margin: 0 auto;
+            background: #FDF8F5;
+            min-height: 100vh;
+        }
+
+        .about-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 40px;
+            font-weight: 400;
+            text-transform: uppercase;
+            color: #222;
+            text-align: center;
+            padding: 30px 0;
+        }
+
+        /* Main Content Section */
+        .about-main {
+            position: relative;
+            width: 1440px;
+            min-height: 1160px;
+            padding: 25px 0;
+        }
+
+        .about-intro {
+            position: absolute;
+            top: 25px;
+            left: 152px;
+            width: 560px;
+        }
+
+        .about-intro-text {
+            font-family: 'Playfair Display', serif;
+            font-size: 22px;
+            line-height: 31px;
+            color: #222;
+            font-weight: 500;
+        }
+
+        .about-vertical-divider {
+            position: absolute;
+            top: 22px;
+            left: 118px;
+            width: 2px;
+            height: 100px;
+            background: #DA6561;
+        }
+
+        .about-list-left {
+            position: absolute;
+            top: 148px;
+            left: 115px;
+            width: 591px;
+        }
+
+        .about-list-item {
+            font-family: Arial, sans-serif;
+            font-size: 18px;
+            line-height: 28px;
+            color: #222;
+            margin-bottom: 28px;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .about-list-item::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: #DA6561;
+        }
+
+        .about-list-item strong {
+            font-weight: 700;
+        }
+
+        /* Right side list */
+        .about-list-right {
+            position: absolute;
+            top: 607px;
+            left: 733px;
+            width: 592px;
+        }
+
+        .about-list-right .about-list-item {
+            margin-bottom: 35px;
+        }
+
+        /* Images */
+        .about-image-main {
+            position: absolute;
+            top: 1px;
+            left: 836px;
+            width: 483px;
+            height: 554px;
+            overflow: hidden;
+        }
+
+        .about-image-main img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .about-image-main-border {
+            position: absolute;
+            top: 14px;
+            left: 818px;
+            width: 483px;
+            height: 562px;
+            border: 2px solid #DA6561;
+        }
+
+        .about-image-left {
+            position: absolute;
+            top: 579px;
+            left: 118px;
+            width: 299px;
+            height: 372px;
+            overflow: hidden;
+        }
+
+        .about-image-left img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .about-image-left-border {
+            position: absolute;
+            top: 570px;
+            left: 126px;
+            width: 299px;
+            height: 372px;
+            border: 2px solid #DA6561;
+        }
+
+        .about-image-small {
+            position: absolute;
+            top: 584px;
+            left: 438px;
+            width: 193px;
+            height: 266px;
+            overflow: hidden;
+        }
+
+        .about-image-small img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .about-image-small-border {
+            position: absolute;
+            top: 589px;
+            left: 445px;
+            width: 193px;
+            height: 266px;
+            border: 2px solid #DA6561;
+        }
+
+        .about-image-bottom {
+            position: absolute;
+            top: 888px;
+            left: 268px;
+            width: 324px;
+            height: 260px;
+            overflow: hidden;
+        }
+
+        .about-image-bottom img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .about-image-bottom-border {
+            position: absolute;
+            top: 895px;
+            left: 275px;
+            width: 324px;
+            height: 262px;
+            border: 2px solid #DA6561;
+        }
+
+        /* Team Section */
+        .team-section {
+            background: #fff;
+            padding: 45px 0 90px;
+        }
+
+        .team-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 40px;
+            font-weight: 400;
+            text-transform: uppercase;
+            color: #222;
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .team-grid {
+            display: flex;
+            flex-wrap: wrap;
+            width: 1200px;
+            margin: 0 auto;
+        }
+
+        .team-member {
+            width: 400px;
+            padding: 0 20px;
+            margin-bottom: 90px;
+        }
+
+        .team-photo {
+            width: 360px;
+            height: 360px;
+            overflow: hidden;
+            margin-bottom: 29px;
+        }
+
+        .team-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .team-name {
+            font-family: 'Playfair Display', serif;
+            font-size: 24px;
+            font-weight: 500;
+            color: #222;
+            margin-bottom: 5px;
+        }
+
+        .team-role {
+            font-family: Arial, sans-serif;
+            font-size: 16px;
+            color: #666;
+            margin-bottom: 14px;
+        }
+
+        .team-divider {
+            width: 50px;
+            height: 2px;
+            background: #DA6561;
+            margin-bottom: 6px;
+        }
+
+        .team-description {
+            font-family: Arial, sans-serif;
+            font-size: 14px;
+            line-height: 24px;
+            color: #222;
+            padding-top: 21px;
+        }
+
+        /* Footer */
+        .about-footer {
+            margin-top: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="page">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-container">
+                <a href="index.html" class="logo">
+                    <img src="https://www.figma.com/api/mcp/asset/5bb49d37-0fa5-4b3b-bd28-64c665d439ad" alt="Incoflores"
+                        class="logo-img">
+                </a>
+                <nav class="nav">
+                    <div class="nav-dropdown">
+                        <a href="index.html#services" class="nav-link nav-link-dropdown">Наши услуги</a>
+                        <div class="dropdown-menu">
+                            <a href="http://project6732419.tilda.ws/page36402882.html" class="dropdown-item">Цветочный брокер</a>
+                            <a href="quality-control.html" class="dropdown-item">Контроль качества</a>
+                            <a href="http://project6732419.tilda.ws/page36408111.html" class="dropdown-item">Специальное предложение к 8 марта, тюльпаны 🌷</a>
+                        </div>
+                    </div>
+                    <a href="flowercatalog.html" class="nav-link">Каталог цветов</a>
+                    <a href="plantations.html" class="nav-link">Наши партнеры</a>
+                    <a href="https://incoflores.ru/webshop" class="nav-link">Веб шоп</a>
+                    <a href="calculator.html" class="nav-link">Калькулятор доставки</a>
+                    <a href="about.html" class="nav-link nav-link-active">О нас</a>
+                    <a href="index.html#contacts" class="nav-link">Контакты</a>
+                </nav>
+            </div>
+        </header>
+
+        <div class="about-container">
+            <!-- Breadcrumbs -->
+            <div class="breadcrumbs" style="padding: 60px 0 0 140px;">
+                <a href="index.html" class="breadcrumb-link">Incoflores</a>
+                <span class="breadcrumb-separator">/</span>
+                <a href="index.html#services" class="breadcrumb-link">Наши услуги</a>
+                <span class="breadcrumb-separator">/</span>
+                <span class="breadcrumb-current">О нас</span>
+            </div>
+
+            <!-- Title -->
+            <h1 class="about-title">О нас</h1>
+
+            <!-- Main Content -->
+            <div class="about-main">
+                <!-- Vertical Divider -->
+                <div class="about-vertical-divider"></div>
+
+                <!-- Intro Text -->
+                <div class="about-intro">
+                    <p class="about-intro-text">
+                        Компания INCOFLORES работает с 2008 года и оказывает брокерские услуги по закупке цветов более чем с 300 плантаций Эквадора и Кении.
+                    </p>
+                </div>
+
+                <!-- Left List -->
+                <div class="about-list-left">
+                    <div class="about-list-item">
+                        Мы официально зарегистрированное и действующее на территории Эквадора предприятие. <strong>Мы платим налоги, легальны и надежны.</strong>
+                    </div>
+                    <div class="about-list-item">
+                        Мы работаем на цветочном рынке уже <strong>более 15 лет</strong>. Мы можем работать с любой плантацией Эквадора, с открытого рынка или по стандингам.
+                    </div>
+                    <div class="about-list-item">
+                        Мы можем предложить Вам <strong>эксклюзив</strong> от некоторых плантаций с высочайшим качеством цветка
+                    </div>
+                    <div class="about-list-item">
+                        Мы сами делаем <strong>100% проверку качества</strong> цветка перед вылетом, не привлекая никаких сторонних компаний. Мы видим в живую весь цветок, который вылетает нашим клиентам.
+                    </div>
+                </div>
+
+                <!-- Images -->
+                <div class="about-image-main-border"></div>
+                <div class="about-image-main">
+                    <img src="https://www.figma.com/api/mcp/asset/24204fe0-4dae-41c4-92b7-72e45cc65028" alt="Цветы">
+                </div>
+
+                <div class="about-image-left-border"></div>
+                <div class="about-image-left">
+                    <img src="https://www.figma.com/api/mcp/asset/964cd1c6-e17c-4250-80c5-ca861b9d0861" alt="Розы">
+                </div>
+
+                <div class="about-image-small-border"></div>
+                <div class="about-image-small">
+                    <img src="https://www.figma.com/api/mcp/asset/ab8d240c-8b0e-4f3a-a8ec-fcbe7791a62b" alt="Роза">
+                </div>
+
+                <div class="about-image-bottom-border"></div>
+                <div class="about-image-bottom">
+                    <img src="https://www.figma.com/api/mcp/asset/5c54afcc-6619-44a9-b3c8-eba9af9bf240" alt="Цветы">
+                </div>
+
+                <!-- Right List -->
+                <div class="about-list-right">
+                    <div class="about-list-item">
+                        Мы предлагаем самую низкую комиссию (от <strong>3 центов</strong> за стебель)
+                    </div>
+                    <div class="about-list-item">
+                        Мы любим "баловать" наших клиентов <strong>промо-коробками</strong> (бесплатным или почти бесплатным цветком)
+                    </div>
+                    <div class="about-list-item">
+                        Мы на связи <strong>24 часа</strong> в сутки
+                    </div>
+                    <div class="about-list-item">
+                        Мы работаем с любыми объемами поставок (от <strong>1 коробки</strong>)
+                    </div>
+                    <div class="about-list-item">
+                        Мы обеспечиваем <strong>индивидуальный подход</strong> к каждому клиенту вне зависимости от объемов закупаемой продукции
+                    </div>
+                    <div class="about-list-item">
+                        Мы рады сотрудничать с любым покупателем, будь то крупный оптовик или небольшой магазинчик с постоянным заказом, корпоративный клиент или организатор праздничных мероприятий, которому требуется разовая поставка цветка
+                    </div>
+                    <div class="about-list-item">
+                        Мы верны, надежны, профессиональны и мы очень любим цветы!
+                    </div>
+                </div>
+            </div>
+
+            <!-- Team Section -->
+            <section class="team-section">
+                <h2 class="team-title">Наша команда</h2>
+                <div class="team-grid">
+                    <!-- Team Member 1 -->
+                    <div class="team-member">
+                        <div class="team-photo">
+                            <img src="https://www.figma.com/api/mcp/asset/17446265-b25d-462b-a52f-54c231a7d41a" alt="Анна Воробьева">
+                        </div>
+                        <h3 class="team-name">Анна Воробьева</h3>
+                        <p class="team-role">Генеральный директор</p>
+                        <div class="team-divider"></div>
+                        <p class="team-description">
+                            Анна - наш вдохновитель и специалист<br>
+                            по связям с общественностью
+                        </p>
+                    </div>
+
+                    <!-- Team Member 2 -->
+                    <div class="team-member">
+                        <div class="team-photo">
+                            <img src="https://www.figma.com/api/mcp/asset/1f4f4c87-fb80-4153-a95f-d06eb48157a1" alt="Ольга Сек">
+                        </div>
+                        <h3 class="team-name">Ольга Сек</h3>
+                        <p class="team-role">Специалист по документообороту</p>
+                        <div class="team-divider"></div>
+                        <p class="team-description">
+                            Ольга - наш дотошный и скурпулезный архивариус
+                        </p>
+                    </div>
+
+                    <!-- Team Member 3 -->
+                    <div class="team-member">
+                        <div class="team-photo">
+                            <img src="https://www.figma.com/api/mcp/asset/0d365787-3f0d-4049-ad10-7eb1025aabcd" alt="Ивет Родригез">
+                        </div>
+                        <h3 class="team-name">Ивет Родригез</h3>
+                        <p class="team-role">Менеджер по работе с поставщиками</p>
+                        <div class="team-divider"></div>
+                        <p class="team-description">
+                            Ивет - наша волшебница и чародейка - достанет<br>
+                            все, что в принципе возможно достать
+                        </p>
+                    </div>
+
+                    <!-- Team Member 4 -->
+                    <div class="team-member">
+                        <div class="team-photo">
+                            <img src="https://www.figma.com/api/mcp/asset/ecf10786-7d09-49b8-b6c0-304aaf278fa5" alt="Кристиан Андранго">
+                        </div>
+                        <h3 class="team-name">Кристиан Андранго</h3>
+                        <p class="team-role">Специалист отдела контроля качества</p>
+                        <div class="team-divider"></div>
+                        <p class="team-description">
+                            Кристиан - наша опора в нелегкой борьбе<br>
+                            за высочайшее качество поставляемого цветка
+                        </p>
+                    </div>
+
+                    <!-- Team Member 5 -->
+                    <div class="team-member">
+                        <div class="team-photo">
+                            <img src="https://www.figma.com/api/mcp/asset/4f97ee3f-e281-41cb-8105-e8d848883cd2" alt="Виталий Назаров">
+                        </div>
+                        <h3 class="team-name">Виталий Назаров</h3>
+                        <p class="team-role">ИТ-специалист</p>
+                        <div class="team-divider"></div>
+                        <p class="team-description">
+                            Виталий - наш технический гений
+                        </p>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Footer -->
+        <footer class="footer about-footer">
+            <div class="footer-content">
+                <p class="footer-copy">© All Rights Reserved. Acme Inc.</p>
+                <div class="footer-social">
+                    <a href="https://www.facebook.com/groups/incoflores" class="social-link" target="_blank">
+                        <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M15 0C6.71573 0 0 6.71573 0 15C0 22.4742 5.47059 28.6838 12.6667 30V19.5H9V15H12.6667V12C12.6667 8.42166 14.8333 6.5 18.0833 6.5C19.5833 6.5 20.9167 6.66667 21.3333 6.75V10H19.3333C17.5 10 17.1667 10.8333 17.1667 12.1667V15H21.1667L20.5 19.5H17.1667V30C24.3629 28.6838 30 22.4742 30 15C30 6.71573 23.2843 0 15 0Z" fill="#DA6561"/>
+                        </svg>
+                    </a>
+                    <a href="https://vk.com/incoflores" class="social-link" target="_blank">
+                        <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M15 0C6.716 0 0 6.716 0 15C0 23.284 6.716 30 15 30C23.284 30 30 23.284 30 15C30 6.716 23.284 0 15 0ZM21.875 16.875C21.875 16.875 23.125 18.125 23.438 18.75C23.438 18.75 23.5 18.875 23.5 18.937C23.625 19.187 23.563 19.375 23.563 19.437C23.5 19.625 23.25 19.75 23.125 19.75H20.625C20.375 19.75 19.875 19.625 19.25 19.125C18.75 18.75 18.313 18.125 17.875 17.562C17.25 16.812 16.75 16.312 16.25 16.312C16.1875 16.312 16.125 16.3245 16.0625 16.3495C15.625 16.5 15.063 17.125 15.063 18.687C15.063 19.187 14.688 19.437 14.438 19.437H13.25C12.75 19.437 10.188 19.25 7.938 16.875C5.125 13.875 2.625 7.875 2.625 7.687C2.5 7.375 2.75 7.187 3.063 7.187H5.625C6 7.187 6.125 7.437 6.25 7.687C6.375 8 7.125 9.812 8.25 11.437C9.938 13.937 10.688 14.437 11.25 14.437C11.3125 14.437 11.375 14.4245 11.4375 14.3995C12.125 14 11.938 11.375 11.938 10.625C11.938 8.687 11.625 7.875 10.75 7.625C10.5 7.562 10.313 7.375 10.5 7.187C10.813 6.812 11.313 6.625 12 6.625H13.313C14 6.75 14.125 7.125 14.125 7.625V10.875C14.125 11.562 14.313 11.937 14.563 11.937C14.813 11.937 15.313 11.562 16.313 10.437C17.563 9.062 18.438 7 18.438 7C18.5 6.812 18.75 6.5 19.125 6.5H21.875C22.5 6.5 22.625 6.812 22.5 7.187C22.25 8.187 19.875 11.5 19.875 11.5C19.625 11.875 19.563 12.062 19.875 12.5C20.063 12.812 20.813 13.437 21.313 14.062C22.25 15.125 22.938 16 23.125 16.562C23.313 17.125 22.438 16.875 21.875 16.875Z" fill="#DA6561"/>
+                        </svg>
+                    </a>
+                    <a href="https://www.instagram.com/vorobyeva_incoflores" class="social-link" target="_blank">
+                        <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M15 0C6.716 0 0 6.716 0 15C0 23.284 6.716 30 15 30C23.284 30 30 23.284 30 15C30 6.716 23.284 0 15 0ZM15 7.5C16.937 7.5 17.187 7.5 17.937 7.5C20.687 7.625 21.875 8.875 22 11.562C22 12.312 22.062 12.562 22.062 15C22.062 17.437 22 17.687 22 18.437C21.875 21.125 20.625 22.375 17.937 22.5C17.187 22.5 16.937 22.562 15 22.562C13.062 22.562 12.812 22.5 12.062 22.5C9.375 22.375 8.125 21.125 8 18.437C8 17.687 7.937 17.437 7.937 15C7.937 12.562 8 12.312 8 11.562C8.125 8.875 9.375 7.625 12.062 7.5C12.812 7.5 13.062 7.5 15 7.5ZM15 9.187C13.062 9.187 12.875 9.187 12.125 9.25C10.437 9.312 9.562 10.187 9.5 11.875C9.437 12.625 9.437 12.812 9.437 15C9.437 17.187 9.437 17.375 9.5 18.125C9.562 19.812 10.437 20.687 12.125 20.75C12.875 20.812 13.062 20.812 15 20.812C16.937 20.812 17.125 20.812 17.875 20.75C19.562 20.687 20.437 19.812 20.5 18.125C20.562 17.375 20.562 17.187 20.562 15C20.562 12.812 20.562 12.625 20.5 11.875C20.437 10.187 19.562 9.312 17.875 9.25C17.125 9.187 16.937 9.187 15 9.187ZM15 10.875C17.312 10.875 19.125 12.687 19.125 15C19.125 17.312 17.312 19.125 15 19.125C12.687 19.125 10.875 17.312 10.875 15C10.875 12.687 12.687 10.875 15 10.875ZM19.312 10.687C19.312 10.062 19.812 9.562 20.437 9.562C21.062 9.562 21.562 10.062 21.562 10.687C21.562 11.312 21.062 11.812 20.437 11.812C19.812 11.812 19.312 11.312 19.312 10.687ZM15 12.5C13.625 12.5 12.5 13.625 12.5 15C12.5 16.375 13.625 17.5 15 17.5C16.375 17.5 17.5 16.375 17.5 15C17.5 13.625 16.375 12.5 15 12.5Z" fill="#DA6561"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
